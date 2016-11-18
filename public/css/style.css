@@ -1,0 +1,71 @@
+@font-face {}
+a {
+  text-decoration: none;
+  color: #222; }
+
+li {
+  list-style-type: none; }
+
+body {
+  background-color: #555;
+  margin: 0;
+  padding: 0;
+  color: #222;
+  font-size: 1em; }
+
+/*
+///////// gradient //////////
+body {
+  background: $color;
+  background: -webkit-linear-gradient($color, $color2);
+  background: -o-linear-gradient($color, $color2);
+  background: -moz-linear-gradient($color, $color2);
+  background: linear-gradient($color, $color2);
+}
+
+///////// pattern //////////
+#bg_pattern {
+  background-image: url(image.png);
+  background-position: left top;
+  background-size: $percent*25;
+  background-repeat: repeat;
+}
+
+///////// image //////////
+#bg_image {
+  background: url(image.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}*/
+/*
+header {
+  background-image: url(../img/responsive-banner.jpg);
+  background-size: cover;
+  background-position: center;
+  height: $pixel*450;
+  position: relative;
+  figure {
+    width: $percent*45;
+    position: absolute;
+    top: $percent*15;
+    img {
+      width: inherit;
+    }
+  }
+}*/
+header {
+  background-image: url(../img/responsive-banner.jpg);
+  background-size: cover;
+  background-position: bottom;
+  width: 75%;
+  margin: 0 auto;
+  height: 400px;
+  position: relative; }
+  header figure {
+    width: 43%;
+    position: absolute;
+    top: 15%; }
+    header figure img {
+      width: inherit; }
+
+/*# sourceMappingURL=style.css.map */

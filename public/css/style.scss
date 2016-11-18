@@ -1,0 +1,27 @@
+// ------------------------- PAGESTYLES --------------------------- //
+
+@import "config/colors";
+@import "config/fonts";
+@import "config/variables";
+@import "config/typo";
+
+///////// BODY ////////////////
+
+@import "designs/body";
+
+///////// HEADER ////////////////
+
+@import "designs/header";
+
+///////// MAIN NAVI ////////////////
+
+@import "designs/navigation";
+
+///////// MAIN ////////////////
+
+@import "designs/main";
+
+///////// FOOTER ////////////////
+
+@import "designs/footer";
+

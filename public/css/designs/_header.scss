@@ -1,0 +1,47 @@
+// ------------------------- HEADER --------------------------- //
+
+// Platzierung Logo
+// Bannerbild
+// Breite (Viewport oder schmaler)
+
+
+////////// Width = Viewport ///////////
+/*
+header {
+  background-image: url(../img/responsive-banner.jpg);
+  background-size: cover;
+  background-position: center;
+  height: $pixel*450;
+  position: relative;
+  figure {
+    width: $percent*45;
+    position: absolute;
+    top: $percent*15;
+    img {
+      width: inherit;
+    }
+  }
+}*/
+
+
+
+////////// Width < Viewport ///////////
+
+header {
+  background-image: url(../img/responsive-banner.jpg);
+  background-size: cover;
+  background-position: bottom;
+  width: $percent*75;
+  margin: 0 auto;
+  height: $pixel*400;
+  position: relative;
+  figure {
+    width: $percent*43;
+    position: absolute;
+    top: $percent*15;
+    img {
+      width: inherit;
+    }
+  }
+
+}

@@ -1,0 +1,60 @@
+[
+    {
+        "name": "phpmailer/phpmailer",
+        "version": "6.0.x-dev",
+        "version_normalized": "6.0.9999999.9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/PHPMailer/PHPMailer.git",
+            "reference": "c7650fbdfff9236e6f3624f3147ef843aea4583a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/PHPMailer/PHPMailer/zipball/c7650fbdfff9236e6f3624f3147ef843aea4583a",
+            "reference": "c7650fbdfff9236e6f3624f3147ef843aea4583a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.5.0"
+        },
+        "require-dev": {
+            "phpdocumentor/phpdocumentor": "2.*",
+            "phpunit/phpunit": "4.*"
+        },
+        "suggest": {
+            "hayageek/oauth2-yahoo": "Needed for Yahoo XOAUTH2 authentication",
+            "league/oauth2-google": "Needed for Google XOAUTH2 authentication",
+            "stevenmaguire/oauth2-microsoft": "Needed for Microsoft XOAUTH2 authentication"
+        },
+        "time": "2016-09-21 15:29:37",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PHPMailer\\PHPMailer\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "LGPL-2.1"
+        ],
+        "authors": [
+            {
+                "name": "Jim Jagielski",
+                "email": "jimjag@gmail.com"
+            },
+            {
+                "name": "Marcus Bointon",
+                "email": "phpmailer@synchromedia.co.uk"
+            },
+            {
+                "name": "Andy Prevost",
+                "email": "codeworxtech@users.sourceforge.net"
+            },
+            {
+                "name": "Brent R. Matzelle"
+            }
+        ],
+        "description": "PHPMailer is a full-featured email creation and transfer class for PHP"
+    }
+]
