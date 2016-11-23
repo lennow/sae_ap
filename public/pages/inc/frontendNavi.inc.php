@@ -10,7 +10,7 @@ $frontPage = \classes\helpers\NavigationHelper::$navArray['frontend'];
 
 ?>
 
-<nav>
+<nav id="main_nav">
     <ul>
         <?php foreach ($frontPage as $pageName => $pageTitle) : ?>
             <li>

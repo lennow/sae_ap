@@ -1,12 +1,20 @@
 // ------------------------- BODY --------------------------- //
 
+* {
+  margin: 0;
+  padding: 0;
+  color: $textcolor;
+}
+
+
 ///////// color //////////
 body {
   background-color: $darkgrey;
   margin: 0;
   padding: 0;
-  color: $textcolor;
+  //color: $textcolor;
   font-size: $em;
+  @include flexbox(column, flex-start, center);
 }
 /*
 ///////// gradient //////////

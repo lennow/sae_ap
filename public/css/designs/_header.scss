@@ -5,43 +5,58 @@
 // Breite (Viewport oder schmaler)
 
 
-////////// Width = Viewport ///////////
-/*
-header {
-  background-image: url(../img/responsive-banner.jpg);
-  background-size: cover;
-  background-position: center;
-  height: $pixel*450;
-  position: relative;
-  figure {
-    width: $percent*45;
-    position: absolute;
-    top: $percent*15;
+////////// Wireframe 1 - Width < Viewport ///////////
+
+/*header {
+  width: $percent*75;
+  background-color: $white_trans;
+  #logo_wrapper {
+    width: auto;
+  }
+  #banner_wrapper {
+    width: $percent*100;
     img {
-      width: inherit;
+      width: $percent*100;
     }
   }
 }*/
 
 
+////////// Wireframe 2 - Width = Viewport ///////////
 
-////////// Width < Viewport ///////////
-
-header {
-  background-image: url(../img/responsive-banner.jpg);
-  background-size: cover;
-  background-position: bottom;
-  width: $percent*75;
-  margin: 0 auto;
-  height: $pixel*400;
+/*header {
+  width: $percent*100;
+  background-color: $white_trans;
   position: relative;
-  figure {
-    width: $percent*43;
-    position: absolute;
-    top: $percent*15;
+  #banner_wrapper {
+    width: $percent*100;
     img {
-      width: inherit;
+      width: $percent*100;
     }
   }
+  #logo_wrapper {
+    width: auto;
+    position: absolute;
+    top: $percent*5;
+    left: $percent*5;
+  }
+}*/
 
+////////// Wireframe 3 + 4 - Width = Viewport ///////////
+
+header {
+  width: $percent*100;
+  position: relative;
+  #banner_wrapper {
+    width: $percent*100;
+    img {
+      width: $percent*100;
+    }
+  }
+  #logo_wrapper {
+    width: auto;
+    position: absolute;
+    top: $percent*5;
+    left: $percent*5;
+  }
 }

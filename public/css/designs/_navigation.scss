@@ -3,3 +3,56 @@
 // Platzierung
 //    über oder unter Bannerbild
 //    seitlich unter Bannerbild
+
+
+////////// über Bannerbild (Wireframe 1) ///////////
+
+/*.nav_line {
+  padding: $em*2;
+  @include flexbox(row, space-between, flex-end);
+  nav ul {
+    width: $percent*60;
+    @include flexbox (row, space-between, flex-end);
+    li {
+      padding: 0 $em;
+      font-family: $caviarB;
+      font-size: $em*1.5;
+    }
+  }
+}*/
+
+
+////////// unter Bannerbild (Wireframe 2) ///////////
+
+/*nav ul {
+  width: $percent*85;
+  margin: $percent auto;
+  @include flexbox (row, space-between, flex-end);
+  li {
+    padding: 0 $em;
+    font-family: $caviarB;
+    font-size: $em*1.5;
+  }
+}*/
+
+
+////////// unter Bannerbild links (Wireframe 3 + 4) ///////////
+
+#main_nav {
+  width: $percent*15;
+}
+#main_nav ul {
+  width: $percent*100;
+  padding: $em;
+  background-color: $white_trans;
+  @include flexbox (column, space-between, center);
+  li {
+    width: $percent*80;
+    padding: $em*0.7;
+    font-family: $caviarB;
+    font-size: $em*1.5;
+    &:not(:first-child) {
+      border-top: thin solid $darkgrey;
+    }
+  }
+}

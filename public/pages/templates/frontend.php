@@ -33,24 +33,40 @@
     </pre>
 -->
 
-    <header>
-        <figure>
-            <img src="img/Logo_weiss.png" alt="Logo" />
-        </figure>
-
-        <!-- Navigation => falls width < viewport -->
-        <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="frontendNavi"); ?>
-
-        <!-- Banner => falls width < viewport -->
-        <figure>
+    <!-- /// HEADER - Wireframe 1 /// -->
+    <!--<header>
+        <div class="nav_line">
+             Logo
+            <figure id="logo_wrapper">
+                <img src="img/Logo_schwarz.png" alt="Logo schwarz" width="200"/>
+            </figure>
+             Navigation
+            <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="frontendNavi"); ?>
+        </div>
+         Banner
+        <figure id="banner_wrapper">
             <img src="img/responsive-banner.jpg" alt="Bannerbild" />
         </figure>
+    </header> -->
 
+    <!-- /// HEADER - Wireframe 2 ; Wireframe 3 + 4 ohne Navi /// -->
+    <header>
+        <!-- Logo -->
+        <figure id="logo_wrapper">
+            <img src="img/Logo_weiss.png" alt="Logo weiß" width="300"/>
+        </figure>
+        <figure id="banner_wrapper">
+            <img src="img/responsive-banner.jpg" alt="Bannerbild" />
+        </figure>
+        <!-- Navigation -->
+        <?php //classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="frontendNavi"); ?>
     </header>
 
+
+
+    <!-- /// MAIN - Wireframe 2 ohne Navi ; Wireframe 3 + 4 mit Navi /// -->
     <div id="main_wrapper">
 
-        <!-- Navigation -->
         <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="frontendNavi"); ?>
 
         <!-- Seitenleiste -->
