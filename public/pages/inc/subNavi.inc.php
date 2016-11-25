@@ -10,7 +10,7 @@ $aboutPage = \classes\helpers\NavigationHelper::$navArray['subnavi'];
 
 ?>
 
-<nav>
+<nav id="subnavi">
     <ul>
         <?php foreach ($aboutPage as $pageName => $pageTitle) : ?>
             <li>

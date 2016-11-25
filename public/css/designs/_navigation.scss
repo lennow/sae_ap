@@ -7,10 +7,10 @@
 
 ////////// über Bannerbild (Wireframe 1) ///////////
 
-/*.nav_line {
+.nav_line {
   padding: $em*2;
   @include flexbox(row, space-between, flex-end);
-  nav ul {
+  #main_nav ul {
     width: $percent*60;
     @include flexbox (row, space-between, flex-end);
     li {
@@ -19,31 +19,62 @@
       font-size: $em*1.5;
     }
   }
-}*/
+}
+
+#subnavi ul {
+  margin-bottom: $vertspace;
+  @include flexbox(row, flex-start, center);
+  li {
+    padding-right: $em*2;
+    font-family: $caviarB;
+    font-size: $em*1.2;
+  }
+}
+
+.footer_navi {
+  font-family: $caviarB;
+  font-size: $em;
+}
 
 
 ////////// unter Bannerbild (Wireframe 2) ///////////
 
-/*nav ul {
+/*#main_nav ul {
   width: $percent*85;
-  margin: $percent auto;
+  margin: 0 auto;
+  //border-bottom: $border_dark;
+  padding: $em*2 0;
   @include flexbox (row, space-between, flex-end);
   li {
     padding: 0 $em;
     font-family: $caviarB;
     font-size: $em*1.5;
   }
+}
+
+#subnavi ul {
+  margin-bottom: $vertspace;
+  @include flexbox(row, space-between, center);
+  li {
+    padding: 0 $em;
+    font-family: $caviarB;
+    font-size: $em*1.2;
+  }
+}
+
+.footer_navi {
+  font-family: $caviarB;
+  font-size: $em;
 }*/
 
 
 ////////// unter Bannerbild links (Wireframe 3 + 4) ///////////
 
-#main_nav {
-  width: $percent*15;
+/*#main_nav {
+  width: $percent*100;
 }
 #main_nav ul {
   width: $percent*100;
-  padding: $em;
   background-color: $white_trans;
   @include flexbox (column, space-between, center);
   li {
@@ -52,7 +83,17 @@
     font-family: $caviarB;
     font-size: $em*1.5;
     &:not(:first-child) {
-      border-top: thin solid $darkgrey;
+      border-top: $border_dark;
     }
   }
 }
+
+#subnavi ul {
+  margin-bottom: $vertspace;
+  @include flexbox(row, flex-start, center);
+  li {
+    padding-right: $em*2;
+    font-family: $caviarB;
+    font-size: $em*1.2;
+  }
+}*/

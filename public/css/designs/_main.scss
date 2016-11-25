@@ -1,8 +1,78 @@
-// ------------------------- NAVIGATION --------------------------- //
+// ------------------------- MAIN --------------------------- //
+
+////////// Wireframe 1 - Width < Viewport ///////////
 
 #main_wrapper {
-  width: $percent*90;
-  margin: -($pixel*30) auto 0;
-  z-index: 5;
+  width: $percent*75;
+  margin: 0 auto;
+  padding: $vertspace 0;
+  background-color: $white_trans;
+  @include flexbox(row, space-around, flex-start);
+  aside {
+    width: $percent*15;
+    padding: $em $percent*3;
+    @include flexbox(column, space-between, center);
+    #sidebar * {
+      padding: $em*0.5 0;
+      text-align: center;
+    }
+  }
+  main {
+    width: $percent*75;
+    padding: $vertspace $percent*9;
+  }
 }
 
+////////// Wireframe 2 - Width = Viewport ///////////
+
+
+/*#main_wrapper {
+  width: $percent*100;
+  @include flexbox(row-reverse, space-between, flex-start);
+  aside {
+    width: $percent*35;
+    height: $percent*90;
+    background-color: $white_trans;
+    margin: $vertspace $percent*9;
+    @include flexbox(column, space-between, center);
+    #sidebar * {
+      padding: $em*0.5 0;
+      text-align: center;
+    }
+  }
+  main {
+    width: $percent*65;
+    padding: $vertspace $percent*9;
+  }
+}
+*/
+
+////////// Wireframe 3 + 4 - Width = Viewport ///////////
+
+/*#main_wrapper {
+  width: $percent*90;
+  margin: -($pixel*30) auto 0;
+  //margin: $pixel*715 auto 0;
+  z-index: 5;
+  @include flexbox(row, space-around, flex-start);
+}
+#side_wrapper {
+  width: $percent*20;
+  @include flexbox (column, center, center);
+  aside {
+    width: $percent*100;
+    height: $percent*90;
+    background-color: $white_trans;
+    margin: $vertspace 0;
+    @include flexbox(column, space-between, center);
+    #sidebar * {
+      padding: $em*0.5 0;
+      text-align: center;
+    }
+  }
+}
+main {
+  width: $percent*65;
+  background-color: $white_trans;
+  padding: $vertspace;
+}*/

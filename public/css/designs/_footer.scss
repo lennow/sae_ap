@@ -1,0 +1,26 @@
+// ------------------------- FOOTER --------------------------- //
+
+// Breite (Viewport oder schmaler)
+
+
+////////// Wireframe 1 - Width < Viewport ///////////
+
+footer {
+  width: $percent*75;
+  background-color: $white_trans;
+  padding: $em*1.5 0;
+  border-top: $border_dark;
+  @include flexbox(row, space-around, flex-start);
+}
+
+
+////////// Wireframe 2, 3 + 4 - Width = Viewport ///////////
+
+/*footer {
+  width: $percent*100;
+  background-color: $white_trans;
+  margin-top: $vertspace;
+  padding: $em*1.5 0;
+  //border-top: $border_dark;
+  @include flexbox(row, space-around, flex-start);
+}*/

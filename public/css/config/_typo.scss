@@ -1,9 +1,10 @@
 // ----------------------- TYPOGRAPHY --------------------- //
 
 
-p {
+p, li {
   font-family: $caviar;
   font-size: $em;
+  line-height: $em*1.5;
 }
 
 a {
@@ -16,7 +17,9 @@ li {
 }
 
 h1 {
-
+  font-family: $caviarB;
+  font-size: $em*2;
+  line-height: $vertspace;
 }
 
 h2 {

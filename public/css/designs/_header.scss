@@ -7,7 +7,7 @@
 
 ////////// Wireframe 1 - Width < Viewport ///////////
 
-/*header {
+header {
   width: $percent*75;
   background-color: $white_trans;
   #logo_wrapper {
@@ -19,7 +19,7 @@
       width: $percent*100;
     }
   }
-}*/
+}
 
 
 ////////// Wireframe 2 - Width = Viewport ///////////
@@ -44,9 +44,10 @@
 
 ////////// Wireframe 3 + 4 - Width = Viewport ///////////
 
-header {
+/*header {
   width: $percent*100;
   position: relative;
+  //position: fixed;
   #banner_wrapper {
     width: $percent*100;
     img {
@@ -60,3 +61,4 @@ header {
     left: $percent*5;
   }
 }
+*/

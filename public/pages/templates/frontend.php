@@ -34,53 +34,72 @@
 -->
 
     <!-- /// HEADER - Wireframe 1 /// -->
-    <!--<header>
+    <header>
         <div class="nav_line">
-             Logo
             <figure id="logo_wrapper">
                 <img src="img/Logo_schwarz.png" alt="Logo schwarz" width="200"/>
             </figure>
-             Navigation
-            <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="frontendNavi"); ?>
+            <nav id="main_nav">
+                <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="frontendNavi"); ?>
+            </nav>
         </div>
-         Banner
         <figure id="banner_wrapper">
             <img src="img/responsive-banner.jpg" alt="Bannerbild" />
         </figure>
-    </header> -->
+    </header>
 
     <!-- /// HEADER - Wireframe 2 ; Wireframe 3 + 4 ohne Navi /// -->
-    <header>
-        <!-- Logo -->
+<!-- <header>
         <figure id="logo_wrapper">
             <img src="img/Logo_weiss.png" alt="Logo weiß" width="300"/>
         </figure>
         <figure id="banner_wrapper">
             <img src="img/responsive-banner.jpg" alt="Bannerbild" />
         </figure>
-        <!-- Navigation -->
-        <?php //classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="frontendNavi"); ?>
-    </header>
+        <nav id="main_nav">
+            <?php //classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="frontendNavi"); ?>
+        </nav>
+    </header>-->
 
 
 
     <!-- /// MAIN - Wireframe 2 ohne Navi ; Wireframe 3 + 4 mit Navi /// -->
     <div id="main_wrapper">
 
-        <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="frontendNavi"); ?>
+        <!--<div id="side_wrapper">
+            <nav id="main_nav">
+                <?php //classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="frontendNavi"); ?>
+            </nav>-->
 
-        <!-- Seitenleiste -->
-        <aside>
-            <div id="sidebar">
-
-            </div>
-        </aside>
+            <!-- Seitenleiste -->
+            <aside>
+                <div id="sidebar">
+                    <figure class="img_aside">
+                        <img src="img/Logo_schwarz.png" alt="" width="200"/>
+                    </figure>
+                    <p>
+                        Hier stehen Infos zu:
+                    </p>
+                    <ul>
+                        <li>Sponsoring</li>
+                        <li>Spenden</li>
+                        <li>Kooperationen</li>
+                        <li>Sonstigem</li>
+                    </ul>
+                </div>
+            </aside>
+        <!--</div>-->
 
         <!-- Content -->
         <main>
             <!-- Subnavigationen -->
-            <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="subNavi"); ?>
-            <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="projectNavi"); ?>
+            <?php if (!isset ($_GET['p']) || $_GET['p'] == "verein") : ?>
+                <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="subNavi"); ?>
+            <?php endif; ?>
+
+            <?php if (isset ($_GET['p']) && $_GET['p'] == "angebote") : ?>
+                <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="projectNavi"); ?>
+            <?php endif; ?>
 
             <!-- Content -->
             <?php if (isset ($_GET['p'])) : ?>
@@ -92,10 +111,22 @@
     </div>
 
     <footer>
-        <div></div>
-        <div class="footer_navi">
+        <!-- Kontaktdaten / Adresse -->
+        <p>
+            Dr. Lena Lehmann<br /><br />
+            SAE Institute Leipzig<br />
+            Webdesign & Development<br />
+            WDD 915
+        </p>
+        <p>
+            Kontakt:<br />
+            lena.lehmann@email.de<br />
+        </p>
+
+        <!-- Navigation -->
+        <nav class="footer_navi">
             <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="frontendNavi"); ?>
-        </div>
+        </nav>
     </footer>
 
 
