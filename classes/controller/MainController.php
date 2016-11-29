@@ -40,8 +40,6 @@ class MainController {
         $this->page = $this->navigation->validateSiteParams (@$_SESSION['username'], @$this->globals['p']);
         //$this->logout();
 
-        print_r ($this->page);
-
         /*
          * switch/case für Seitensteuerung
          */
