@@ -9,6 +9,8 @@
 namespace classes\controller;
 
 use classes\helpers\NavigationHelper;
+use classes\helpers\FormValidator;
+use classes\helpers\FormMailer;
 use classes\view\View;
 
 class MainController {
@@ -47,6 +49,11 @@ class MainController {
         switch ($this->page) {
             case 'kontakt':
                 // ToDo: Steuerung Kontaktformular
+                // wenn absenden gedrückt, Formularvalidierung starten
+                    FormValidator::validateFormfields(@$_POST['contact']);
+                    $this->view->errorStatus = FormValidator::$errorMessages;
+                    $mail = new FormMailer();
+                    $this->view->mailStatus = $mail->sendContactData($_POST['contact']);
                 break;
 
             case 'login':

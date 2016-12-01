@@ -7,22 +7,39 @@
  */
 ?>
 
+<pre>
+    <?php // print_r($_POST); ?>
+</pre>
+
+<p>
+    <?= (isset ($this->mailStatus)) ? $this->mailStatus : "" ?>
+</p>
+
 <form action="" method="post" id="contact_form">
 
     <div>
         <label for="name">Name</label>
-        <input type="text" id="name" name="contact[name]" placeholder="Ihr Name">
+        <input type="text" id="name" name="contact[Name]" placeholder="Ihr Name">
+        <p class="error">
+            <?= (isset ($this->errorStatus['Name'])) ? $this->errorStatus['Name'] : "" ?>
+        </p>
     </div>
 
     <div>
         <label for="email">Email</label>
-        <input type="email" id="email" name="contact[email]" placeholder="Ihre E-Mail Adresse">
+        <input type="email" id="email" name="contact[Email]" placeholder="Ihre Email Adresse">
+        <p class="error">
+            <?= (isset($this->errorStatus['Email'])) ? $this->errorStatus['Email'] : "" ?>
+        </p>
     </div>
 
     <div>
         <label for="message">Nachricht</label>
-        <textarea type="message" id="message" name="contact[message]"
+        <textarea type="message" id="message" name="contact[Nachricht]"
                   placeholder="Ihre Nachricht an uns" cols="50" rows="20"></textarea>
+        <p class="error">
+            <?= (isset($this->errorStatus["Nachricht"])) ? $this->errorStatus["Nachricht"] : "" ?>
+        </p>
     </div>
 
     <div>

@@ -40,7 +40,7 @@
                 <img src="img/Logo_schwarz.png" alt="Logo schwarz" width="200"/>
             </figure>
             <nav id="main_nav">
-                <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="frontendNavi"); ?>
+                <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
             </nav>
         </div>
         <figure id="banner_wrapper">
@@ -57,7 +57,7 @@
             <img src="img/responsive-banner.jpg" alt="Bannerbild" />
         </figure>
         <nav id="main_nav">
-            <?php //classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="frontendNavi"); ?>
+            <?php //classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
         </nav>
     </header>-->
 
@@ -68,7 +68,7 @@
 
         <!--<div id="side_wrapper">
             <nav id="main_nav">
-                <?php //classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="frontendNavi"); ?>
+                <?php //classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
             </nav>-->
 
             <!-- Seitenleiste -->
@@ -94,11 +94,11 @@
         <main>
             <!-- Subnavigationen -->
             <?php if (!isset ($_GET['p']) || $_GET['p'] == "verein") : ?>
-                <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="subNavi"); ?>
+                <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "subNavi"); ?>
             <?php endif; ?>
 
             <?php if (isset ($_GET['p']) && $_GET['p'] == "angebote") : ?>
-                <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="projectNavi"); ?>
+                <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "projectNavi"); ?>
             <?php endif; ?>
 
             <!-- Content -->
@@ -125,7 +125,7 @@
 
         <!-- Navigation -->
         <nav class="footer_navi">
-            <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], $sub="frontendNavi"); ?>
+            <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
         </nav>
     </footer>
 
