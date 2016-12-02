@@ -8,12 +8,14 @@
 ?>
 
 <pre>
-    <?php // print_r($_POST); ?>
+    <?php //print_r($_POST); ?>
 </pre>
 
 <p>
     <?= (isset ($this->mailStatus)) ? $this->mailStatus : "" ?>
 </p>
+
+<h1>Kontaktformular</h1>
 
 <form action="" method="post" id="contact_form">
 
@@ -36,13 +38,14 @@
     <div>
         <label for="message">Nachricht</label>
         <textarea type="message" id="message" name="contact[Nachricht]"
-                  placeholder="Ihre Nachricht an uns" cols="50" rows="20"></textarea>
+                  placeholder="Ihre Nachricht an uns" cols="50"></textarea>
         <p class="error">
             <?= (isset($this->errorStatus["Nachricht"])) ? $this->errorStatus["Nachricht"] : "" ?>
         </p>
     </div>
 
     <div>
+        <label for="submit"></label>
         <input type="submit" id="submit" name="contact[submit]" value="Absenden">
     </div>
 

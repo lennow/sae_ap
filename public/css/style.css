@@ -8,7 +8,7 @@
 /*
     Display
  */
-body, .nav_line, .nav_line #main_nav ul, #subnavi ul, #main_wrapper, #main_wrapper aside, footer {
+body, .nav_line, .nav_line #main_nav ul, #subnavi ul, #main_wrapper, #main_wrapper aside, form, form div, footer {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flexbox;
@@ -19,7 +19,7 @@ body, .nav_line, .nav_line #main_nav ul, #subnavi ul, #main_wrapper, #main_wrapp
 /*
     Flex direction
  */
-.nav_line, .nav_line #main_nav ul, #subnavi ul, #main_wrapper, footer {
+.nav_line, .nav_line #main_nav ul, #subnavi ul, #main_wrapper, form div, footer {
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   -webkit-flex-direction: row;
@@ -27,7 +27,7 @@ body, .nav_line, .nav_line #main_nav ul, #subnavi ul, #main_wrapper, #main_wrapp
   -ms-flex-direction: row;
   flex-direction: row; }
 
-body, #main_wrapper aside {
+body, #main_wrapper aside, form {
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
   -webkit-flex-direction: column;
@@ -59,7 +59,7 @@ body, #main_wrapper aside {
 /*
     Justify content
  */
-body, #subnavi ul {
+body, #subnavi ul, form div {
   -webkit-box-pack: start;
   -moz-box-pack: start;
   -webkit-flex-pack: start;
@@ -68,7 +68,7 @@ body, #subnavi ul {
   -webkit-justify-content: flex-start;
   justify-content: flex-start; }
 
-.nav_line, .nav_line #main_nav ul, #main_wrapper aside {
+.nav_line, .nav_line #main_nav ul, #main_wrapper aside, form {
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
   -webkit-flex-pack: justify;
@@ -85,7 +85,7 @@ body, #subnavi ul {
 /*
     Align items
  */
-#main_wrapper, footer {
+#main_wrapper, form, form div, footer {
   -webkit-box-align: start;
   -ms-flex-align: start;
   -webkit-align-items: flex-start;
@@ -132,12 +132,6 @@ body, #subnavi ul, #main_wrapper aside {
   border-radius: $radius;
 }
 
-@mixin box_shadow ($box_shadow){
-  -webkit-box-shadow: $box_shadow;
-  -moz-box-shadow: $box_shadow;
-  box-shadow: $box_shadow;
-}
-
 @mixin rotate ($deg) {
   -webkit-transform: rotate($deg);
   -moz-transform: rotate($deg);
@@ -153,13 +147,7 @@ body, #subnavi ul, #main_wrapper aside {
   background-color: $bg_color;
 }
 
-@mixin layer_gradient {
-  background: linear-gradient(left, transparent 0%, transparent 0%, rgba(0,0,0,0.5) 130%);
-  background: -moz-linear-gradient(left, transparent 0%, transparent 0%, rgba(0,0,0,0.5) 130%);
-  background: -webkit-linear-gradient(left, transparent 0%, transparent 0%, rgba(0,0,0,0.5) 130%);
-  background: -ms-linear-gradient(left, transparent 0%, transparent 0%, rgba(0,0,0,0.5) 130%);
-  background: -o-linear-gradient(left, transparent 0%, transparent 0%, rgba(0,0,0,0.5) 130%);
-}*/
+*/
 /*@mixin touch-action {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
@@ -183,7 +171,7 @@ body, #subnavi ul, #main_wrapper aside {
 @font-face {
   font-family: 'Caviar BoldIt';
   src: url("../fonts/CaviarDreams_BoldItalic.ttf"); }
-p, li {
+p, li, label {
   font-family: "Caviar";
   font-size: 1em;
   line-height: 1.5em; }
@@ -198,6 +186,31 @@ li {
 h1 {
   font-family: "Caviar Bold";
   font-size: 2em;
+  line-height: 3em; }
+
+h2 {
+  font-family: "Caviar BoldIt";
+  font-size: 1.5em;
+  line-height: 3em; }
+
+h3 {
+  font-family: "Caviar Bold";
+  font-size: 1.3em;
+  line-height: 3em; }
+
+h4 {
+  font-family: "Caviar";
+  font-size: 1.2em;
+  line-height: 3em; }
+
+h5 {
+  font-family: "Caviar Bold";
+  font-size: 1.2em;
+  line-height: 3em; }
+
+h6 {
+  font-family: "Caviar";
+  font-size: 1.2em;
   line-height: 3em; }
 
 * {
@@ -416,6 +429,57 @@ main {
   background-color: $white_trans;
   padding: $vertspace;
 }*/
+form div {
+  width: 100%;
+  margin-bottom: 1em; }
+  form div label {
+    width: 15%; }
+  form div input, form div textarea {
+    width: 40%;
+    height: 2em;
+    border: none;
+    border-bottom: thin solid #cecece;
+    padding: 1em;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0.5px 0.5px 4px 0.5px #cecece;
+    -moz-box-shadow: 0.5px 0.5px 4px 0.5px #cecece;
+    box-shadow: 0.5px 0.5px 4px 0.5px #cecece; }
+    form div input:-moz-placeholder, form div textarea:-moz-placeholder {
+      font-family: "Caviar Italic";
+      font-size: 0.9em;
+      color: #cecece; }
+    form div input:-ms-input-placeholder, form div textarea:-ms-input-placeholder {
+      font-family: "Caviar Italic";
+      font-size: 0.9em;
+      color: #cecece; }
+    form div input::-moz-placeholder, form div textarea::-moz-placeholder {
+      font-family: "Caviar Italic";
+      font-size: 0.9em;
+      color: #cecece; }
+    form div input::-webkit-input-placeholder, form div textarea::-webkit-input-placeholder {
+      font-family: "Caviar Italic";
+      font-size: 0.9em;
+      color: #cecece; }
+  form div textarea {
+    height: 10em;
+    -webkit-box-shadow: 0.5px 0.5px 4px 0.5px #cecece;
+    -moz-box-shadow: 0.5px 0.5px 4px 0.5px #cecece;
+    box-shadow: 0.5px 0.5px 4px 0.5px #cecece; }
+  form div input[type=submit], form div textarea[type=submit] {
+    width: 20%;
+    padding: 0;
+    font-family: "Caviar Bold";
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    background: radial-gradient(white 30%, #cecece);
+    background: -moz-radial-gradient(white 30%, #cecece);
+    background: -webkit-radial-gradient(white 30%, #cecece);
+    background: -ms-radial-gradient(white 30%, #cecece);
+    background: -o-radial-gradient(white 30%, #cecece); }
+
 footer {
   width: 75%;
   background-color: rgba(255, 255, 255, 0.9);

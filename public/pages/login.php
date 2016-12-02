@@ -7,6 +7,9 @@
  */
 ?>
 
+<h1>Anmeldung</h1>
+<h3>zum internen Bereich</h3>
+
 <form action="" method="post" id="login_form">
 
     <div>
@@ -20,6 +23,7 @@
     </div>
 
     <div>
+        <label for="submit"></label>
         <input type="submit" id="submit" name="contact[submit]" value="Absenden">
     </div>
 

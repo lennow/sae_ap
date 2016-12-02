@@ -17,15 +17,15 @@ class FormMailer
 
     public function sendContactData ($contactData) {
 
-        if (FormValidator::validateFormfields($_POST['contact']) === true) {
+        if ($contactData === true) {
 
             $mail = new PHPMailer();
             $mail->setFrom('info@verein.de', 'Verein');
-            $mail->addAddress($contactData['Email']);     // Add a recipient
-            //$mail->addReplyTo($data["Email"]);
+            $mail->addAddress(@$_POST['contact']['Email']);             // Add a recipient
+            //$mail->addReplyTo($_POST["Email"]);
             //$mail->isHTML(true);                          // Set email format to HTML
-            $mail->Subject = "Nachricht von {$contactData['Name']} via Kontaktformular";
-            $mail->Body    = $contactData['Nachricht'];
+            $mail->Subject = "Nachricht von " . @$_POST['contact']['Name'] . "via Kontaktformular";
+            $mail->Body    = @$_POST['contact']['Nachricht'];
             //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             if(!$mail->send()) {

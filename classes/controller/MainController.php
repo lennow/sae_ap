@@ -50,10 +50,10 @@ class MainController {
             case 'kontakt':
                 // ToDo: Steuerung Kontaktformular
                 // wenn absenden gedrückt, Formularvalidierung starten
-                    FormValidator::validateFormfields(@$_POST['contact']);
+                    $valid = FormValidator::validateFormfields(@$_POST['contact']);
                     $this->view->errorStatus = FormValidator::$errorMessages;
                     $mail = new FormMailer();
-                    $this->view->mailStatus = $mail->sendContactData($_POST['contact']);
+                    $this->view->mailStatus = $mail->sendContactData($valid);
                 break;
 
             case 'login':

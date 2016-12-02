@@ -8,6 +8,42 @@
   @include align-items($align);
 }
 
+@mixin placeholder {
+  &:-moz-placeholder           {@content}
+  &:-ms-input-placeholder      {@content}
+  &::-moz-placeholder          {@content}
+  &::-webkit-input-placeholder {@content}
+}
+
+@mixin border-radius($radius){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box_shadow ($box_shadow){
+  -webkit-box-shadow: $box_shadow;
+  -moz-box-shadow: $box_shadow;
+  box-shadow: $box_shadow;
+}
+
+@mixin linear_gradient {
+  background: linear-gradient($lightgrey, $white 40%, $lightgrey);
+  background: -moz-linear-gradient($lightgrey, $white 40%, $lightgrey);
+  background: -webkit-linear-gradient($lightgrey, $white 40%, $lightgrey);
+  background: -ms-linear-gradient($lightgrey, $white 40%, $lightgrey);
+  background: -o-linear-gradient($lightgrey, $white 40%, $lightgrey);
+}
+
+@mixin radial_gradient {
+  background: radial-gradient($white $percent*30, $lightgrey);
+  background: -moz-radial-gradient($white $percent*30, $lightgrey);
+  background: -webkit-radial-gradient($white $percent*30, $lightgrey);
+  background: -ms-radial-gradient($white $percent*30, $lightgrey);
+  background: -o-radial-gradient($white $percent*30, $lightgrey);
+}
+
+
 /*@mixin text ($f_family, $f_size, $line-height, $color) {
   font-family: $f_family;
   font-size: $f_size;
@@ -28,12 +64,6 @@
   border-radius: $radius;
 }
 
-@mixin box_shadow ($box_shadow){
-  -webkit-box-shadow: $box_shadow;
-  -moz-box-shadow: $box_shadow;
-  box-shadow: $box_shadow;
-}
-
 @mixin rotate ($deg) {
   -webkit-transform: rotate($deg);
   -moz-transform: rotate($deg);
@@ -49,13 +79,7 @@
   background-color: $bg_color;
 }
 
-@mixin layer_gradient {
-  background: linear-gradient(left, transparent 0%, transparent 0%, rgba(0,0,0,0.5) 130%);
-  background: -moz-linear-gradient(left, transparent 0%, transparent 0%, rgba(0,0,0,0.5) 130%);
-  background: -webkit-linear-gradient(left, transparent 0%, transparent 0%, rgba(0,0,0,0.5) 130%);
-  background: -ms-linear-gradient(left, transparent 0%, transparent 0%, rgba(0,0,0,0.5) 130%);
-  background: -o-linear-gradient(left, transparent 0%, transparent 0%, rgba(0,0,0,0.5) 130%);
-}*/
+*/
 
 
 /*@mixin touch-action {

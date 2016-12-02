@@ -1,0 +1,39 @@
+// ------------------------- FORMULARE --------------------------- //
+
+form {
+  @include flexbox(column, space-between, flex-start);
+  div {
+    width: $percent*100;
+    margin-bottom: $em;
+    @include flexbox(row, flex-start, flex-start);
+    label {
+      width: $percent*15;
+    }
+    input {
+      width: $percent*40;
+      height: $em*2;
+      border: none;
+      border-bottom: $border_grey;
+      padding: $em;
+      @include border-radius($pixel*3);
+      @include box_shadow($box_shadow);
+      @include placeholder {
+        font-family: $caviarI;
+        font-size: $em*0.9;
+        color: $lightgrey;
+      }
+    }
+    textarea {
+      @extend input;
+      height: $em*10;
+      @include box_shadow($box_shadow);
+    }
+    input[type=submit] {
+      width: $percent*20;
+      padding: 0;
+      font-family: $caviarB;
+      @include border-radius($pixel*5);
+      @include radial_gradient();
+    }
+  }
+}
