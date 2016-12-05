@@ -17,6 +17,8 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
     <!-- jQuery -->
+    <script src="js/jquery-3.1.1.slim.min.js"></script>
+    <script src="js/script.js"></script>
 
 </head>
 <body>
@@ -25,7 +27,7 @@
     <pre>
         $GET: <?php //print_r ($_GET); ?>
     </pre>
-    <pre>
+       <pre>
         $POST: <?php //print_r ($_POST); ?>
     </pre>
     <pre>
@@ -103,10 +105,14 @@
 
             <!-- Content -->
             <?php if (isset ($_GET['p'])) : ?>
-                <?php require_once "pages/" . $this->pageContent; ?>
+                <?php if (isset ($_GET['sub'])) : ?>
+                    <?php require_once "pages/" . $_GET['sub'] . ".php"; ?>
+                <?php else : ?>
+                    <?php require_once "pages/" . $this->pageContent; ?>
+                <?php endif; ?>
             <?php else : ?>
                 <?php require_once "pages/verein.php"; ?>
-            <?php endif; ?>
+                <?php endif; ?>
         </main>
     </div>
 

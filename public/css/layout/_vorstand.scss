@@ -1,0 +1,48 @@
+// ----------------------- PAGE VORSTAND --------------------- //
+
+
+////////// Version 1 - Foto & Text nebeneinander ///////////
+
+.vorstand_box {
+  width: $percent*100;
+  margin-bottom: $em*3;
+  @include flexbox(row, space-between, flex-start);
+  figure {
+    width: $percent*25;
+  }
+  .vorstand_textbox {
+    width: $percent*70;
+  }
+  &:first-of-type{
+    margin-top: $em*2;
+  }
+}
+
+
+////////// Version 2 - Foto & Text untereinander, Boxen nebeneinander ///////////
+
+/*#vorstand_wrapper {
+  @include flexbox(row, space-between, flex-start);
+}
+
+.vorstand_box {
+  width: $percent*24;
+  height: $em*25;
+  //padding: $em;
+  border-right: $border_grey;
+  @include flexbox(column, space-between, center);
+  figure {
+    width: $percent*90;
+    height: $percent*50;
+    img {
+      width: $percent*95;
+    }
+  }
+  .vorstand_textbox {
+    width: $percent*90;
+    height: $percent*50;
+  }
+  &:last-of-type {
+    border: none;
+  }
+}*/

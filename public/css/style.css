@@ -8,7 +8,7 @@
 /*
     Display
  */
-body, .nav_line, .nav_line #main_nav ul, #subnavi ul, #main_wrapper, #main_wrapper aside, form, form div, footer {
+body, .nav_line, .nav_line #main_nav ul, #subnavi ul, #main_wrapper, #main_wrapper aside, form, form div, .vorstand_box, footer {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flexbox;
@@ -19,7 +19,7 @@ body, .nav_line, .nav_line #main_nav ul, #subnavi ul, #main_wrapper, #main_wrapp
 /*
     Flex direction
  */
-.nav_line, .nav_line #main_nav ul, #subnavi ul, #main_wrapper, form div, footer {
+.nav_line, .nav_line #main_nav ul, #subnavi ul, #main_wrapper, form div, .vorstand_box, footer {
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   -webkit-flex-direction: row;
@@ -68,7 +68,7 @@ body, #subnavi ul, form div {
   -webkit-justify-content: flex-start;
   justify-content: flex-start; }
 
-.nav_line, .nav_line #main_nav ul, #main_wrapper aside, form {
+.nav_line, .nav_line #main_nav ul, #main_wrapper aside, form, .vorstand_box {
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
   -webkit-flex-pack: justify;
@@ -85,7 +85,7 @@ body, #subnavi ul, form div {
 /*
     Align items
  */
-#main_wrapper, form, form div, footer {
+#main_wrapper, form, form div, .vorstand_box, footer {
   -webkit-box-align: start;
   -ms-flex-align: start;
   -webkit-align-items: flex-start;
@@ -177,6 +177,7 @@ p, li, label {
   line-height: 1.5em; }
 
 a {
+  font-family: "Caviar Bold";
   text-decoration: none;
   color: #222; }
 
@@ -480,6 +481,41 @@ form div {
     background: -ms-radial-gradient(white 30%, #cecece);
     background: -o-radial-gradient(white 30%, #cecece); }
 
+.vorstand_box {
+  width: 100%;
+  margin-bottom: 3em; }
+  .vorstand_box figure {
+    width: 25%; }
+  .vorstand_box .vorstand_textbox {
+    width: 70%; }
+  .vorstand_box:first-of-type {
+    margin-top: 2em; }
+
+/*#vorstand_wrapper {
+  @include flexbox(row, space-between, flex-start);
+}
+
+.vorstand_box {
+  width: $percent*24;
+  height: $em*25;
+  //padding: $em;
+  border-right: $border_grey;
+  @include flexbox(column, space-between, center);
+  figure {
+    width: $percent*90;
+    height: $percent*50;
+    img {
+      width: $percent*95;
+    }
+  }
+  .vorstand_textbox {
+    width: $percent*90;
+    height: $percent*50;
+  }
+  &:last-of-type {
+    border: none;
+  }
+}*/
 footer {
   width: 75%;
   background-color: rgba(255, 255, 255, 0.9);
