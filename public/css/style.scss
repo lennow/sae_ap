@@ -14,15 +14,15 @@
 
 ///////// HEADER ////////////////
 
-@import "designs/header";
+@import "designs/version_1/header";
 
 ///////// MAIN NAVI ////////////////
 
-@import "designs/navigation";
+@import "designs/version_1/navigation";
 
 ///////// MAIN + PAGES////////////////
 
-@import "designs/main";
+@import "designs/version_1/main";
 @import "designs/forms";
 
 @import "layout/vorstand";
@@ -31,5 +31,12 @@
 
 ///////// FOOTER ////////////////
 
-@import "designs/footer";
+@import "designs/version_1/footer";
+@import "layout/impressum";
+
+
+
+// ------------------------- MEDIA QUERIES --------------------------- //
+
+
 

@@ -10,7 +10,7 @@ $projectPage = \classes\helpers\NavigationHelper::$navArray['projects'];
 
 ?>
 
-<nav>
+<nav id="projnavi">
     <ul>
         <?php foreach ($projectPage as $pageName => $pageTitle) : ?>
             <li>

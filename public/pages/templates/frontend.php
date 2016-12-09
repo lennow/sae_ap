@@ -16,10 +16,6 @@
     <!-- CSS Dateien -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <!-- jQuery -->
-    <script src="js/jquery-3.1.1.slim.min.js"></script>
-    <script src="js/script.js"></script>
-
 </head>
 <body>
 
@@ -35,62 +31,41 @@
     </pre>
 -->
 
-    <!-- /// HEADER - Wireframe 1 /// -->
+
+    <!-- /// HEADER - Version 1 = Wireframe 1 / Version 2 = Wireframe 2, 3 & 4 (ohne Navi)/// -->
+
     <header>
-        <div class="nav_line">
-            <figure id="logo_wrapper">
-                <img src="img/Logo_schwarz.png" alt="Logo schwarz" width="200"/>
-            </figure>
-            <nav id="main_nav">
-                <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
-            </nav>
-        </div>
-        <figure id="banner_wrapper">
-            <img src="img/responsive-banner.jpg" alt="Bannerbild" />
-        </figure>
+        <?php require_once "pages/templates/version_1/header.php"; ?>
+        <?php //require_once "pages/templates/version_2/header.php"; ?>
     </header>
-
-    <!-- /// HEADER - Wireframe 2 ; Wireframe 3 + 4 ohne Navi /// -->
-<!-- <header>
-        <figure id="logo_wrapper">
-            <img src="img/Logo_weiss.png" alt="Logo weiß" width="300"/>
-        </figure>
-        <figure id="banner_wrapper">
-            <img src="img/responsive-banner.jpg" alt="Bannerbild" />
-        </figure>
-        <nav id="main_nav">
-            <?php //classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
-        </nav>
-    </header>-->
-
 
 
     <!-- /// MAIN - Wireframe 2 ohne Navi ; Wireframe 3 + 4 mit Navi /// -->
     <div id="main_wrapper">
 
-        <!--<div id="side_wrapper">
-            <nav id="main_nav">
-                <?php //classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
-            </nav>-->
+    <!--<div id="side_wrapper">
+        <nav id="main_nav">
+            <?php //classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
+        </nav>-->
 
-            <!-- Seitenleiste -->
-            <aside>
-                <div id="sidebar">
-                    <figure class="img_aside">
-                        <img src="img/Logo_schwarz.png" alt="" width="200"/>
-                    </figure>
-                    <p>
-                        Hier stehen Infos zu:
-                    </p>
-                    <ul>
-                        <li>Sponsoring</li>
-                        <li>Spenden</li>
-                        <li>Kooperationen</li>
-                        <li>Sonstigem</li>
-                    </ul>
-                </div>
-            </aside>
-        <!--</div>-->
+        <!-- Seitenleiste -->
+        <aside>
+            <div id="sidebar">
+                <figure class="img_aside">
+                    <img src="img/Logo_schwarz.png" alt="" width="200"/>
+                </figure>
+                <p>
+                    Hier stehen Infos zu:
+                </p>
+                <ul>
+                    <li>Sponsoring</li>
+                    <li>Spenden</li>
+                    <li>Kooperationen</li>
+                    <li>Sonstigem</li>
+                </ul>
+            </div>
+        </aside>
+    <!--</div>-->
 
         <!-- Content -->
         <main>
@@ -114,6 +89,7 @@
                 <?php require_once "pages/verein.php"; ?>
                 <?php endif; ?>
         </main>
+
     </div>
 
     <footer>
@@ -135,6 +111,9 @@
         </nav>
     </footer>
 
+<!-- jQuery -->
+<script src="js/jquery-3.1.1.slim.min.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>

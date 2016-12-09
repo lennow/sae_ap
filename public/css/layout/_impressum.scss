@@ -1,0 +1,15 @@
+// ----------------------- PAGE IMPRESSUM --------------------- //
+
+#imprint_wrapper {
+  @include flexbox(column, space-between, flex-start);
+  .imprint_box {
+    margin-top: $em*2;
+    .imprint_subbox {
+      @include flexbox(row, flex-start, flex-start);
+      p {
+        margin-right: $em*2;
+      }
+    }
+  }
+
+}
