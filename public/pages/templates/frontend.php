@@ -4,6 +4,9 @@
  * User: Lena
  * Date: 03.11.2016
  * Time: 11:51
+ *
+ * Frontend Template für alle Seiten
+ *
  */
 ?>
 

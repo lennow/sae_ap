@@ -1,6 +1,5 @@
 // ------------------------- MIXINS --------------------------- //
 
-
 @mixin flexbox ($dir, $justify, $align) {
   @include display-flex();
   @include flex-direction($dir);
@@ -27,22 +26,67 @@
   box-shadow: $box_shadow;
 }
 
-@mixin linear_gradient {
-  background: linear-gradient($lightgrey, $white 40%, $lightgrey);
-  background: -moz-linear-gradient($lightgrey, $white 40%, $lightgrey);
-  background: -webkit-linear-gradient($lightgrey, $white 40%, $lightgrey);
-  background: -ms-linear-gradient($lightgrey, $white 40%, $lightgrey);
-  background: -o-linear-gradient($lightgrey, $white 40%, $lightgrey);
+@mixin linear_gradient ($color1, $color2) {
+  background: linear-gradient($color1, $color2, $color1);
+  background: -moz-linear-gradient($color1, $color2, $color1);
+  background: -webkit-linear-gradient($color1, $color2, $color1);
+  background: -ms-linear-gradient($color1, $color2, $color1);
+  background: -o-linear-gradient($color1, $color2, $color1);
 }
 
-@mixin radial_gradient {
-  background: radial-gradient($white $percent*30, $lightgrey);
-  background: -moz-radial-gradient($white $percent*30, $lightgrey);
-  background: -webkit-radial-gradient($white $percent*30, $lightgrey);
-  background: -ms-radial-gradient($white $percent*30, $lightgrey);
-  background: -o-radial-gradient($white $percent*30, $lightgrey);
+@mixin radial_gradient ($color1, $color2) {
+  background: linear-gradient($color1, $color2);
+  background: -moz-linear-gradient($color1, $color2);
+  background: -webkit-linear-gradient($color1, $color2);
+  background: -ms-linear-gradient($color1, $color2);
+  background: -o-linear-gradient($color1, $color2);
 }
 
+
+// ------------------------- MEDIA QUERIES MIXINS --------------------------- //
+
+@mixin breakpoint1400 {
+  @media screen and (max-width: $pixel*1400) {
+    @content;
+  }
+}
+
+@mixin breakpoint1200 {
+  @media screen and (max-width: $pixel*1200) {
+    @content;
+  }
+}
+
+@mixin breakpoint1000 {
+  @media screen and (max-width: $pixel*1000) {
+    @content;
+  }
+}
+
+@mixin breakpoint800 {
+  @media screen and (max-width: $pixel*800) {
+    @content;
+  }
+}
+
+@mixin breakpoint600 {
+  @media screen and (max-width: $pixel*600) {
+    @content;
+  }
+}
+
+@mixin breakpoint400 {
+  @media screen and (max-width: $pixel*400) {
+    @content;
+  }
+}
+
+
+
+
+
+
+/************************** ARCHIVE ****************************/
 
 /*@mixin text ($f_family, $f_size, $line-height, $color) {
   font-family: $f_family;

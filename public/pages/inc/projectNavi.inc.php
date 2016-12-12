@@ -4,6 +4,10 @@
  * User: Lena
  * Date: 11.11.2016
  * Time: 13:12
+ *
+ * Unternavigation auf Seite "Angebote"
+ * => Projeknavigation
+ *
  */
 
 $projectPage = \classes\helpers\NavigationHelper::$navArray['projects'];

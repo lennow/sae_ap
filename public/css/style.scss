@@ -1,11 +1,18 @@
 // ------------------------- PAGESTYLES --------------------------- //
 
+/*
+* importiert Partials
+* Definition der Media Queries
+*/
+
 @import "helpers/sass-flexbox";
-@import "helpers/mixins";
 
 @import "config/colors";
 @import "config/fonts";
 @import "config/variables";
+
+@import "helpers/mixins";
+
 @import "config/typo";
 
 ///////// BODY ////////////////
@@ -36,7 +43,7 @@
 
 
 
-// ------------------------- MEDIA QUERIES --------------------------- //
+
 
 
 

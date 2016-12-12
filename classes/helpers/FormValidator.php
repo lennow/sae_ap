@@ -4,6 +4,17 @@
  * User: Engelstein IT
  * Date: 09.11.2016
  * Time: 11:20
+ *
+ * Klasse FormValidator
+ *
+ * hilft bei der Validierung von Formulardaten
+ *
+ * Eigenschaften:
+ * $errorMessages (leeres public static Array)
+ *
+ * Methoden:
+ * validateFormfields() => static
+ *
  */
 
 namespace classes\helpers;
@@ -14,19 +25,20 @@ class FormValidator
 
     public static $errorMessages = [];
 
+
+    /**
+     * Validierung der Formulareingabedaten
+     *
+     * prüft im ersten Schritt, ob Feld ausgefüllt wurde
+     * prüft im zweiten Schritt, ob Fels korrekt ausgefüllt wurde (z.B. Email Adresse)
+     * gibt entweder Fehlermeldung zurück oder TRUE
+     *
+     * @param $inputData
+     * @return bool
+     *
+     */
     public static function validateFormfields ($inputData) {
 
-        // wenn Submit-Button gedrückt wurde,
-        // gehe durch $_POST['contact']:
-        //
-        // Schritt 1: prüfe jedes Feld, ob es leer ist
-        //          => wenn ja, schreibe Fehlermeldung in $error
-        // Schritt 2: prüfe einzelne Felder auf korrekte Einträge (reguläre Ausdrücke?)
-        //
-        // in jedem Schritt: wenn Validierung fehlschlägt, gib Fehlermeldung zurück
-        // Schritt 3: Gibt es Fehlermeldungen? => ja >> gib sie aus
-        //                                        nein >> gib TRUE zurück
-        //
         if (isset ($inputData['submit'])) {
             foreach ($inputData as $field => $value) {
                 if($value == ""){

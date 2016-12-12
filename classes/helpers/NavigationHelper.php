@@ -4,6 +4,25 @@
  * User: Lena
  * Date: 09.11.2016
  * Time: 11:26
+ *
+ * Klasse NavigationHelper
+ *
+ * steuert Erstellung der Seitennavigation
+ * validiert Seitenaufruf
+ *
+ * Eigenschaften:
+ * $home (private Variable) => Startseite
+ * $frontendNav (public Array) => Hauptnavigation
+ * $backendNav (public Array) => Backendnavigation
+ * $subNav (public Array) => Unternavigation
+ * $projectNav (public Array) => Unternavigation
+ * $navArray (leeres public static Array)
+ *
+ * Methoden:
+ * __construct()
+ * createNavigation($login_status, $sub) => static
+ * validateSiteParams($login_status, $get_param)
+ *
  */
 
 namespace classes\helpers;
@@ -50,10 +69,16 @@ class NavigationHelper
     }
 
 
-    /*
+    /**
+     *
+     * Erstellen der Navigation
+     *
      * Einbindung der richtigen Seitennavigation abhängig vom Loginstatus (eingeloggt oder nicht)
+     *
+     * @param string $login_status Variable aus Sessionarray (nur wenn eingeloggt),
+     * @param string $sub Bezeichnung der einzubindenen Navigation
+     *
      */
-
     public static function createNavigation ($login_status, $sub) {
         if (isset ($login_status)) {
             $nav_file = "pages/inc/backendNavi.inc.php";
@@ -68,10 +93,17 @@ class NavigationHelper
         }
     }
 
-    /*
-     * Validierung der Seitenparameter und Aufruf der Seite, einfügen in Navigation
+    /**
+     *
+     * Validierung der GET-Parameter
+     *
+     * Validierung der Seitenparameter und Aufruf der Seite,
+     * Einfügen des Seitennamens in die Navigation
+     *
+     * @param string $login_status Variable aus Sessionarray (nur wenn eingeloggt),
+     * @param string $get_param aufgerufener GET-Parameter
+     *
      */
-
     public function validateSiteParams ($login_status, $get_param) {
         if (isset ($get_param) && !empty ($get_param)) {
             if (isset ($login_status)) {

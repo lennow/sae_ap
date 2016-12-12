@@ -4,6 +4,14 @@
  * User: Engelstein IT
  * Date: 01.12.2016
  * Time: 11:28
+ *
+ * Klasse FormMailer
+ *
+ * versendet Informationen aus Kontaktformular per Email
+ *
+ * Methoden:
+ * sendContactData()
+ *
  */
 
 namespace classes\helpers;
@@ -15,6 +23,13 @@ use PHPMailer\PHPMailer\PHPMailer;
 class FormMailer
 {
 
+    /**
+     * benutzt Klasse PHP Mailer
+     *
+     * @param $contactData
+     * @return string Erfolgsnachricht
+     *
+     */
     public function sendContactData ($contactData) {
 
         if ($contactData === true) {

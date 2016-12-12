@@ -1,3 +1,7 @@
+/*
+* importiert Partials
+* Definition der Media Queries
+*/
 /**
 * SassFlexbox
 * Manage Flexbox in Sass easily.
@@ -113,6 +117,19 @@ body, #subnavi ul, #projnavi ul, #main_wrapper aside {
 /*
     Align content
  */
+@font-face {
+  font-family: 'Caviar';
+  src: url("../fonts/CaviarDreams.ttf"); }
+@font-face {
+  font-family: 'Caviar Bold';
+  src: url("../fonts/Caviar_Dreams_Bold.ttf"); }
+@font-face {
+  font-family: 'Caviar Italic';
+  src: url("../fonts/CaviarDreams_Italic.ttf"); }
+@font-face {
+  font-family: 'Caviar BoldIt';
+  src: url("../fonts/CaviarDreams_BoldItalic.ttf"); }
+/************************** ARCHIVE ****************************/
 /*@mixin text ($f_family, $f_size, $line-height, $color) {
   font-family: $f_family;
   font-size: $f_size;
@@ -160,22 +177,14 @@ body, #subnavi ul, #projnavi ul, #main_wrapper aside {
   -ms-user-select: none;
   user-select: none;
 }*/
-@font-face {
-  font-family: 'Caviar';
-  src: url("../fonts/CaviarDreams.ttf"); }
-@font-face {
-  font-family: 'Caviar Bold';
-  src: url("../fonts/Caviar_Dreams_Bold.ttf"); }
-@font-face {
-  font-family: 'Caviar Italic';
-  src: url("../fonts/CaviarDreams_Italic.ttf"); }
-@font-face {
-  font-family: 'Caviar BoldIt';
-  src: url("../fonts/CaviarDreams_BoldItalic.ttf"); }
 p, li, label {
   font-family: "Caviar";
   font-size: 1em;
   line-height: 1.5em; }
+  @media screen and (max-width: 1000px) {
+    p, li, label {
+      font-size: 0.9em;
+      line-height: 1.3em; } }
 
 a {
   font-family: "Caviar Bold";
@@ -189,31 +198,55 @@ h1 {
   font-family: "Caviar Bold";
   font-size: 2em;
   line-height: 3em; }
+  @media screen and (max-width: 1000px) {
+    h1 {
+      font-size: 1.7em;
+      line-height: 2.5em; } }
 
 h2 {
   font-family: "Caviar BoldIt";
   font-size: 1.5em;
   line-height: 3em; }
+  @media screen and (max-width: 1000px) {
+    h2 {
+      font-size: 1.3em;
+      line-height: 2em; } }
 
 h3 {
   font-family: "Caviar Bold";
   font-size: 1.3em;
   line-height: 3em; }
+  @media screen and (max-width: 1000px) {
+    h3 {
+      font-size: 1.1em;
+      line-height: 2em; } }
 
 h4 {
-  font-family: "Caviar";
-  font-size: 1.2em;
-  line-height: 3em; }
-
-h5 {
   font-family: "Caviar Bold";
   font-size: 1.2em;
   line-height: 3em; }
+  @media screen and (max-width: 1000px) {
+    h4 {
+      font-size: 1em;
+      line-height: 2em; } }
 
-h6 {
-  font-family: "Caviar";
+h5 {
+  font-family: "Caviar BoldIt";
   font-size: 1.2em;
   line-height: 3em; }
+  @media screen and (max-width: 1000px) {
+    h5 {
+      font-size: 1em;
+      line-height: 2em; } }
+
+h6 {
+  font-family: "Caviar Italic";
+  font-size: 1.2em;
+  line-height: 3em; }
+  @media screen and (max-width: 1000px) {
+    h6 {
+      font-size: 1em;
+      line-height: 2em; } }
 
 * {
   margin: 0;
@@ -259,6 +292,9 @@ header {
     width: 100%; }
     header #banner_wrapper img {
       width: 100%; }
+  @media screen and (max-width: 1200px) {
+    header {
+      width: 80%; } }
 
 .nav_line {
   padding: 2em; }
@@ -267,7 +303,21 @@ header {
     .nav_line #main_nav ul li {
       padding: 0 1em;
       font-family: "Caviar Bold";
-      font-size: 1.5em; }
+      font-size: 1.3em; }
+      @media screen and (max-width: 1200px) {
+        .nav_line #main_nav ul li {
+          font-size: 1.1em; } }
+      @media screen and (max-width: 1000px) {
+        .nav_line #main_nav ul li {
+          font-size: 1em; } }
+  .nav_line #logo_wrapper img {
+    width: 200px; }
+    @media screen and (max-width: 1400px) {
+      .nav_line #logo_wrapper img {
+        width: 150px; } }
+    @media screen and (max-width: 1000px) {
+      .nav_line #logo_wrapper img {
+        width: 120px; } }
 
 #subnavi ul, #projnavi ul {
   margin-bottom: 3em; }
@@ -291,9 +341,18 @@ header {
     #main_wrapper aside #sidebar * {
       padding: 0.5em 0;
       text-align: center; }
+    @media screen and (max-width: 1400px) {
+      #main_wrapper aside .img_aside img {
+        width: 150px; } }
+    @media screen and (max-width: 1000px) {
+      #main_wrapper aside .img_aside img {
+        width: 120px; } }
   #main_wrapper main {
     width: 75%;
     padding: 3em 9%; }
+  @media screen and (max-width: 1200px) {
+    #main_wrapper {
+      width: 80%; } }
 
 form div {
   width: 100%;
@@ -328,6 +387,12 @@ form div {
       font-family: "Caviar Italic";
       font-size: 0.9em;
       color: #cecece; }
+    @media screen and (max-width: 1400px) {
+      form div input, form div textarea {
+        width: 50%; } }
+    @media screen and (max-width: 1000px) {
+      form div input, form div textarea {
+        width: 60%; } }
   form div textarea {
     height: 10em;
     -webkit-box-shadow: 0.5px 0.5px 4px 0.5px #cecece;
@@ -340,11 +405,11 @@ form div {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    background: radial-gradient(white 30%, #cecece);
-    background: -moz-radial-gradient(white 30%, #cecece);
-    background: -webkit-radial-gradient(white 30%, #cecece);
-    background: -ms-radial-gradient(white 30%, #cecece);
-    background: -o-radial-gradient(white 30%, #cecece); }
+    background: linear-gradient(#cecece, white 40%, #cecece);
+    background: -moz-linear-gradient(#cecece, white 40%, #cecece);
+    background: -webkit-linear-gradient(#cecece, white 40%, #cecece);
+    background: -ms-linear-gradient(#cecece, white 40%, #cecece);
+    background: -o-linear-gradient(#cecece, white 40%, #cecece); }
 
 .vorstand_box {
   width: 100%;
@@ -386,6 +451,9 @@ footer {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 1.5em 0;
   border-top: thin solid #555; }
+  @media screen and (max-width: 1200px) {
+    footer {
+      width: 80%; } }
 
 #imprint_wrapper .imprint_box {
   margin-top: 2em; }

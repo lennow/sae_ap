@@ -4,6 +4,15 @@
  * User: Lena
  * Date: 03.11.2016
  * Time: 11:19
+ *
+ * Klasse Main Controller
+ *
+ * steuert Anwendung grundlegend
+ * Methoden:
+ * __construct()
+ * generatePagefiles()
+ * runApplication()
+ *
  */
 
 namespace classes\controller;
@@ -13,10 +22,18 @@ use classes\helpers\FormValidator;
 use classes\helpers\FormMailer;
 use classes\view\View;
 
+
+
 class MainController {
 
-    // ToDo: Array für Seiten; Seiten erstellen (automatisch); Navigation erstellen
-
+    /**
+     * Konstruktor
+     *
+     * startet Session
+     * schreibt GET und POST Arrays in ein gemeinsames Array
+     * instanziiert View und NavigationHelper
+     *
+     */
     public function __construct() {
 
         session_name("user");
@@ -27,6 +44,16 @@ class MainController {
         $this->navigation = new NavigationHelper();
     }
 
+
+
+    /**
+     * Erstellung der Seiten
+     *
+     * benutzt Klasse NavigationHelper
+     * nimmt Navigationsarray aus NavigationHelper und legt im Ordner public/pages
+     * die entsprechenden PHP-Dateien an
+     *
+     */
     public function generatePagefiles() {
         $sectors = array ('frontend', 'backend', 'subnavi', 'projects');
         foreach ($sectors as $area) {
@@ -38,23 +65,35 @@ class MainController {
         }
     }
 
+
+
+    /**
+     * Anwendungssteuerung
+     *
+     * benutzt NavigationHelper
+     * ruft Funktion validateSiteParams() auf und übergibt dieser eine Session-Variable (falls eingeloggter User)
+     * und den aktuellen GET-Parameter
+     *
+     * ruft Funktion logout() auf (bei Ausloggen)
+     *
+     * switch/case für eigentliche Seitensteuerung
+     * benutzt FormValidator für Formularauswertung
+     * ruft auf Kontaktseite und im Backend entsprechende Routinen auf
+     *
+     * ruft Template (Frontend oder Backend) auf, (je nach Login-Status)
+     *
+     */
     public function run_application() {
         $this->page = $this->navigation->validateSiteParams (@$_SESSION['username'], @$this->globals['p']);
         //$this->logout();
 
-        /*
-         * switch/case für Seitensteuerung
-         */
-
         switch ($this->page) {
             case 'kontakt':
-                // ToDo: Steuerung Kontaktformular
-                // wenn absenden gedrückt, Formularvalidierung starten
-                    $valid = FormValidator::validateFormfields(@$_POST['contact']);
-                    $this->view->errorStatus = FormValidator::$errorMessages;
-                    $mail = new FormMailer();
-                    $this->view->mailStatus = $mail->sendContactData($valid);
-                break;
+                $valid = FormValidator::validateFormfields(@$_POST['contact']);
+                $this->view->errorStatus = FormValidator::$errorMessages;
+                $mail = new FormMailer();
+                $this->view->mailStatus = $mail->sendContactData($valid);
+            break;
 
             case 'login':
                 // ToDo: Steuerung Loginformular

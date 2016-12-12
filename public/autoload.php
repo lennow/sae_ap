@@ -4,6 +4,10 @@
  * User: Lena
  * Date: 03.11.2016
  * Time: 10:31
+ *
+ * Autoloader
+ * ruft Anwendung automatisch auf
+ *
  */
 
 spl_autoload_register(function($class) {

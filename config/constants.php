@@ -4,6 +4,9 @@
  * User: Lena
  * Date: 03.11.2016
  * Time: 10:34
+ *
+ * Vordefinition verschiedener Konstanten
+ *
  */
 
 // Path to Pages
