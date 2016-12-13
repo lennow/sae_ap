@@ -24,6 +24,12 @@ $(document).ready(function () {
     });
 
 
+    //////////// NAVIGATION - Off Canvas Navigation ////////////////////////
 
+    // bei Klick auf Icon OCN einblenden
+
+    $('#nav_icon').on('click', function() {
+        $('#mobile_nav').slideToggle();
+    });
 
 });

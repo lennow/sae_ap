@@ -283,6 +283,13 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }*/
+.clearfix:after {
+  content: ".";
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0px; }
+
 header {
   width: 75%;
   background-color: rgba(255, 255, 255, 0.9); }
@@ -310,6 +317,12 @@ header {
       @media screen and (max-width: 1000px) {
         .nav_line #main_nav ul li {
           font-size: 1em; } }
+      @media screen and (max-width: 900px) {
+        .nav_line #main_nav ul li {
+          font-size: 1.3em; } }
+    @media screen and (max-width: 900px) {
+      .nav_line #main_nav ul {
+        display: none !important; } }
   .nav_line #logo_wrapper img {
     width: 200px; }
     @media screen and (max-width: 1400px) {
@@ -318,6 +331,32 @@ header {
     @media screen and (max-width: 1000px) {
       .nav_line #logo_wrapper img {
         width: 120px; } }
+
+#nav_icon {
+  display: none;
+  cursor: pointer;
+  float: right; }
+  #nav_icon i {
+    font-size: 3em;
+    color: rgba(0, 0, 0, 0.9); }
+  @media screen and (max-width: 900px) {
+    #nav_icon {
+      display: block !important; } }
+
+#mobile_nav {
+  display: none;
+  background-color: #cecece;
+  width: auto;
+  position: absolute;
+  top: 8em;
+  right: 5em;
+  height: auto;
+  padding: 1em; }
+  #mobile_nav li {
+    padding: 0.5em;
+    font-size: 1.3em; }
+    #mobile_nav li:not(:first-child) {
+      border-top: thin solid white; }
 
 #subnavi ul, #projnavi ul {
   margin-bottom: 3em; }
@@ -415,7 +454,12 @@ form div {
   width: 100%;
   margin-bottom: 3em; }
   .vorstand_box figure {
-    width: 25%; }
+    width: auto; }
+    .vorstand_box figure img {
+      width: 95%; }
+      @media screen and (max-width: 1600px) {
+        .vorstand_box figure img {
+          width: 85%; } }
   .vorstand_box .vorstand_textbox {
     width: 70%; }
   .vorstand_box:first-of-type {

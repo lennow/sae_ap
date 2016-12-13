@@ -17,4 +17,4 @@ Im Anhang des Konzeptes finden sich die Wireframes, welche als Vorlage für das 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// ToDo:    MQ für einzelne Seiten | MQ < 1000px | Backend
+// ToDo:    MQ für einzelne Seiten | MQ < 1000px | Formularauswertung mit jQuery | Backend

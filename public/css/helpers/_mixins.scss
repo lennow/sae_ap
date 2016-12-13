@@ -45,6 +45,12 @@
 
 // ------------------------- MEDIA QUERIES MIXINS --------------------------- //
 
+@mixin breakpoint1600 {
+  @media screen and (max-width: $pixel*1600) {
+    @content;
+  }
+}
+
 @mixin breakpoint1400 {
   @media screen and (max-width: $pixel*1400) {
     @content;
@@ -59,6 +65,18 @@
 
 @mixin breakpoint1000 {
   @media screen and (max-width: $pixel*1000) {
+    @content;
+  }
+}
+
+@mixin breakpoint900 {
+  @media screen and (max-width: $pixel*900) {
+    @content;
+  }
+}
+
+@mixin breakpoint800 {
+  @media screen and (max-width: $pixel*800) {
     @content;
   }
 }

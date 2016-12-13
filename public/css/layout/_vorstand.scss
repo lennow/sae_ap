@@ -8,7 +8,14 @@
   margin-bottom: $em*3;
   @include flexbox(row, space-between, flex-start);
   figure {
-    width: $percent*25;
+    width: auto;
+    img {
+      width: $percent*95;
+      // Media Query max-width 1600px
+      @include breakpoint1600 {
+        width: $percent*85;
+      }
+    }
   }
   .vorstand_textbox {
     width: $percent*70;
