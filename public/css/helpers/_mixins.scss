@@ -126,12 +126,6 @@
   border-radius: $radius;
 }
 
-@mixin rotate ($deg) {
-  -webkit-transform: rotate($deg);
-  -moz-transform: rotate($deg);
-  -ms-transform: rotate($deg);
-  transform: rotate($deg);
-}
 
 @mixin background ($bg_img, $bg_pos, $bg_rep, $bg_size, $bg_color) {
   background-image: $bg_img;

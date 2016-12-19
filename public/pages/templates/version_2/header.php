@@ -17,11 +17,16 @@
 <!-- /// HEADER - Wireframe 2 ; Wireframe 3 + 4 ohne Navi /// -->
 
 <figure id="logo_wrapper">
-    <img src="img/Logo_weiss.png" alt="Logo weiß" width="300"/>
+    <img src="img/Logo_weiss.png" alt="Logo weiss"/>
 </figure>
 <figure id="banner_wrapper">
     <img src="img/responsive-banner.jpg" alt="Bannerbild" />
 </figure>
+
+    <!-- Hauptnavigation (Desktop, bis 900px Breite) -->
 <nav id="main_nav">
     <?php //classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
 </nav>
+
+    <!-- Hauptnavigation (Mobile, ab 900px Breite) -->
+<?php //require_once "pages/inc/mobileNavi.inc.php"; ?>

@@ -24,12 +24,8 @@
         <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
     </nav>
     <!-- Hauptnavigation (Mobile, ab 900px Breite) -->
-    <div id="nav_icon">
-        <i class="fa fa-bars" aria-hidden="true"></i>
-    </div>
-    <nav id="mobile_nav">
-        <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
-    </nav>
+    <?php require_once "pages/inc/mobileNavi.inc.php"; ?>
+
 
 </div>
 <figure id="banner_wrapper">

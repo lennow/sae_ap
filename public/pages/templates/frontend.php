@@ -39,24 +39,24 @@
     <!-- /// HEADER - Version 1 = Wireframe 1 / Version 2 = Wireframe 2, 3 & 4 (ohne Navi)/// -->
 
     <header>
-        <?php require_once "pages/templates/version_1/header.php"; ?>
-        <?php //require_once "pages/templates/version_2/header.php"; ?>
+        <?php //require_once "pages/templates/version_1/header.php"; ?>
+        <?php require_once "pages/templates/version_2/header.php"; ?>
     </header>
 
 
     <!-- /// MAIN - Wireframe 2 ohne Navi ; Wireframe 3 + 4 mit Navi /// -->
     <div id="main_wrapper">
 
-    <!--<div id="side_wrapper">
+    <div id="side_wrapper">
         <nav id="main_nav">
-            <?php //classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
-        </nav>-->
+            <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
+        </nav>
 
         <!-- Seitenleiste -->
         <aside>
             <div id="sidebar">
                 <figure class="img_aside">
-                    <img src="img/Logo_schwarz.png" alt="" width="200"/>
+                    <img src="img/Logo_schwarz.png" alt=""/>
                 </figure>
                 <p>
                     Hier stehen Infos zu:
@@ -69,7 +69,7 @@
                 </ul>
             </div>
         </aside>
-    <!--</div>-->
+    </div>
 
         <!-- Content -->
         <main>
@@ -116,7 +116,7 @@
     </footer>
 
 <!-- jQuery -->
-<script src="js/jquery-3.1.1.slim.min.js"></script>
+<script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/script.js"></script>
 
 </body>

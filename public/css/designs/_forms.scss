@@ -7,7 +7,7 @@ form {
     margin-bottom: $em;
     @include flexbox(row, flex-start, flex-start);
     label {
-      width: $percent*15;
+      width: $percent*20;
     }
     input {
       width: $percent*40;
@@ -37,6 +37,7 @@ form {
       @include box_shadow($box_shadow);
     }
     input[type=submit] {
+      cursor: pointer;
       width: $percent*20;
       padding: 0;
       font-family: $caviarB;
