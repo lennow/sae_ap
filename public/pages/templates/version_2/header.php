@@ -29,4 +29,4 @@
 </nav>
 
     <!-- Hauptnavigation (Mobile, ab 900px Breite) -->
-<?php //require_once "pages/inc/mobileNavi.inc.php"; ?>
+<?php require_once "pages/inc/mobileNavi.inc.php"; ?>

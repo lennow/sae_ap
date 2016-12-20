@@ -58,21 +58,23 @@
                 <figure class="img_aside">
                     <img src="img/Logo_schwarz.png" alt=""/>
                 </figure>
-                <p>
-                    Hier stehen Infos zu:
-                </p>
-                <ul>
-                    <li>Sponsoring</li>
-                    <li>Spenden</li>
-                    <li>Kooperationen</li>
-                    <li>Sonstigem</li>
-                </ul>
+                <div class="sidebar_content">
+                    <p>
+                        Hier stehen Infos zu:
+                    </p>
+                    <ul>
+                        <li>Sponsoring</li>
+                        <li>Spenden</li>
+                        <li>Kooperationen</li>
+                        <li>Sonstigem</li>
+                    </ul>
+                </div>
             </div>
         </aside>
     </div>
 
         <!-- Content -->
-        <main>
+        <main class="clearfix">
             <!-- Subnavigationen -->
             <?php if (!isset ($_GET['p']) || $_GET['p'] == "verein") : ?>
                 <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "subNavi"); ?>
