@@ -204,6 +204,10 @@ h1 {
     h1 {
       font-size: 1.7em;
       line-height: 2.5em; } }
+  @media screen and (max-width: 600px) {
+    h1 {
+      font-size: 1.5em;
+      line-height: 2em; } }
 
 h2 {
   font-family: "Caviar BoldIt";
@@ -343,8 +347,8 @@ header {
     #nav_icon {
       display: block !important;
       position: absolute;
-      top: 16em;
-      left: 3em;
+      top: 1em;
+      left: 2em;
       z-index: 15; } }
 
 #mobile_nav {
@@ -352,8 +356,8 @@ header {
   background-color: rgba(206, 206, 206, 0.9);
   width: 20%;
   position: absolute;
-  top: 19em;
-  left: 3em;
+  top: 4em;
+  left: 2em;
   height: auto;
   padding: 1em;
   z-index: 15; }
@@ -373,6 +377,10 @@ header {
   #subnavi, #projnavi {
     width: 60%;
     float: right; } }
+@media screen and (max-width: 600px) {
+  #subnavi, #projnavi {
+    width: 70%;
+    font-size: 0.9em; } }
 
 #main_wrapper {
   width: 90%;
@@ -423,6 +431,9 @@ header {
         @media screen and (max-width: 800px) {
           #side_wrapper aside .img_aside img {
             width: 120px; } }
+    @media screen and (max-width: 600px) {
+      #side_wrapper aside {
+        width: 95%; } }
   @media screen and (max-width: 1000px) {
     #side_wrapper {
       width: 24%; } }
@@ -444,7 +455,11 @@ main {
   @media screen and (max-width: 700px) {
     main {
       width: 90%;
-      margin: 0 auto; } }
+      margin: 0 auto;
+      position: relative; } }
+  @media screen and (max-width: 600px) {
+    main {
+      padding: 3em 1em; } }
 
 form div {
   width: 100%;
@@ -549,6 +564,9 @@ footer {
   background-color: rgba(255, 255, 255, 0.9);
   margin-top: 3em;
   padding: 1.5em 0; }
+  @media screen and (max-width: 600px) {
+    footer {
+      font-size: 0.8em; } }
 
 #imprint_wrapper .imprint_box {
   margin-top: 2em; }

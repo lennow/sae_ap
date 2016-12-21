@@ -17,7 +17,7 @@ require_once "autoload.php";
 require_once "../vendor/autoload.php";
 require_once "../config/constants.php";
 
-use classes\controller\MainController;
+use classes\mvc_pagestructure\MainController;
 
 $controller = new MainController();
 $controller->generatePagefiles();

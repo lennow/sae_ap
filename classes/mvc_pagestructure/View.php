@@ -21,7 +21,7 @@
  *
  */
 
-namespace classes\view;
+namespace classes\mvc_pagestructure;
 
 
 class View
@@ -82,7 +82,7 @@ class View
      */
     public function loadTemplate() {
         $output = "";
-        $file = "pages/templates/" . $this->template . ".php";
+        $file = __PAGEDIR__ . "templates/" . $this->template . ".php";
 
         if (file_exists ($file)) {
             ob_start();

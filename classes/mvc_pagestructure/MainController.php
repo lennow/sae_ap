@@ -15,12 +15,12 @@
  *
  */
 
-namespace classes\controller;
+namespace classes\mvc_pagestructure;
 
 use classes\helpers\NavigationHelper;
 use classes\helpers\FormValidator;
 use classes\helpers\FormMailer;
-use classes\view\View;
+use classes\mvc_pagestructure\View;
 
 
 
@@ -66,7 +66,6 @@ class MainController {
     }
 
 
-
     /**
      * Anwendungssteuerung
      *
@@ -88,6 +87,7 @@ class MainController {
         //$this->logout();
 
         switch ($this->page) {
+
             case 'kontakt':
                 $valid = FormValidator::validateFormfields(@$_POST['contact']);
                 $this->view->errorStatus = FormValidator::$errorMessages;
@@ -97,6 +97,7 @@ class MainController {
 
             case 'login':
                 // ToDo: Steuerung Loginformular
+
                 break;
 
             case 'dokumente':
@@ -111,14 +112,17 @@ class MainController {
         /*
          * Template laden, Content laden
          */
-
-        $this->view->setTemplate("frontend");
-        $this->view->pageContent = $this->page . ".php";
+        if (isset ($_SESSION['username'])) {
+            $this->view->setTemplate("backend");
+            $this->view->pageContent = $this->page . ".php";
+        } else {
+            $this->view->setTemplate("frontend");
+            $this->view->pageContent = $this->page . ".php";
+        }
 
         /*
          * Template laden, Content laden
         */
-
         try {
             return $this->view->loadTemplate();
         } catch (\InvalidArgumentException $e) {

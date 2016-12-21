@@ -48,6 +48,8 @@
     <div id="main_wrapper">
 
     <div id="side_wrapper">
+
+        <!-- Hauptnavigation (Desktop, bis 900px Breite) - NUR mit Wireframe 3 oder 4! -->
         <nav id="main_nav">
             <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
         </nav>
@@ -75,6 +77,10 @@
 
         <!-- Content -->
         <main class="clearfix">
+
+            <!-- Hauptnavigation (Mobile, ab 900px Breite) - NUR mit Wireframe 3 oder 4! -->
+            <?php require_once "pages/inc/mobileNavi.inc.php"; ?>
+
             <!-- Subnavigationen -->
             <?php if (!isset ($_GET['p']) || $_GET['p'] == "verein") : ?>
                 <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "subNavi"); ?>
