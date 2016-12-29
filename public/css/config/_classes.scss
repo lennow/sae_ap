@@ -6,3 +6,12 @@
   -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
+
+.button {
+  cursor: pointer;
+  width: auto;
+  padding: 0;
+  font-family: $caviarB;
+  @include border-radius($pixel*5);
+  @include linear_gradient($lightgrey, $white $percent*40);
+}

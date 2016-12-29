@@ -20,11 +20,20 @@ namespace classes\mvc_pagestructure;
 use classes\helpers\NavigationHelper;
 use classes\helpers\FormValidator;
 use classes\helpers\FormMailer;
+use classes\mvc_upload\UploadController;
+use classes\mvc_login\LoginController;
+use classes\mvc_login\LoginModel;
 use classes\mvc_pagestructure\View;
-
+use classes\mvc_upload\UploadModel;
+use classes\traits\Redirect;
+use classes\traits\Logout;
+use classes\mvc_articles\ArticleController;
 
 
 class MainController {
+
+    use Redirect;
+    use Logout;
 
     /**
      * Konstruktor
@@ -84,7 +93,6 @@ class MainController {
      */
     public function run_application() {
         $this->page = $this->navigation->validateSiteParams (@$_SESSION['username'], @$this->globals['p']);
-        //$this->logout();
 
         switch ($this->page) {
 
@@ -96,17 +104,33 @@ class MainController {
             break;
 
             case 'login':
-                // ToDo: Steuerung Loginformular
-
+                $this->view->errorStatus = FormValidator::$errorMessages;
+                $login = new LoginController();
+                $login->checkLoginData(@$_POST['login']);
                 break;
 
             case 'dokumente':
-                // ToDo: Steuerung Dokumentenverwaltung Backend
+                // ToDo: im Controller evtl. Methode run() erstellen und Funktionalität dort aufrufen?
+
+                $this->view->documents = new UploadController();
+
+                /*$upload = new UploadController();
+                $uploadDB = new UploadModel();
+                $upload->validateUploadedFile(@$_FILES['upload']);
+                $this->view->errorStatus = @FormValidator::$errorMessages['upload'];
+                $upload->registerUpload(@$_FILES['upload']);
+                $this->view->filenames = $upload->filenames;*/
                 break;
 
             case 'artikel':
-                // ToDo: Steuerung Atrikelverwaltung Backend
+                $this->view->articles = new ArticleController();
                 break;
+
+            case 'logout':
+                $this->logout();
+                $this->redirect('verein');
+                break;
+
         }
 
         /*

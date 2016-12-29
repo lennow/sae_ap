@@ -13,7 +13,7 @@
 /*
     Display
  */
-body, #main_nav ul, #subnavi ul, #projnavi ul, #main_wrapper, #side_wrapper, #side_wrapper aside, form, form div, .vorstand_box, footer, #imprint_wrapper, #imprint_wrapper .imprint_box .imprint_subbox {
+body, #main_nav ul, #subnavi ul, #projnavi ul, #main_wrapper, #side_wrapper, #side_wrapper aside, form, form div, .vorstand_box, footer, #imprint_wrapper, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_header, #backend #backend_header nav ul, #backend #backend_main .content, #backend #backend_main .content .download {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flexbox;
@@ -24,7 +24,7 @@ body, #main_nav ul, #subnavi ul, #projnavi ul, #main_wrapper, #side_wrapper, #si
 /*
     Flex direction
  */
-#subnavi ul, #projnavi ul, #main_wrapper, form div, .vorstand_box, footer, #imprint_wrapper .imprint_box .imprint_subbox {
+#subnavi ul, #projnavi ul, #main_wrapper, form div, .vorstand_box, footer, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_header, #backend #backend_header nav ul, #backend #backend_main .content {
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   -webkit-flex-direction: row;
@@ -32,7 +32,7 @@ body, #main_nav ul, #subnavi ul, #projnavi ul, #main_wrapper, #side_wrapper, #si
   -ms-flex-direction: row;
   flex-direction: row; }
 
-body, #main_nav ul, #side_wrapper, #side_wrapper aside, form, #imprint_wrapper {
+body, #main_nav ul, #side_wrapper, #side_wrapper aside, form, #imprint_wrapper, #backend #backend_main .content .download {
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
   -webkit-flex-direction: column;
@@ -64,7 +64,7 @@ body, #main_nav ul, #side_wrapper, #side_wrapper aside, form, #imprint_wrapper {
 /*
     Justify content
  */
-body, #subnavi ul, #projnavi ul, form div, #imprint_wrapper .imprint_box .imprint_subbox {
+body, #subnavi ul, #projnavi ul, form div, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_main .content, #backend #backend_main .content .download {
   -webkit-box-pack: start;
   -moz-box-pack: start;
   -webkit-flex-pack: start;
@@ -82,7 +82,7 @@ body, #subnavi ul, #projnavi ul, form div, #imprint_wrapper .imprint_box .imprin
   -webkit-justify-content: center;
   justify-content: center; }
 
-#main_nav ul, #side_wrapper aside, form, .vorstand_box, #imprint_wrapper {
+#main_nav ul, #side_wrapper aside, form, .vorstand_box, #imprint_wrapper, #backend #backend_header nav ul {
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
   -webkit-flex-pack: justify;
@@ -91,7 +91,7 @@ body, #subnavi ul, #projnavi ul, form div, #imprint_wrapper .imprint_box .imprin
   -webkit-justify-content: space-between;
   justify-content: space-between; }
 
-#main_wrapper, footer {
+#main_wrapper, footer, #backend #backend_header {
   -moz-justify-content: space-around;
   -webkit-justify-content: space-around;
   justify-content: space-around; }
@@ -99,12 +99,19 @@ body, #subnavi ul, #projnavi ul, form div, #imprint_wrapper .imprint_box .imprin
 /*
     Align items
  */
-#main_wrapper, form, form div, .vorstand_box, footer, #imprint_wrapper, #imprint_wrapper .imprint_box .imprint_subbox {
+#main_wrapper, form, form div, .vorstand_box, footer, #imprint_wrapper, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_main .content, #backend #backend_main .content .download {
   -webkit-box-align: start;
   -ms-flex-align: start;
   -webkit-align-items: flex-start;
   -moz-align-items: flex-start;
   align-items: flex-start; }
+
+#backend #backend_header, #backend #backend_header nav ul {
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  -webkit-align-items: flex-end;
+  -moz-align-items: flex-end;
+  align-items: flex-end; }
 
 body, #main_nav ul, #subnavi ul, #projnavi ul, #side_wrapper, #side_wrapper aside {
   -webkit-box-align: center;
@@ -131,12 +138,6 @@ body, #main_nav ul, #subnavi ul, #projnavi ul, #side_wrapper, #side_wrapper asid
 @font-face {
   font-family: 'Caviar BoldIt';
   src: url("../fonts/CaviarDreams_BoldItalic.ttf"); }
-.rotate90 {
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg); }
-
 /************************** ARCHIVE ****************************/
 /*@mixin text ($f_family, $f_size, $line-height, $color) {
   font-family: $f_family;
@@ -253,6 +254,26 @@ h6 {
     h6 {
       font-size: 1em;
       line-height: 2em; } }
+
+.rotate90 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+.button, form div input[type=submit], form div textarea[type=submit], #backend #backend_main .docs_upload input[type=submit], #backend #backend_main .docs_upload form div textarea[type=submit], form div #backend #backend_main .docs_upload textarea[type=submit] {
+  cursor: pointer;
+  width: auto;
+  padding: 0;
+  font-family: "Caviar Bold";
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: linear-gradient(#cecece, white 40%, #cecece);
+  background: -moz-linear-gradient(#cecece, white 40%, #cecece);
+  background: -webkit-linear-gradient(#cecece, white 40%, #cecece);
+  background: -ms-linear-gradient(#cecece, white 40%, #cecece);
+  background: -o-linear-gradient(#cecece, white 40%, #cecece); }
 
 * {
   margin: 0;
@@ -505,19 +526,6 @@ form div {
     -webkit-box-shadow: 0.5px 0.5px 4px 0.5px #cecece;
     -moz-box-shadow: 0.5px 0.5px 4px 0.5px #cecece;
     box-shadow: 0.5px 0.5px 4px 0.5px #cecece; }
-  form div input[type=submit], form div textarea[type=submit] {
-    cursor: pointer;
-    width: 20%;
-    padding: 0;
-    font-family: "Caviar Bold";
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    background: linear-gradient(#cecece, white 40%, #cecece);
-    background: -moz-linear-gradient(#cecece, white 40%, #cecece);
-    background: -webkit-linear-gradient(#cecece, white 40%, #cecece);
-    background: -ms-linear-gradient(#cecece, white 40%, #cecece);
-    background: -o-linear-gradient(#cecece, white 40%, #cecece); }
 
 .vorstand_box {
   width: 100%;
@@ -572,5 +580,22 @@ footer {
   margin-top: 2em; }
   #imprint_wrapper .imprint_box .imprint_subbox p {
     margin-right: 2em; }
+
+#backend #backend_header {
+  margin: 3em; }
+  #backend #backend_header figure {
+    width: 10%; }
+    #backend #backend_header figure img {
+      width: 100%; }
+  #backend #backend_header nav {
+    width: 25%; }
+#backend #backend_main .content .download {
+  margin-right: 30%; }
+  #backend #backend_main .content .download a {
+    padding: 1em; }
+#backend #backend_main .docs_upload {
+  margin: 1em 0; }
+  #backend #backend_main .docs_upload input[type=file], #backend #backend_main .docs_upload form div textarea[type=file], form div #backend #backend_main .docs_upload textarea[type=file] {
+    margin: 1em 0; }
 
 /*# sourceMappingURL=style.css.map */

@@ -4,6 +4,13 @@
  * User: Engelstein IT
  * Date: 21.12.2016
  * Time: 11:17
+ *
+ *
+ * Interface DB_Connection
+ *
+ * Methoden:
+ * connectDB()
+ *
  */
 
 namespace classes\traits;
@@ -18,7 +25,7 @@ trait DB_Connection
      * etabliert Verbindung zur Datenbank
      *
      */
-    public static function connectDB () {
+    public function connectDB () {
         try {
             return new \PDO(
                 'mysql:host=' . __HOST__ .

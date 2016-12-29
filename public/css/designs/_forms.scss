@@ -37,12 +37,7 @@ form {
       @include box_shadow($box_shadow);
     }
     input[type=submit] {
-      cursor: pointer;
-      width: $percent*20;
-      padding: 0;
-      font-family: $caviarB;
-      @include border-radius($pixel*5);
-      @include linear_gradient($lightgrey, $white $percent*40);
+      @extend .button;
     }
   }
 }

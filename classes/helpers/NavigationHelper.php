@@ -42,7 +42,7 @@ class NavigationHelper
 
     public $backendNav = array (
         "dokumente" => "Dokumentenverwaltung",
-        "artikel" => "Atrikelverwaltung",
+        "artikel" => "Artikelverwaltung",
         "logout" => "Logout"
     );
 

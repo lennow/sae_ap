@@ -30,10 +30,8 @@
        <pre>
         $POST: <?php //print_r ($_POST); ?>
     </pre>
-    <pre>
-        $SESSION: <?php //print_r ($_SESSION); ?>
-    </pre>
--->
+    -->
+
 
 
     <!-- /// HEADER - Version 1 = Wireframe 1 / Version 2 = Wireframe 2, 3 & 4 (ohne Navi)/// -->

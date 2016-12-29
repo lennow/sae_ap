@@ -44,6 +44,9 @@ class LoginModel extends Model
      *
      * prüft, ob Einwahldaten in DB vorhanden
      *
+     * @param $loginData
+     * @return array (Nutzerdaten aus DB)
+     *
      */
     public function getLoginData ($loginData) {
         $sql = "SELECT * FROM vereine_users 
@@ -51,8 +54,8 @@ class LoginModel extends Model
                 AND userPassword = :password";
 
         $array = [
-            ":username" => $loginData["Benutzername"],
-            ":password" => $loginData["Passwort"]
+            ":username" => $loginData['username'],
+            ":password" => $loginData['pass']
         ];
 
         return $this->getDataFromDB($sql, $array);
@@ -64,6 +67,8 @@ class LoginModel extends Model
      * neuen Benutzer anlegen
      *
      * legt neue Zeile in DB mit neuen Nutzerdaten an
+     *
+     * @param $userData
      *
      */
     public function setUser ($userData) {

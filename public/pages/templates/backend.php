@@ -21,7 +21,7 @@
     <link rel="stylesheet" type="text/css" href="libraries/font-awesome-4.7.0/css/font-awesome.min.css">
 
 </head>
-<body>
+<body id="backend">
 
 <!--
     <pre>
@@ -37,24 +37,22 @@
 
     <!-- /// HEADER Backend /// -->
 
-    <figure id="logo_wrapper">
-        <img src="img/Logo_weiss.png" alt="Logo weiss"/>
-    </figure>
+    <header id="backend_header">
+        <figure>
+            <img src="img/Logo_weiss.png" alt="Logo weiss"/>
+        </figure>
+        <nav>
+            <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "backendNavi"); ?>
+        </nav>
+    </header>
 
-    <!-- Hauptnavigation -->
-    <nav id="main_nav">
-        <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "backendNavi"); ?>
-    </nav>
+    <!-- /// MAIN Backend /// -->
 
-    <!-- /// MAIN - Wireframe 2 ohne Navi ; Wireframe 3 + 4 mit Navi /// -->
-    <div id="main_wrapper">
-
-        <!-- Content -->
-        <main>
-
-        </main>
-
-    </div>
+    <main id="backend_main">
+        <?php if (isset ($_SESSION['username']) && isset($_GET['p'])) : ?>
+        <?php require_once "pages/" . $_GET['p'] . ".php"; ?>
+        <?php endif; ?>
+    </main>
 
 <!-- jQuery -->
 <script src="js/jquery-3.1.1.min.js"></script>

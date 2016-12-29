@@ -19,12 +19,12 @@
 
     <div>
         <label for="pass">Passwort</label>
-        <input type="password" id="pass" name="contact[pass]" placeholder="Passwort">
+        <input type="password" id="pass" name="login[pass]" placeholder="Passwort">
     </div>
 
     <div>
         <label for="submit"></label>
-        <input type="submit" id="submit" name="contact[submit]" value="Absenden">
+        <input type="submit" id="submit" name="login[submit]" value="Anmelden">
     </div>
 
 </form>

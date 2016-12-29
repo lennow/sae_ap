@@ -38,7 +38,7 @@ class Model
      *
      */
     public function __construct() {
-        $this->db = DB_Connection::connectDB();
+        $this->db = $this->connectDB();
     }
 
     /**
@@ -47,7 +47,7 @@ class Model
      *  holt Daten aus der DB und gibt diese zurück
      *
      */
-    public function getDataFromDB($sql, $array) {
+    public function getDataFromDB($sql, $array = null) {
         $stmt = $this->db->prepare($sql);
         $stmt->execute($array);
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
@@ -59,7 +59,7 @@ class Model
      *  schreibt Daten in die DB
      *
      */
-    public function setDataToDB($sql, $array) {
+    public function setDataToDB($sql, $array = null) {
         $stmt = $this->db->prepare($sql);
         $stmt->execute($array);
     }

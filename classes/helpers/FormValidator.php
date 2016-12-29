@@ -29,8 +29,10 @@ class FormValidator
     /**
      * Validierung der Formulareingabedaten
      *
-     * prüft im ersten Schritt, ob Feld ausgefüllt wurde
-     * prüft im zweiten Schritt, ob Fels korrekt ausgefüllt wurde (z.B. Email Adresse)
+     * prüft im ersten Schritt, ob Submit Button Gedrückt wurde
+     * prüft im zweiten Schritt, ob es sich um Login- oder Kontaktformular handelt
+     * prüft im Login-Formular, ob Felder beide ausgefüllt wurden
+     * prüft im Kontakt-Formular, ob Feld jeweils ausgefüllt wurde, checkt dann noch Email Adresse
      * gibt entweder Fehlermeldung zurück oder TRUE
      *
      * @param $inputData
@@ -40,18 +42,27 @@ class FormValidator
     public static function validateFormfields ($inputData) {
 
         if (isset ($inputData['submit'])) {
-            foreach ($inputData as $field => $value) {
-                if($value == ""){
-                    self::$errorMessages[$field] = "Bitte füllen Sie das Feld {$field} aus!";
-                } else {
-                    if ($field == "Email" && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
-                        self::$errorMessages[$field] = "Bitte geben Sie eine korrekte E-Mail Adresse an!";
+
+            if ($inputData == $_POST['login']) {
+                if(empty ($inputData['username']) || empty ($inputData['pass'])){
+                    self::$errorMessages['login'] = "Bitte füllen Sie beide Felder aus!";
+                }
+            } else {
+                foreach ($inputData as $field => $value) {
+                    if(empty ($value)){
+                        self::$errorMessages[$field] = "Bitte füllen Sie das Feld {$field} aus!";
+                    } else {
+                        if ($field == "Email" && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
+                            self::$errorMessages[$field] = "Bitte geben Sie eine korrekte E-Mail Adresse an!";
+                        }
                     }
                 }
             }
-            if (empty (self::$errorMessages)) {
-                return true;
-            }
+
+        }
+
+        if (empty (self::$errorMessages)) {
+            return true;
         }
     }
 

@@ -96,7 +96,4 @@ class View
         return $output;
     }
 
-
-
-
 }
