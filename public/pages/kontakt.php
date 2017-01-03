@@ -7,10 +7,6 @@
  */
 ?>
 
-<pre>
-    <?php //print_r($_POST); ?>
-</pre>
-
 <p>
     <?= (isset ($this->mailStatus)) ? $this->mailStatus : "" ?>
 </p>

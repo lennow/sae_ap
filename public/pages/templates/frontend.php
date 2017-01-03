@@ -15,6 +15,7 @@
 <head>
     <title>Vereinsname</title>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
     <!-- CSS Dateien -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -45,39 +46,44 @@
     <!-- /// MAIN - Wireframe 2 ohne Navi ; Wireframe 3 + 4 mit Navi /// -->
     <div id="main_wrapper">
 
-    <div id="side_wrapper">
+        <div id="side_wrapper">
 
-        <!-- Hauptnavigation (Desktop, bis 900px Breite) - NUR mit Wireframe 3 oder 4! -->
-        <nav id="main_nav">
-            <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
-        </nav>
+            <!-- Hauptnavigation (Desktop, >700px Breite) - NUR mit Wireframe 3 oder 4! -->
+            <nav id="main_nav">
+                <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
+            </nav>
 
-        <!-- Seitenleiste -->
-        <aside>
-            <div id="sidebar">
-                <figure class="img_aside">
-                    <img src="img/Logo_schwarz.png" alt=""/>
-                </figure>
-                <div class="sidebar_content">
-                    <p>
-                        Hier stehen Infos zu:
-                    </p>
-                    <ul>
-                        <li>Sponsoring</li>
-                        <li>Spenden</li>
-                        <li>Kooperationen</li>
-                        <li>Sonstigem</li>
-                    </ul>
+            <!-- Seitenleiste -->
+            <aside>
+                <div id="sidebar">
+                    <figure class="img_aside">
+                        <img src="img/Logo_schwarz.png" alt=""/>
+                    </figure>
+                    <div class="sidebar_content">
+                        <p>
+                            Hier stehen Infos zu:
+                        </p>
+                        <ul>
+                            <li>Sponsoring</li>
+                            <li>Spenden</li>
+                            <li>Kooperationen</li>
+                            <li>Sonstigem</li>
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </aside>
-    </div>
+            </aside>
+        </div>
 
         <!-- Content -->
         <main class="clearfix">
 
-            <!-- Hauptnavigation (Mobile, ab 900px Breite) - NUR mit Wireframe 3 oder 4! -->
+            <!-- Hauptnavigation (Mobile, <700px Breite) - NUR mit Wireframe 3 oder 4! -->
             <?php require_once "pages/inc/mobileNavi.inc.php"; ?>
+
+            <!-- Logo (Mobile, <400px Breite) -->
+            <figure id="logo_mobile">
+                <img src="img/Logo_schwarz.png" alt="Logo schwarz"/>
+            </figure>
 
             <!-- Subnavigationen -->
             <?php if (!isset ($_GET['p']) || $_GET['p'] == "verein") : ?>

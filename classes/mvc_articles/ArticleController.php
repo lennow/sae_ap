@@ -19,31 +19,40 @@
 
 namespace classes\mvc_articles;
 
-use classes\mvc_articles\ArticleModel;
-
 
 class ArticleController
 {
 
-    public $allArticles;
+    public $all;
     private $articleModel;
 
 
     public function __construct () {
         $this->articleModel = new ArticleModel();
-        $this->run_articles();
+        $this->all = $this->articleModel->getAllArticlesFromDB();
     }
 
-    public function run_articles () {
-        $this->allArticles = $this->articleModel->getAllArticlesFromDB();
-    }
+    public function createArticles ($article) {
 
-    public function updateArticles ($selectedArticle) {
-
-        if (isset ($selectedArticle['submit'])) {
-            $update = $this->articleModel->getSpecialArticleFromDB($selectedArticle);
-            return $update;
+        if (isset ($article['article']['submit'])) {
+            if (isset ($article['update'])) {
+                $this->articleModel->updateArticleInDB($article['update']);
+            } else {
+                $this->articleModel->insertArticleToDB($article['article']);
+            }
         }
+
+    }
+
+    public function updateArticles ($selected) {
+
+        if (isset ($selected['update']['submit'])) {
+            $update = $this->articleModel->getSpecialArticleFromDB($selected['update']);
+            return $update;
+        } elseif (isset ($selected['update']['delete'])) {
+            $this->articleModel->deleteArticleFromDB($selected['update']);
+        }
+
     }
 
 }

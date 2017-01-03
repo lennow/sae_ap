@@ -42,45 +42,80 @@ class UploadModel extends Model
     /**
      * Liste der Uploads aus DB auslesen
      *
-     * liest Spalte mit Dateinamen aus (sofern Werte vorhanden)
-     * schreibt diese Liste in $filename
+     * liest Spalte mit Dateinamen aus
+     * schreibt diese Liste in $allDocuments
      *
-     * @return $filename
+     * @return $allDocuments
      *
      */
     public function getUploadsFromDB () {
 
         $sql = "SELECT * FROM vereine_uploads";
 
-        return $this->getDataFromDB($sql);
+        $allDocuments = $this->getDataFromDB($sql);
+        return $allDocuments;
 
     }
 
-// ToDo: Prüfung der vorhandenen Daten und Überschreiben funzt noch nicht!
-// ToDo: Bei jeder Aktualisierung der Seite im Browser wird Datei neu in DB geschrieben und in Liste ausgegeben.
-
     /**
-     * speichern der hochgeladenen Dateinamen in DB
+     * Speichern der hochgeladenen Dateinamen in DB
      *
-     * prüft, ob Name der hochgeladenen Datei bereits in DB steht
-     *
-     * überschreibt bereits vorhandene Dateinamen bzw.
      * fügt neuen Dateinamen hinzu
      *
-     * @param $uploadedData
+     * @param $uploaded
      *
      */
-    public function setUploadsToDB ($uploadedData) {
+    public function setUploadsToDB ($uploaded) {
 
-        $sql = "INSERT INTO vereine_uploads 
-                (uploadName)
+        $sql = "INSERT INTO vereine_uploads (uploadName)
                 VALUES (:filename)";
 
         $array = [
-            ":filename" => $uploadedData['name']
+            ":filename" => $uploaded['name']
         ];
 
         $this->setDataToDB($sql, $array);
+    }
+
+    /**
+     * Überschreiben der hochgeladenen Dateinamen in DB
+     *
+     * überschreibt bereits vorhandene Dateinamen
+     *
+     * @param $uploaded
+     *
+     */
+    public function updateUploadsInDB ($uploaded) {
+
+        $sql = "UPDATE vereine_uploads 
+                SET uploadName = :uploaded";
+
+        $array = [
+            ":uploaded" => $uploaded['name']
+        ];
+
+        $this->setDataToDB($sql, $array);
+
+    }
+
+    /**
+     * Löschen der hochgeladenen Dateinamen in DB
+     *
+     * löscht ausgewählten Dateinamen
+     *
+     * @param $uploaded
+     *
+     */
+    public function deleteUploadsFromDB ($uploaded) {
+
+        $sql = "DELETE FROM vereine_uploads WHERE uploadName = :uploaded";
+
+        $array = [
+            ":uploaded" => $uploaded['name']
+        ];
+
+        $this->setDataToDB($sql, $array);
+
     }
 
 }

@@ -23,4 +23,11 @@ trait Redirect
         header("Location: ?p=" . $location);
         exit();
     }
+
+    public function download ($content) {
+        header('Content-Type: application/pdf');
+        header('Content-Disposition: attachment; filename=' . $content);
+        readfile($content);
+        exit();
+    }
 }

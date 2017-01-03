@@ -4,6 +4,12 @@
   @include flexbox(column, space-between, flex-start);
   .imprint_box {
     margin-top: $em*2;
+    h3 {
+      // Media Query max-width 490px
+      @include breakpoint490 {
+        padding-left: $em*0.5;
+      }
+    }
     .imprint_subbox {
       @include flexbox(row, flex-start, flex-start);
       p {

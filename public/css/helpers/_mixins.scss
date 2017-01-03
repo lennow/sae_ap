@@ -75,14 +75,14 @@
   }
 }
 
-@mixin breakpoint700 {
-  @media screen and (max-width: $pixel*700) {
+@mixin breakpoint800 {
+  @media screen and (max-width: $pixel*800) {
     @content;
   }
 }
 
-@mixin breakpoint800 {
-  @media screen and (max-width: $pixel*800) {
+@mixin breakpoint700 {
+  @media screen and (max-width: $pixel*700) {
     @content;
   }
 }
@@ -93,12 +93,29 @@
   }
 }
 
+@mixin breakpoint520 {
+  @media screen and (max-width: $pixel*520) {
+    @content;
+  }
+}
+
+@mixin breakpoint490 {
+  @media screen and (max-width: $pixel*490) {
+    @content;
+  }
+}
+
 @mixin breakpoint400 {
   @media screen and (max-width: $pixel*400) {
     @content;
   }
 }
 
+@mixin breakpoint300 {
+  @media screen and (max-width: $pixel*300) {
+    @content;
+  }
+}
 
 
 

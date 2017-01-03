@@ -1,7 +1,8 @@
 <?php
 
-$articles = $this->articles->allArticles;
-$update = $this->articles->updateArticles(@$_POST['update']);
+$this->allArticles->createArticles(@$_POST);
+$all = $this->allArticles->all;
+$update = $this->allArticles->updateArticles(@$_POST);
 
 ?>
 
@@ -46,25 +47,19 @@ $update = $this->articles->updateArticles(@$_POST['update']);
     <div>
         <label for="article_list">Wähle einen Artikel aus:</label>
         <select name="update[select]" id="article_list">
-            <?php foreach ($articles as $item => $articleArray) : ?>
+            <?php foreach ($all as $item => $articleArray) : ?>
                 <option value="<?= $articleArray['articleTitle'] ?>">
                     <?= $articleArray['articleTitle'] ?>
                 </option>
             <?php endforeach; ?>
         </select>
     </div>
-    <div>
-        <input type="submit" name="update[submit]" value="Auswählen">
+    <div class="articles_crud">
+        <div>
+            <input type="submit" name="update[submit]" value="Artikel bearbeiten">
+        </div>
+        <div>
+            <input type="submit" name="update[delete]" value="Artikel löschen">
+        </div>
     </div>
 </form>
-
-
-<?php
-
-// ToDo: Delete => Artikel von Seite und aus DB löschen
-
-    echo '<pre>';
-    print_r($update);
-    echo '</pre>';
-
-?>

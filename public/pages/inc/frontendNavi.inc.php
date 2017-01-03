@@ -13,8 +13,6 @@ $frontPage = \classes\helpers\NavigationHelper::$navArray['frontend'];
 
 ?>
 
-<!-- ********* Hauptnavigation (Desktop) ************* -->
-
 <ul>
     <?php foreach ($frontPage as $pageName => $pageTitle) : ?>
         <li>

@@ -15,6 +15,23 @@
  *
  */
 
+
+// ToDo [Frontend]:     Formularauswertung mit jQuery
+// ToDo [Frontend]:     Fehlermeldungen ausgeben!
+// ToDo [Frontend]:     Media Queries fertig
+// ToDo [Frontend]:     Artikel auf Aktuelles darstellen => Akkordeon (jQuery)
+// ToDo [Frontend]:     Fehlermeldung in Kontaktformular prüfen!
+
+// ToDo [Backend]:      Select-Liste stylen
+// ToDo [Backend]:      Dokumentenverwaltung besser als select oder als Links?
+// ToDo [Backend]:      Dokumentenupload funzt nicht... Warum???
+// ToDo [Backend]:      Gibt es Möglichkeit, Artikel direkt in Select-Liste zu laden, ohne neues Laden?
+
+// ToDo [Allgemein]:    Wie lade ich die Datenbank auf den Server hoch?
+
+
+
+
 namespace classes\mvc_pagestructure;
 
 use classes\helpers\NavigationHelper;
@@ -22,9 +39,6 @@ use classes\helpers\FormValidator;
 use classes\helpers\FormMailer;
 use classes\mvc_upload\UploadController;
 use classes\mvc_login\LoginController;
-use classes\mvc_login\LoginModel;
-use classes\mvc_pagestructure\View;
-use classes\mvc_upload\UploadModel;
 use classes\traits\Redirect;
 use classes\traits\Logout;
 use classes\mvc_articles\ArticleController;
@@ -110,20 +124,11 @@ class MainController {
                 break;
 
             case 'dokumente':
-                // ToDo: im Controller evtl. Methode run() erstellen und Funktionalität dort aufrufen?
-
-                $this->view->documents = new UploadController();
-
-                /*$upload = new UploadController();
-                $uploadDB = new UploadModel();
-                $upload->validateUploadedFile(@$_FILES['upload']);
-                $this->view->errorStatus = @FormValidator::$errorMessages['upload'];
-                $upload->registerUpload(@$_FILES['upload']);
-                $this->view->filenames = $upload->filenames;*/
+                $this->view->allDocuments = new UploadController();
                 break;
 
             case 'artikel':
-                $this->view->articles = new ArticleController();
+                $this->view->allArticles = new ArticleController();
                 break;
 
             case 'logout':

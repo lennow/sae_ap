@@ -6,6 +6,11 @@ form {
     width: $percent*100;
     margin-bottom: $em;
     @include flexbox(row, flex-start, flex-start);
+    // Media Query max-width 400px
+    @include breakpoint400 {
+      flex-direction: column;
+      margin-left: $em*2;
+    }
     label {
       width: $percent*20;
     }
@@ -29,6 +34,10 @@ form {
       // Media Query max-width 1000px
       @include breakpoint1000 {
         width: $percent*60;
+      }
+      // Media Query max-width 400px
+      @include breakpoint400 {
+        width: $percent*80;
       }
     }
     textarea {

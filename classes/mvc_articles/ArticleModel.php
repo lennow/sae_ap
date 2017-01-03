@@ -47,9 +47,10 @@ class ArticleModel extends Model
 
     public function getSpecialArticleFromDB ($article) {
 
-        $sql = "SELECT * FROM vereine_articles WHERE articleTitle = :selectedTitle";
+        $sql = "SELECT * FROM vereine_articles WHERE articleTitle = :selected";
+
         $array = [
-            ":selectedTitle" => $article['select']
+            ":selected" => $article['select']
         ];
 
         $allArticles = $this->getDataFromDB($sql, $array);
@@ -67,6 +68,32 @@ class ArticleModel extends Model
             ":title" => $article['title'],
             ":text" => $article['text']
         ];
+
+        $this->setDataToDB($sql, $array);
+
+    }
+
+    public function updateArticleInDB ($article) {
+
+        $sql = "UPDATE vereine_articles 
+                SET articleTitle = :title, articleText = :text 
+                WHERE articleID = :id";
+
+        $array = [
+            ":title" => $article['title'],
+            ":text" => $article['text'],
+            ":id" => $article['id']
+        ];
+
+        $this->setDataToDB($sql, $array);
+
+    }
+
+    public function deleteArticleFromDB ($article) {
+
+        $sql = "DELETE FROM vereine_articles WHERE articleTitle = :selected";
+
+        $array = [":selected" => $article['select']];
 
         $this->setDataToDB($sql, $array);
 
