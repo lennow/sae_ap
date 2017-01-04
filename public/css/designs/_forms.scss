@@ -1,6 +1,7 @@
 // ------------------------- FORMULARE --------------------------- //
 
 form {
+  width: $percent*100;
   @include flexbox(column, space-between, flex-start);
   div {
     width: $percent*100;
@@ -11,42 +12,63 @@ form {
       flex-direction: column;
       margin-left: $em*2;
     }
-    label {
-      width: $percent*20;
-    }
-    input {
-      width: $percent*40;
-      height: $em*2;
-      border: none;
-      border-bottom: $border_grey;
-      padding: $em;
-      @include border-radius($pixel*3);
-      @include box_shadow($box_shadow);
-      @include placeholder {
-        font-family: $caviarI;
-        font-size: $em*0.9;
-        color: $lightgrey;
-      }
-      // Media Query max-width 1400px
-      @include breakpoint1400 {
-        width: $percent*50;
-      }
-      // Media Query max-width 1000px
-      @include breakpoint1000 {
-        width: $percent*60;
-      }
-      // Media Query max-width 400px
-      @include breakpoint400 {
-        width: $percent*80;
-      }
-    }
-    textarea {
-      @extend input;
-      height: $em*10;
-      @include box_shadow($box_shadow);
-    }
-    input[type=submit] {
-      @extend .button;
-    }
   }
 }
+
+label {
+  width: $percent*20;
+}
+
+.backend_label {
+  width: $percent*100;
+}
+
+input {
+  width: $percent*40;
+  height: $em*2;
+  border: none;
+  border-bottom: $border_grey;
+  padding: $em;
+  @include border-radius($pixel*3);
+  @include box_shadow($box_shadow);
+  @include placeholder {
+    font-family: $caviarI;
+    font-size: $em*0.9;
+    color: $darkgrey;
+  }
+  // Media Query max-width 1400px
+  @include breakpoint1400 {
+    width: $percent*50;
+  }
+  // Media Query max-width 1000px
+  @include breakpoint1000 {
+    width: $percent*60;
+  }
+  // Media Query max-width 400px
+  @include breakpoint400 {
+    width: $percent*80;
+  }
+}
+
+input[type=file] {
+  width: $percent*100;
+}
+
+input[type=submit] {
+  @extend .button;
+  margin: $em*0.5 $em*2 $em*0.5 0;
+}
+
+textarea {
+  @extend input;
+  height: $em*10;
+  text-align: left;
+  @include box_shadow($box_shadow);
+}
+
+select {
+  margin: $em 0;
+  width: $percent*35;
+  @include border-radius($pixel*5);
+}
+

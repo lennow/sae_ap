@@ -2,12 +2,10 @@
 
 $this->allDocuments->createDocuments(@$_FILES['upload']);
 $allDocs = $this->allDocuments->all;
+$this->allDocuments->chooseDocuments(@$_POST['upload']);
 
 ?>
 
-<pre>
-    <?php print_r($_FILES); ?>
-</pre>
 
 <h1>Unsere Vereinsdokumente</h1>
 
@@ -17,21 +15,24 @@ $allDocs = $this->allDocuments->all;
 
         <h3>Lade ein Dokument herunter:</h3>
 
-        <form action="" method="post" id="update_uploads">
-            <div>
-                <label for="upload_list">
-                    Wähle ein Dokument aus:
-                </label>
-                <select name="upload[select]" id="upload_list">
-                    <?php foreach ($allDocs as $item => $articleArray) : ?>
-                        <option value="<?= $articleArray['uploadName'] ?>">
-                            <?= $articleArray['uploadName'] ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
-            </div>
-            <div>
-                <input type="submit" name="upload[delete]" value="Dokument löschen">
+        <form action="" method="post">
+            <label for="upload_list" class="backend_label">
+                Wähle ein Dokument aus:
+            </label>
+            <select name="upload[select]" id="upload_list">
+                <?php foreach ($allDocs as $item => $articleArray) : ?>
+                    <option value="<?= $articleArray['uploadName'] ?>">
+                        <?= $articleArray['uploadName'] ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+            <div class="crud">
+                <div>
+                    <input type="submit" name="upload[download]" value="Dokument herunterladen">
+                </div>
+                <div>
+                    <input type="submit" name="upload[delete]" value="Dokument löschen">
+                </div>
             </div>
         </form>
 
@@ -40,11 +41,11 @@ $allDocs = $this->allDocuments->all;
     <div class="upload">
         <h3>Lade ein Dokument hoch:</h3>
 
-        <form class="docs_upload" action="" method="post" enctype="multipart/form-data">
-            <label for="upload_field">
+        <form action="" method="post" enctype="multipart/form-data">
+            <label for="upload_field" class="backend_label">
                 Wähle eine Datei aus:
             </label>
-            <input type="file" id="upload_field">
+            <input type="file" id="upload_field" name="upload">
             <input type="submit" name="upload[submit]" value="Datei hochladen">
         </form>
     </div>

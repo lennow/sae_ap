@@ -84,7 +84,7 @@ h5 {
 
 h6 {
   font-family: $caviarI;
-  font-size: $em*1.2;
+  font-size: $em;
   line-height: $vertspace;
   // Media Query max-width 1000px
   @include breakpoint1000 {

@@ -18,12 +18,16 @@
 
 
 namespace classes\mvc_articles;
+use classes\traits\Redirect;
 
 
 class ArticleController
 {
 
+    use Redirect;
+
     public $all;
+    public $page = "artikel";
     private $articleModel;
 
 
@@ -35,10 +39,12 @@ class ArticleController
     public function createArticles ($article) {
 
         if (isset ($article['article']['submit'])) {
-            if (isset ($article['update'])) {
-                $this->articleModel->updateArticleInDB($article['update']);
-            } else {
+            if ($article['article']['id'] == "") {
                 $this->articleModel->insertArticleToDB($article['article']);
+                $this->refresh($this->page);
+            } else {
+                $this->articleModel->updateArticleInDB($article['article']);
+                $this->refresh($this->page);
             }
         }
 
@@ -51,6 +57,7 @@ class ArticleController
             return $update;
         } elseif (isset ($selected['update']['delete'])) {
             $this->articleModel->deleteArticleFromDB($selected['update']);
+            $this->refresh($this->page);
         }
 
     }

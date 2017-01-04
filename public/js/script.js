@@ -45,4 +45,14 @@ $(document).ready(function () {
         $('#nav_icon').toggleClass("rotate90");
     });
 
+
+    //////////// AKTUELLES - Akkordeon für Veranstaltungen ////////////////////////
+
+    // bei Klick auf Titel Text einblenden
+
+    $('.accordion > h3').click(function () {
+        console.log($(this).parents('.accordion').siblings('p'));
+        $(this).parents('.accordion').siblings('p').slideToggle();
+    });
+
 });

@@ -20,7 +20,7 @@ trait Redirect
 {
 
     public function redirect ($location) {
-        header("Location: ?p=" . $location);
+        header('Location: ?p=' . $location);
         exit();
     }
 
@@ -30,4 +30,10 @@ trait Redirect
         readfile($content);
         exit();
     }
+
+    public function refresh ($page) {
+        header('Refresh: 1; url=' . $_SERVER['PHP_SELF'] . '?p=' . $page);
+        exit();
+    }
+
 }

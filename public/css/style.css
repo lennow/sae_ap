@@ -13,7 +13,7 @@
 /*
     Display
  */
-body, #main_nav ul, #subnavi ul, #projnavi ul, #main_wrapper, #side_wrapper, #side_wrapper aside, form, form div, .vorstand_box, footer, #imprint_wrapper, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_header, #backend #backend_header nav ul, #backend #backend_main .content, #backend #backend_main .content .download {
+body, #main_nav ul, #subnavi ul, #projnavi ul, #main_wrapper, #side_wrapper, #side_wrapper aside, form, form div, .vorstand_box, footer, #imprint_wrapper, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_header, #backend #backend_header nav ul, #backend #backend_main .content, #backend #backend_main .content .download, #backend .crud {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flexbox;
@@ -24,7 +24,7 @@ body, #main_nav ul, #subnavi ul, #projnavi ul, #main_wrapper, #side_wrapper, #si
 /*
     Flex direction
  */
-#subnavi ul, #projnavi ul, #main_wrapper, form div, .vorstand_box, footer, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_header, #backend #backend_header nav ul, #backend #backend_main .content {
+#subnavi ul, #projnavi ul, #main_wrapper, form div, .vorstand_box, footer, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_header, #backend #backend_header nav ul, #backend #backend_main .content, #backend .crud {
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   -webkit-flex-direction: row;
@@ -64,7 +64,7 @@ body, #main_nav ul, #side_wrapper, #side_wrapper aside, form, #imprint_wrapper, 
 /*
     Justify content
  */
-body, #subnavi ul, #projnavi ul, form div, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_main .content, #backend #backend_main .content .download {
+body, #subnavi ul, #projnavi ul, form div, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_main .content, #backend #backend_main .content .download, #backend .crud {
   -webkit-box-pack: start;
   -moz-box-pack: start;
   -webkit-flex-pack: start;
@@ -99,7 +99,7 @@ body, #subnavi ul, #projnavi ul, form div, #imprint_wrapper .imprint_box .imprin
 /*
     Align items
  */
-#main_wrapper, form, form div, .vorstand_box, footer, #imprint_wrapper, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_main .content, #backend #backend_main .content .download {
+#main_wrapper, form, form div, .vorstand_box, footer, #imprint_wrapper, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_main .content, #backend #backend_main .content .download, #backend .crud {
   -webkit-box-align: start;
   -ms-flex-align: start;
   -webkit-align-items: flex-start;
@@ -248,7 +248,7 @@ h5 {
 
 h6 {
   font-family: "Caviar Italic";
-  font-size: 1.2em;
+  font-size: 1em;
   line-height: 3em; }
   @media screen and (max-width: 1000px) {
     h6 {
@@ -261,7 +261,7 @@ h6 {
   -ms-transform: rotate(90deg);
   transform: rotate(90deg); }
 
-.button, form div input[type=submit], form div textarea[type=submit], #backend #backend_main .docs_upload input[type=submit], #backend #backend_main .docs_upload form div textarea[type=submit], form div #backend #backend_main .docs_upload textarea[type=submit] {
+.button, input[type=submit], textarea[type=submit] {
   cursor: pointer;
   width: auto;
   padding: 0;
@@ -556,57 +556,79 @@ main {
       width: 95%;
       padding: 3em 1em; } }
 
-form div {
-  width: 100%;
-  margin-bottom: 1em; }
-  @media screen and (max-width: 400px) {
-    form div {
-      flex-direction: column;
-      margin-left: 2em; } }
-  form div label {
-    width: 20%; }
-  form div input, form div textarea {
-    width: 40%;
-    height: 2em;
-    border: none;
-    border-bottom: thin solid #cecece;
-    padding: 1em;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: 0.5px 0.5px 4px 0.5px #cecece;
-    -moz-box-shadow: 0.5px 0.5px 4px 0.5px #cecece;
-    box-shadow: 0.5px 0.5px 4px 0.5px #cecece; }
-    form div input:-moz-placeholder, form div textarea:-moz-placeholder {
-      font-family: "Caviar Italic";
-      font-size: 0.9em;
-      color: #cecece; }
-    form div input:-ms-input-placeholder, form div textarea:-ms-input-placeholder {
-      font-family: "Caviar Italic";
-      font-size: 0.9em;
-      color: #cecece; }
-    form div input::-moz-placeholder, form div textarea::-moz-placeholder {
-      font-family: "Caviar Italic";
-      font-size: 0.9em;
-      color: #cecece; }
-    form div input::-webkit-input-placeholder, form div textarea::-webkit-input-placeholder {
-      font-family: "Caviar Italic";
-      font-size: 0.9em;
-      color: #cecece; }
-    @media screen and (max-width: 1400px) {
-      form div input, form div textarea {
-        width: 50%; } }
-    @media screen and (max-width: 1000px) {
-      form div input, form div textarea {
-        width: 60%; } }
+form {
+  width: 100%; }
+  form div {
+    width: 100%;
+    margin-bottom: 1em; }
     @media screen and (max-width: 400px) {
-      form div input, form div textarea {
-        width: 80%; } }
-  form div textarea {
-    height: 10em;
-    -webkit-box-shadow: 0.5px 0.5px 4px 0.5px #cecece;
-    -moz-box-shadow: 0.5px 0.5px 4px 0.5px #cecece;
-    box-shadow: 0.5px 0.5px 4px 0.5px #cecece; }
+      form div {
+        flex-direction: column;
+        margin-left: 2em; } }
+
+label {
+  width: 20%; }
+
+.backend_label {
+  width: 100%; }
+
+input, textarea {
+  width: 40%;
+  height: 2em;
+  border: none;
+  border-bottom: thin solid #cecece;
+  padding: 1em;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0.5px 0.5px 4px 0.5px #cecece;
+  -moz-box-shadow: 0.5px 0.5px 4px 0.5px #cecece;
+  box-shadow: 0.5px 0.5px 4px 0.5px #cecece; }
+  input:-moz-placeholder, textarea:-moz-placeholder {
+    font-family: "Caviar Italic";
+    font-size: 0.9em;
+    color: #555; }
+  input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+    font-family: "Caviar Italic";
+    font-size: 0.9em;
+    color: #555; }
+  input::-moz-placeholder, textarea::-moz-placeholder {
+    font-family: "Caviar Italic";
+    font-size: 0.9em;
+    color: #555; }
+  input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+    font-family: "Caviar Italic";
+    font-size: 0.9em;
+    color: #555; }
+  @media screen and (max-width: 1400px) {
+    input, textarea {
+      width: 50%; } }
+  @media screen and (max-width: 1000px) {
+    input, textarea {
+      width: 60%; } }
+  @media screen and (max-width: 400px) {
+    input, textarea {
+      width: 80%; } }
+
+input[type=file], textarea[type=file] {
+  width: 100%; }
+
+input[type=submit], textarea[type=submit] {
+  margin: 0.5em 2em 0.5em 0; }
+
+textarea {
+  height: 10em;
+  text-align: left;
+  -webkit-box-shadow: 0.5px 0.5px 4px 0.5px #cecece;
+  -moz-box-shadow: 0.5px 0.5px 4px 0.5px #cecece;
+  box-shadow: 0.5px 0.5px 4px 0.5px #cecece; }
+
+select {
+  margin: 1em 0;
+  width: 35%;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px; }
 
 .vorstand_box {
   width: 100%;
@@ -674,12 +696,12 @@ footer {
   #backend #backend_header nav {
     width: 25%; }
 #backend #backend_main .content .download {
-  margin-right: 30%; }
+  width: 60%; }
   #backend #backend_main .content .download a {
     padding: 1em; }
-#backend #backend_main .docs_upload {
-  margin: 1em 0; }
-  #backend #backend_main .docs_upload input[type=file], #backend #backend_main .docs_upload form div textarea[type=file], form div #backend #backend_main .docs_upload textarea[type=file] {
-    margin: 1em 0; }
+#backend .article_create {
+  width: 80%; }
+#backend .crud div {
+  width: 25%; }
 
 /*# sourceMappingURL=style.css.map */

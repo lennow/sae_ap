@@ -61,11 +61,12 @@ class ArticleModel extends Model
     public function insertArticleToDB ($article) {
 
         $sql = "INSERT INTO vereine_articles 
-                (articleTitle, articleText)
-                VALUES (:title, :text)";
+                (articleTitle, articleDate, articleText)
+                VALUES (:title, :date, :text)";
 
         $array = [
             ":title" => $article['title'],
+            ":date" => $article['date'],
             ":text" => $article['text']
         ];
 
@@ -76,11 +77,12 @@ class ArticleModel extends Model
     public function updateArticleInDB ($article) {
 
         $sql = "UPDATE vereine_articles 
-                SET articleTitle = :title, articleText = :text 
+                SET articleTitle = :title, articleDate = :date, articleText = :text 
                 WHERE articleID = :id";
 
         $array = [
             ":title" => $article['title'],
+            ":date" => $article['date'],
             ":text" => $article['text'],
             ":id" => $article['id']
         ];

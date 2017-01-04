@@ -22,12 +22,12 @@
 // ToDo [Frontend]:     Artikel auf Aktuelles darstellen => Akkordeon (jQuery)
 // ToDo [Frontend]:     Fehlermeldung in Kontaktformular prüfen!
 
-// ToDo [Backend]:      Select-Liste stylen
-// ToDo [Backend]:      Dokumentenverwaltung besser als select oder als Links?
-// ToDo [Backend]:      Dokumentenupload funzt nicht... Warum???
-// ToDo [Backend]:      Gibt es Möglichkeit, Artikel direkt in Select-Liste zu laden, ohne neues Laden?
+// ToDo [Backend]:      Bildupload für Artikelverwaltung?
 
-// ToDo [Allgemein]:    Wie lade ich die Datenbank auf den Server hoch?
+// ToDo [Fragen]:       Dokumentenverwaltung besser als select oder als Links?
+// ToDo [Fragen]:       Gibt es Möglichkeit, Artikel direkt in Select-Liste zu laden, ohne neues Laden? AJAX?!
+// ToDo [Fragen]:       Wie lade ich die Datenbank auf den Server hoch?
+// ToDo [Fragen]:       Kann ich an select option irgendwie die ID des Artikels hängen?
 
 
 
@@ -125,11 +125,15 @@ class MainController {
 
             case 'dokumente':
                 $this->view->allDocuments = new UploadController();
+                $this->view->errorStatus = FormValidator::$errorMessages;
                 break;
 
+            case 'aktuelles':
             case 'artikel':
+            {
                 $this->view->allArticles = new ArticleController();
                 break;
+            }
 
             case 'logout':
                 $this->logout();

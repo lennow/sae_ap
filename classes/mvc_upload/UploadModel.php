@@ -57,6 +57,19 @@ class UploadModel extends Model
 
     }
 
+    public function getDocumentFromDB ($document) {
+
+        $sql = "SELECT * FROM vereine_uploads WHERE uploadName = :selected";
+
+        $array = [
+            ":selected" => $document['select']
+        ];
+
+        $allArticles = $this->getDataFromDB($sql, $array);
+        return $allArticles;
+
+    }
+
     /**
      * Speichern der hochgeladenen Dateinamen in DB
      *
@@ -111,7 +124,7 @@ class UploadModel extends Model
         $sql = "DELETE FROM vereine_uploads WHERE uploadName = :uploaded";
 
         $array = [
-            ":uploaded" => $uploaded['name']
+            ":uploaded" => $uploaded['select']
         ];
 
         $this->setDataToDB($sql, $array);
