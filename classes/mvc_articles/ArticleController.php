@@ -1,18 +1,23 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Lena
- * Date: 29.12.2016
- * Time: 16:49
+ * User: Engelstein IT
+ * Date: 09.11.2016
+ * Time: 11:20
  *
  * Klasse ArticleController
  *
- * archiviert Uploads in DB
- * und gibt sie wieder aus
+ * steuert Erstellung und Verwaltung der Veranstaltungen (CRUD)
+ *
+ * Eigenschaften:
+ * $all (leere public Variable)
+ * $page (gibt Seite für Redirect an)
+ * $articleModel (leere public Variable)
  *
  * Methoden:
  * __construct()
- * run_articles()
+ * createArticles()
+ * updateArticles()
  *
  */
 
@@ -31,11 +36,29 @@ class ArticleController
     private $articleModel;
 
 
+    /**
+     * Konstruktor
+     *
+     * instanziiert ArticleModel
+     * holt alle Veranstaltungen aus der Datenbank
+     *
+     */
     public function __construct () {
         $this->articleModel = new ArticleModel();
         $this->all = $this->articleModel->getAllArticlesFromDB();
     }
 
+
+    /**
+     * Erstellung neuer Artikel
+     *
+     * wenn Artikel noch nicht in DB, wird er reingeschrieben
+     * wenn Artikel schon in DB, wird er aktualisiert
+     *
+     *
+     * @param $article
+     *
+     */
     public function createArticles ($article) {
 
         if (isset ($article['article']['submit'])) {
@@ -50,6 +73,15 @@ class ArticleController
 
     }
 
+
+    /**
+     * Artikel/Veranstaltungen updaten oder löschen
+     *
+     *
+     * @param $selected
+     * @return array (ausgewählter Artikel)
+     *
+     */
     public function updateArticles ($selected) {
 
         if (isset ($selected['update']['submit'])) {

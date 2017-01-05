@@ -58,7 +58,8 @@ class LoginModel extends Model
             ":password" => $loginData['pass']
         ];
 
-        return $this->getDataFromDB($sql, $array);
+        $login = $this->getDataFromDB($sql, $array);
+        return $login;
     }
 
 
@@ -73,8 +74,8 @@ class LoginModel extends Model
      */
     public function setUser ($userData) {
         $sql = "INSERT INTO vereine_users
-                (userName, userLastname, userEmail, userUsername, userPassword, userStatus)
-                VALUES (:name, :lastname, :email, :username, :password, :status)";
+                (userName, userLastname, userEmail, userUsername, userPassword)
+                VALUES (:name, :lastname, :email, :username, :password)";
 
         $array = [
             ":name" => $userData["Vorname"],
@@ -82,7 +83,6 @@ class LoginModel extends Model
             ":email" => $userData["Email"],
             ":username" => $userData["Benutzername"],
             ":password" => $userData["Passwort"],
-            ":status" => $userData["Status"]
         ];
 
         $this->setDataToDB($sql, $array);

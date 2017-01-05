@@ -13,7 +13,10 @@
  * Methoden:
  * __construct()
  * getUploadsFromDB()
+ * getDocumentFromDB()
  * setUploadsToDB()
+ * updateUploadsInDB()
+ * deleteUploadsFromDB()
  *
  */
 
@@ -40,12 +43,9 @@ class UploadModel extends Model
 
 
     /**
-     * Liste der Uploads aus DB auslesen
+     * alle Dokumente aus DB auslesen
      *
-     * liest Spalte mit Dateinamen aus
-     * schreibt diese Liste in $allDocuments
-     *
-     * @return $allDocuments
+     * @return array (alle Dokumente aus DB)
      *
      */
     public function getUploadsFromDB () {
@@ -57,6 +57,14 @@ class UploadModel extends Model
 
     }
 
+
+    /**
+     * einzelnes Dokument aus DB auslesen
+     *
+     * @param $document (ausgewähltes Dokument)
+     * @return array (Dokumentdaten aus DB)
+     *
+     */
     public function getDocumentFromDB ($document) {
 
         $sql = "SELECT * FROM vereine_uploads WHERE uploadName = :selected";
@@ -71,11 +79,9 @@ class UploadModel extends Model
     }
 
     /**
-     * Speichern der hochgeladenen Dateinamen in DB
+     * neues Dokument in DB schreiben
      *
-     * fügt neuen Dateinamen hinzu
-     *
-     * @param $uploaded
+     * @param $uploaded (eingegebenes Dokument)
      *
      */
     public function setUploadsToDB ($uploaded) {
@@ -91,11 +97,9 @@ class UploadModel extends Model
     }
 
     /**
-     * Überschreiben der hochgeladenen Dateinamen in DB
+     * Dokument in DB aktualisieren
      *
-     * überschreibt bereits vorhandene Dateinamen
-     *
-     * @param $uploaded
+     * @param $uploaded (eingegebenes Dokument)
      *
      */
     public function updateUploadsInDB ($uploaded) {
@@ -112,11 +116,9 @@ class UploadModel extends Model
     }
 
     /**
-     * Löschen der hochgeladenen Dateinamen in DB
+     * Dokument aus DB löschen
      *
-     * löscht ausgewählten Dateinamen
-     *
-     * @param $uploaded
+     * @param $uploaded (ausgewähltes Dokument)
      *
      */
     public function deleteUploadsFromDB ($uploaded) {

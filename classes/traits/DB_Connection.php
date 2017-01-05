@@ -6,7 +6,7 @@
  * Time: 11:17
  *
  *
- * Interface DB_Connection
+ * Trait DB_Connection
  *
  * Methoden:
  * connectDB()

@@ -12,11 +12,12 @@
  * Methoden:
  * sendContactData()
  *
+ * PHPMailer: https://github.com/PHPMailer/PHPMailer
+ *
  */
 
 namespace classes\helpers;
 
-use classes\helpers\FormValidator;
 use PHPMailer\PHPMailer\PHPMailer;
 
 
@@ -30,30 +31,23 @@ class FormMailer
      * @return string Erfolgsnachricht
      *
      */
-    public function sendContactData ($contactData) {
+    public static function sendContactData ($contactData) {
 
-        if ($contactData === true) {
+        $mail = new PHPMailer();
+        $mail->setFrom(@$contactData['Email']);
+        $mail->addAddress('info@verein.de', 'Verein');              // Add a recipient
+        $mail->Subject = "Nachricht von " . @$contactData['Name'] . "via Kontaktformular";
+        $mail->Body    = @$contactData['Nachricht'];
 
-            $mail = new PHPMailer();
-            $mail->setFrom('info@verein.de', 'Verein');
-            $mail->addAddress(@$_POST['contact']['Email']);             // Add a recipient
-            //$mail->addReplyTo($_POST["Email"]);
-            //$mail->isHTML(true);                          // Set email format to HTML
-            $mail->Subject = "Nachricht von " . @$_POST['contact']['Name'] . "via Kontaktformular";
-            $mail->Body    = @$_POST['contact']['Nachricht'];
-            //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-            if(!$mail->send()) {
-                echo 'Ihre Nachricht konnte nicht versendet werden.';
-                echo 'Mailer Error: ' . $mail->ErrorInfo;
-            } else {
-                return 'Vielen Dank, Ihre Nachricht an uns wurde versandt.';
-            }
-
+        if(!$mail->send()) {
+            $fail = 'Ihre Nachricht konnte nicht versendet werden.<br />';
+            $fail .= 'Mailer Error: ' . $mail->ErrorInfo;
+            return $fail;
+        } else {
+            $success = 'Vielen Dank, Ihre Nachricht an uns wurde versandt.';
+            return $success;
         }
 
     }
-
-
 
 }

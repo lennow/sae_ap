@@ -41,29 +41,22 @@ class FormValidator
      */
     public static function validateFormfields ($inputData) {
 
-        if (isset ($inputData['submit'])) {
-
-            if ($inputData == $_POST['login']) {
-                if(empty ($inputData['username']) || empty ($inputData['pass'])){
-                    self::$errorMessages['login'] = "Bitte füllen Sie beide Felder aus!";
-                }
-            } else {
-                foreach ($inputData as $field => $value) {
-                    if(empty ($value)){
-                        self::$errorMessages[$field] = "Bitte füllen Sie das Feld {$field} aus!";
-                    } else {
-                        if ($field == "Email" && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
-                            self::$errorMessages[$field] = "Bitte geben Sie eine korrekte E-Mail Adresse an!";
-                        }
+        if (isset ($inputData['username'])) {
+            if(empty ($inputData['username']) || empty ($inputData['pass'])){
+                self::$errorMessages['login'] = "Bitte füllen Sie beide Felder aus!";
+            }
+        } else {
+            foreach ($inputData as $field => $value) {
+                if(empty ($value)){
+                    self::$errorMessages[$field] = "Bitte füllen Sie das Feld {$field} aus!";
+                } else {
+                    if ($field == "Email" && !filter_var($value, FILTER_VALIDATE_EMAIL)) {
+                        self::$errorMessages[$field] = "Bitte geben Sie eine korrekte E-Mail Adresse an!";
                     }
                 }
             }
-
         }
 
-        if (empty (self::$errorMessages)) {
-            return true;
-        }
     }
 
 }

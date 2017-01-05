@@ -1,0 +1,33 @@
+// ----------------------- PAGE AKTUELLES --------------------- //
+
+
+.accordion_title {
+  padding-left: $em*0.5;
+  text-align: left;
+  background-color: $lightgrey_trans;
+  cursor: pointer;
+  &:after {
+    content: '\02795';
+    float: right;
+    margin-right: $em*0.5;
+    margin-top: $em*0.5;
+    @extend p;
+  }
+  &:hover {
+    background-color: $lightgrey;
+  }
+  &.active {
+    background-color: $lightgrey;
+    &:after {
+      content: '\2796';
+    }
+  }
+}
+
+.panel {
+  padding: $em $em*0.5;
+  display: none;
+  &.show {
+    display: block;
+  }
+}

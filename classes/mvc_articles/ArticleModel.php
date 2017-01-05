@@ -12,8 +12,11 @@
  *
  * Methoden:
  * __construct()
- * getArticleFromDB()
- * insertArticleToDB()
+ * getAllArticlesFromDB()
+ * getSpecialArticleFromDB()
+ * insertArticleToDB ()
+ * updateArticleInDB ()
+ * deleteArticleFromDB ()
  *
  */
 
@@ -36,6 +39,13 @@ class ArticleModel extends Model
         parent::__construct();
     }
 
+
+    /**
+     * alle Veranstaltungen aus DB auslesen
+     *
+     * @return array (alle Veranstaltungen aus DB)
+     *
+     */
     public function getAllArticlesFromDB () {
 
         $sql = "SELECT * FROM vereine_articles";
@@ -45,6 +55,14 @@ class ArticleModel extends Model
 
     }
 
+
+    /**
+     * einzelne Veranstaltung aus DB auslesen
+     *
+     * @param $article (ausgewählter Artikel (Titel))
+     * @return array (Veranstaltung aus DB)
+     *
+     */
     public function getSpecialArticleFromDB ($article) {
 
         $sql = "SELECT * FROM vereine_articles WHERE articleTitle = :selected";
@@ -58,6 +76,13 @@ class ArticleModel extends Model
 
     }
 
+
+    /**
+     * neue Veranstaltung in DB schreiben
+     *
+     * @param $article (eingegebener Artikel)
+     *
+     */
     public function insertArticleToDB ($article) {
 
         $sql = "INSERT INTO vereine_articles 
@@ -74,6 +99,13 @@ class ArticleModel extends Model
 
     }
 
+
+    /**
+     * Veranstaltung in DB aktualisieren
+     *
+     * @param $article (eingegebener Artikel)
+     *
+     */
     public function updateArticleInDB ($article) {
 
         $sql = "UPDATE vereine_articles 
@@ -91,6 +123,13 @@ class ArticleModel extends Model
 
     }
 
+
+    /**
+     * Veranstaltung aus DB löschen
+     *
+     * @param $article (ausgewählter Artikel)
+     *
+     */
     public function deleteArticleFromDB ($article) {
 
         $sql = "DELETE FROM vereine_articles WHERE articleTitle = :selected";

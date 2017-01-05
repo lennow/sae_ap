@@ -15,3 +15,8 @@
   @include border-radius($pixel*5);
   @include linear_gradient($lightgrey, $white $percent*40);
 }
+
+.error {
+  color: red;
+  margin: $em;
+}

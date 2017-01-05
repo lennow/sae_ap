@@ -15,20 +15,19 @@
  *
  */
 
-
-// ToDo [Frontend]:     Formularauswertung mit jQuery
-// ToDo [Frontend]:     Fehlermeldungen ausgeben!
 // ToDo [Frontend]:     Media Queries fertig
-// ToDo [Frontend]:     Artikel auf Aktuelles darstellen => Akkordeon (jQuery)
-// ToDo [Frontend]:     Fehlermeldung in Kontaktformular prüfen!
 
-// ToDo [Backend]:      Bildupload für Artikelverwaltung?
+// ToDo [Backend]:      Media Queries
+// ToDo [Backend]:      Fehlermeldungen
+// ToDo [Backend]:      ZUM SCHLUSS: Nutzerstatus Admin/Nutzer => für Admin Seite mit Formular, um neue Nutzer anzulegen!
+
+/* ******************************************************* */
 
 // ToDo [Fragen]:       Dokumentenverwaltung besser als select oder als Links?
 // ToDo [Fragen]:       Gibt es Möglichkeit, Artikel direkt in Select-Liste zu laden, ohne neues Laden? AJAX?!
-// ToDo [Fragen]:       Wie lade ich die Datenbank auf den Server hoch?
 // ToDo [Fragen]:       Kann ich an select option irgendwie die ID des Artikels hängen?
 
+/* ******************************************************* */
 
 
 
@@ -36,7 +35,7 @@ namespace classes\mvc_pagestructure;
 
 use classes\helpers\NavigationHelper;
 use classes\helpers\FormValidator;
-use classes\helpers\FormMailer;
+use classes\mvc_contact\ContactController;
 use classes\mvc_upload\UploadController;
 use classes\mvc_login\LoginController;
 use classes\traits\Redirect;
@@ -111,16 +110,11 @@ class MainController {
         switch ($this->page) {
 
             case 'kontakt':
-                $valid = FormValidator::validateFormfields(@$_POST['contact']);
-                $this->view->errorStatus = FormValidator::$errorMessages;
-                $mail = new FormMailer();
-                $this->view->mailStatus = $mail->sendContactData($valid);
+                $this->view->contactForm = new ContactController();
             break;
 
             case 'login':
-                $this->view->errorStatus = FormValidator::$errorMessages;
-                $login = new LoginController();
-                $login->checkLoginData(@$_POST['login']);
+                $this->view->loginForm = new LoginController();
                 break;
 
             case 'dokumente':

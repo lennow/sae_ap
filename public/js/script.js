@@ -50,9 +50,46 @@ $(document).ready(function () {
 
     // bei Klick auf Titel Text einblenden
 
-    $('.accordion > h3').click(function () {
-        console.log($(this).parents('.accordion').siblings('p'));
-        $(this).parents('.accordion').siblings('p').slideToggle();
-    });
+    var elements = $(".accordion_title");
+    var i;
+
+    for (i=0; i<$(elements).length; i++) {
+        $(elements[i]).on("click", function () {
+            $(this).toggleClass("active", "");
+            $(this).siblings(".panel").slideToggle().toggleClass("show", "");
+        });
+    }
+
+
+
+
+
+
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

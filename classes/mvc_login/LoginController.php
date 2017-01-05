@@ -21,7 +21,6 @@
 
 namespace classes\mvc_login;
 
-use classes\mvc_login\LoginModel;
 use classes\helpers\FormValidator;
 use classes\traits\Redirect;
 
@@ -29,28 +28,22 @@ use classes\traits\Redirect;
 class LoginController
 {
 
-    // ToDo: Steuerung Login => Formularvalidierung (Abgleich username & password -> LoginModel)
-    // ToDo:                 => Weiterleitung auf Backend (Erfolg) / Fehlermeldung (Fail)
+    use Redirect;
 
     private $loginModel;
-    private $valid;
 
-    use Redirect;
+    private $user = [];
+
 
     /**
      * Konstruktor
      *
-     * schreibt GET und POST Arrays in ein gemeinsames Array
      * instanziiert LoginModel
-     * startet Methode validateFormFields im FormValidator und
-     * prüft damit, ob beide Felder ausgefüllt wurden
      *
      */
     public function __construct() {
 
-        $this->globals = array_merge($_GET, $_POST);
         $this->loginModel = new LoginModel();
-        $this->valid = FormValidator::validateFormfields(@$_POST['login']);
 
     }
 
@@ -66,23 +59,41 @@ class LoginController
      * wenn Daten aus DB zurückkommen
      *
      * @param $loginData
+     * @return array (Fehlermeldungen aus Klasse FormValidator)
      *
      */
     public function checkLoginData ($loginData) {
 
-        if ($this->valid) {
-            $db_data = $this->loginModel->getLoginData($loginData);
-            if (!empty ($db_data[0])) {
-                $_SESSION['id'] = md5($db_data[0]['userID']);
-                $_SESSION['username'] = md5($db_data[0]['userUsername']);
-                $_SESSION['name'] = md5($db_data[0]['userName']);
-                $_SESSION['lastname'] = md5($db_data[0]['userLastname']);
-                $_SESSION['email'] = md5($db_data[0]['userEmail']);
-                $_SESSION['satus'] = md5($db_data[0]['userStatus']);
-                $this->redirect('dokumente');
+        if (isset ($loginData['submit'])) {
+            FormValidator::validateFormfields($loginData);
+            if (empty (FormValidator::$errorMessages)) {
+                $db_data = $this->loginModel->getLoginData($loginData);
+                if (!empty ($db_data[0])) {
+                    $_SESSION['id'] = md5($db_data[0]['userID']);
+                    $_SESSION['username'] = md5($db_data[0]['userUsername']);
+                    $_SESSION['name'] = md5($db_data[0]['userName']);
+                    $_SESSION['lastname'] = md5($db_data[0]['userLastname']);
+                    $_SESSION['email'] = md5($db_data[0]['userEmail']);
+                    $_SESSION['satus'] = md5($db_data[0]['userStatus']);
+                    $this->redirect('dokumente');
+                }
+            } else {
+                return FormValidator::$errorMessages;
             }
         }
 
     }
+
+    /*private function createNewUser ($name, $lastname, $email, $username, $password) {
+
+        $user["Vorname"] = $name;
+        $user["Nachname"] = $lastname;
+        $user["Email"] = $email;
+        $user["Benutzername"] = $username;
+        $user["Passwort"] = $password;
+
+        $this->loginModel->setUser($user);
+
+    }*/
 
 }
