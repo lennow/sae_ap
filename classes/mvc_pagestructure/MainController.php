@@ -15,10 +15,6 @@
  *
  */
 
-// ToDo [Frontend]:     Media Queries fertig
-
-// ToDo [Backend]:      Media Queries
-// ToDo [Backend]:      Fehlermeldungen
 // ToDo [Backend]:      ZUM SCHLUSS: Nutzerstatus Admin/Nutzer => für Admin Seite mit Formular, um neue Nutzer anzulegen!
 
 /* ******************************************************* */
@@ -34,7 +30,6 @@
 namespace classes\mvc_pagestructure;
 
 use classes\helpers\NavigationHelper;
-use classes\helpers\FormValidator;
 use classes\mvc_contact\ContactController;
 use classes\mvc_upload\UploadController;
 use classes\mvc_login\LoginController;
@@ -119,7 +114,6 @@ class MainController {
 
             case 'dokumente':
                 $this->view->allDocuments = new UploadController();
-                $this->view->errorStatus = FormValidator::$errorMessages;
                 break;
 
             case 'aktuelles':

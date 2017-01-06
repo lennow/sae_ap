@@ -90,7 +90,7 @@ class UploadModel extends Model
                 VALUES (:filename)";
 
         $array = [
-            ":filename" => $uploaded['name']
+            ":filename" => htmlspecialchars($uploaded['name'])
         ];
 
         $this->setDataToDB($sql, $array);
@@ -108,7 +108,7 @@ class UploadModel extends Model
                 SET uploadName = :uploaded";
 
         $array = [
-            ":uploaded" => $uploaded['name']
+            ":uploaded" => htmlspecialchars($uploaded['name'])
         ];
 
         $this->setDataToDB($sql, $array);

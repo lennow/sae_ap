@@ -9,13 +9,13 @@ $(document).ready(function () {
 
     // ******* 1. Änderung Schriftfarbe ******* //
 
-    $("#main_nav li a").hover(function(){
+    $("#main_nav li a, .footer_navi li a").hover(function(){
         $(this).css("color", "#cecece");
     }, function(){
         $(this).css("color", "#555");
     });
 
-    $("#subnavi li a, #projnavi li a").hover(function(){
+    $(".subnavi li a, .projnavi li a").hover(function(){
         $(this).css("color", "#cecece"); // für Wireframe 2: #fff
     }, function(){
         $(this).css("color", "#555");

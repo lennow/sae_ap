@@ -14,7 +14,7 @@ $projectPage = \classes\helpers\NavigationHelper::$navArray['projects'];
 
 ?>
 
-<nav id="projnavi">
+<nav class="projnavi">
     <ul>
         <?php foreach ($projectPage as $pageName => $pageTitle) : ?>
             <li>

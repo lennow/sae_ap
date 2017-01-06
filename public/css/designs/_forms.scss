@@ -10,7 +10,6 @@ form {
     // Media Query max-width 400px
     @include breakpoint400 {
       flex-direction: column;
-      margin-left: $em*2;
     }
   }
 }
@@ -52,6 +51,7 @@ input {
 
 input[type=file] {
   width: $percent*100;
+  margin: $em*0.5 0;
 }
 
 input[type=submit] {

@@ -90,9 +90,9 @@ class ArticleModel extends Model
                 VALUES (:title, :date, :text)";
 
         $array = [
-            ":title" => $article['title'],
-            ":date" => $article['date'],
-            ":text" => $article['text']
+            ":title" => htmlspecialchars($article['title']),
+            ":date" => htmlspecialchars($article['date']),
+            ":text" => htmlspecialchars($article['text'])
         ];
 
         $this->setDataToDB($sql, $array);
@@ -113,10 +113,10 @@ class ArticleModel extends Model
                 WHERE articleID = :id";
 
         $array = [
-            ":title" => $article['title'],
-            ":date" => $article['date'],
-            ":text" => $article['text'],
-            ":id" => $article['id']
+            ":title" => htmlspecialchars($article['title']),
+            ":date" => htmlspecialchars($article['date']),
+            ":text" => htmlspecialchars($article['text']),
+            ":id" => htmlspecialchars($article['id'])
         ];
 
         $this->setDataToDB($sql, $array);

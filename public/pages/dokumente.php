@@ -1,6 +1,6 @@
 <?php
 
-$this->allDocuments->createDocuments(@$_FILES['upload']);
+$upload = $this->allDocuments->createDocuments(@$_FILES['upload']);
 $allDocs = $this->allDocuments->all;
 $this->allDocuments->chooseDocuments(@$_POST['upload']);
 
@@ -48,7 +48,14 @@ $this->allDocuments->chooseDocuments(@$_POST['upload']);
             <input type="file" id="upload_field" name="upload">
             <input type="submit" name="upload[submit]" value="Datei hochladen">
         </form>
+        <p class="error">
+            <?php if (isset ($upload)) : ?>
+                <?php foreach ($upload as $key => $error) : ?>
+                    <?php if (isset ($key)) : print_r($error); ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </p>
     </div>
 
 </section>
-

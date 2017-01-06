@@ -78,11 +78,11 @@ class LoginModel extends Model
                 VALUES (:name, :lastname, :email, :username, :password)";
 
         $array = [
-            ":name" => $userData["Vorname"],
-            ":lastname" => $userData["Nachname"],
-            ":email" => $userData["Email"],
-            ":username" => $userData["Benutzername"],
-            ":password" => $userData["Passwort"],
+            ":name" => htmlspecialchars($userData["Vorname"]),
+            ":lastname" => htmlspecialchars($userData["Nachname"]),
+            ":email" => htmlspecialchars($userData["Email"]),
+            ":username" => htmlspecialchars($userData["Benutzername"]),
+            ":password" => htmlspecialchars($userData["Passwort"]),
         ];
 
         $this->setDataToDB($sql, $array);

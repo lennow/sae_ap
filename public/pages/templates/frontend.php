@@ -24,22 +24,11 @@
 </head>
 <body>
 
-<!--
-    <pre>
-        $GET: <?php //print_r ($_GET); ?>
-    </pre>
-       <pre>
-        $POST: <?php //print_r ($_POST); ?>
-    </pre>
-    -->
-
-
-
     <!-- /// HEADER - Version 1 = Wireframe 1 / Version 2 = Wireframe 2, 3 & 4 (ohne Navi)/// -->
 
     <header>
-        <?php //require_once "pages/templates/version_1/header.php"; ?>
-        <?php require_once "pages/templates/version_2/header.php"; ?>
+        <?php require_once "pages/templates/version_1/header.php"; ?>
+        <?php //require_once "pages/templates/version_2/header.php"; ?>
     </header>
 
 
@@ -49,9 +38,9 @@
         <div id="side_wrapper">
 
             <!-- Hauptnavigation (Desktop, >700px Breite) - NUR mit Wireframe 3 oder 4! -->
-            <nav id="main_nav">
-                <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
-            </nav>
+            <!--<nav id="main_nav">
+                <?php //classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
+            </nav>-->
 
             <!-- Seitenleiste -->
             <aside>
@@ -78,12 +67,12 @@
         <main class="clearfix">
 
             <!-- Hauptnavigation (Mobile, <700px Breite) - NUR mit Wireframe 3 oder 4! -->
-            <?php require_once "pages/inc/mobileNavi.inc.php"; ?>
+            <?php //require_once "pages/inc/mobileNavi.inc.php"; ?>
 
             <!-- Logo (Mobile, <400px Breite) -->
-            <figure id="logo_mobile">
+            <!--<figure id="logo_mobile">
                 <img src="img/Logo_schwarz.png" alt="Logo schwarz"/>
-            </figure>
+            </figure>-->
 
             <!-- Subnavigationen -->
             <?php if (!isset ($_GET['p']) || $_GET['p'] == "verein") : ?>
