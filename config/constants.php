@@ -12,6 +12,7 @@
 // Path to Pages
 
 define ("__PAGEDIR__", "pages/");
+define("_URL_", $_SERVER['PHP_SELF']);
 
 // DB Connection Data
 

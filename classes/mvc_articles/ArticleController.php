@@ -82,13 +82,13 @@ class ArticleController
      * @return array (ausgewählter Artikel)
      *
      */
-    public function updateArticles ($selected) {
+    public function updateArticles ($clicked) {
 
-        if (isset ($selected['update']['submit'])) {
-            $update = $this->articleModel->getSpecialArticleFromDB($selected['update']);
+        if ($clicked  == 'edit') {
+            $update = $this->articleModel->getSpecialArticleFromDB($_GET['edit']);
             return $update;
-        } elseif (isset ($selected['update']['delete'])) {
-            $this->articleModel->deleteArticleFromDB($selected['update']);
+        } elseif ($clicked == 'delete') {
+            $this->articleModel->deleteArticleFromDB($_GET['delete']);
             $this->refresh($this->page);
         }
 

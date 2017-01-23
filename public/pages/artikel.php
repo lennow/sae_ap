@@ -2,10 +2,9 @@
 
 $this->allArticles->createArticles(@$_POST);
 $all = $this->allArticles->all;
-$update = $this->allArticles->updateArticles(@$_POST);
+$update = $this->allArticles->updateArticles(@$_GET['action']);
 
 ?>
-
 
 <h1>Veranstaltungen verwalten</h1>
 
@@ -45,24 +44,23 @@ $update = $this->allArticles->updateArticles(@$_POST);
 </div>
 
 <div class="article_create">
-    <h3>Veranstaltung bearbeiten:</h3>
+    <h3>Alle Veranstaltungen:</h3>
+    <div class="crud">
+        <?php foreach ($all as $item => $articleArray) : ?>
+            <div>
+                <h6><?= $articleArray['articleTitle'] ?></h6>
+                <div>
+                    <a href="<?= _URL_ ?>?p=<?= $_GET['p'] ?>&action=edit&edit=<?= $articleArray['articleID'] ?>"
+                       class="button">
+                        Bearbeiten
+                    </a>
+                    <a href="<?= _URL_ ?>?p=<?= $_GET['p'] ?>&action=delete&delete=<?= $articleArray['articleID'] ?>"
+                       class="button">
+                        Löschen
+                    </a>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
 
-    <form action="" method="post">
-        <label for="article_list">Wähle einen Artikel aus:</label>
-        <select name="update[select]" id="article_list">
-            <?php foreach ($all as $item => $articleArray) : ?>
-                <option value="<?= $articleArray['articleTitle'] ?>">
-                    <?= $articleArray['articleTitle'] ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-        <div class="crud">
-            <div>
-                <input type="submit" name="update[submit]" value="Artikel bearbeiten">
-            </div>
-            <div>
-                <input type="submit" name="update[delete]" value="Artikel löschen">
-            </div>
-        </div>
-    </form>
 </div>

@@ -20,8 +20,6 @@
 /* ******************************************************* */
 
 // ToDo [Fragen]:       Dokumentenverwaltung besser als select oder als Links?
-// ToDo [Fragen]:       Gibt es Möglichkeit, Artikel direkt in Select-Liste zu laden, ohne neues Laden? AJAX?!
-// ToDo [Fragen]:       Kann ich an select option irgendwie die ID des Artikels hängen?
 
 /* ******************************************************* */
 

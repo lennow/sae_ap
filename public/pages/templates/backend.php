@@ -39,7 +39,7 @@
 
     <header id="backend_header">
         <figure>
-            <img src="img/Logo_weiss.png" alt="Logo weiss"/>
+            <img src="img/Logo_schwarz.png" alt="Logo schwarz"/>
         </figure>
         <nav>
             <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "backendNavi"); ?>

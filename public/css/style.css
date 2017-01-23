@@ -13,7 +13,7 @@
 /*
     Display
  */
-body, .nav_line, .nav_line #main_nav ul, .subnavi ul, .projnavi ul, #main_wrapper, #main_wrapper aside #sidebar, form, form div, .vorstand_box, footer, #imprint_wrapper, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_header, #backend #backend_header nav ul, #backend #backend_main .content, #backend #backend_main .content .download, #backend .crud {
+body, .nav_line, .nav_line #main_nav ul, .subnavi ul, .projnavi ul, #main_wrapper, #main_wrapper aside #sidebar, form, form div, .vorstand_box, footer, #imprint_wrapper, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_header, #backend #backend_header nav ul, #backend #backend_main .content, #backend #backend_main .content .download, #backend .crud, #backend .crud > div, #backend .crud > div div {
   display: -webkit-box;
   display: -moz-box;
   display: -webkit-flexbox;
@@ -24,7 +24,7 @@ body, .nav_line, .nav_line #main_nav ul, .subnavi ul, .projnavi ul, #main_wrappe
 /*
     Flex direction
  */
-.nav_line, .nav_line #main_nav ul, .subnavi ul, .projnavi ul, #main_wrapper, form div, .vorstand_box, footer, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_header, #backend #backend_header nav ul, #backend #backend_main .content, #backend .crud {
+.nav_line, .nav_line #main_nav ul, .subnavi ul, .projnavi ul, #main_wrapper, form div, .vorstand_box, footer, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_header, #backend #backend_header nav ul, #backend #backend_main .content, #backend .crud > div, #backend .crud > div div {
   -webkit-box-orient: horizontal;
   -moz-box-orient: horizontal;
   -webkit-flex-direction: row;
@@ -32,7 +32,7 @@ body, .nav_line, .nav_line #main_nav ul, .subnavi ul, .projnavi ul, #main_wrappe
   -ms-flex-direction: row;
   flex-direction: row; }
 
-body, #main_wrapper aside #sidebar, form, #imprint_wrapper, #backend #backend_main .content .download {
+body, #main_wrapper aside #sidebar, form, #imprint_wrapper, #backend #backend_main .content .download, #backend .crud {
   -webkit-box-orient: vertical;
   -moz-box-orient: vertical;
   -webkit-flex-direction: column;
@@ -64,7 +64,7 @@ body, #main_wrapper aside #sidebar, form, #imprint_wrapper, #backend #backend_ma
 /*
     Justify content
  */
-body, .subnavi ul, .projnavi ul, form div, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_main .content, #backend #backend_main .content .download, #backend .crud {
+body, .subnavi ul, .projnavi ul, form div, #imprint_wrapper .imprint_box .imprint_subbox, #backend #backend_main .content, #backend #backend_main .content .download, #backend .crud, #backend .crud > div {
   -webkit-box-pack: start;
   -moz-box-pack: start;
   -webkit-flex-pack: start;
@@ -73,7 +73,7 @@ body, .subnavi ul, .projnavi ul, form div, #imprint_wrapper .imprint_box .imprin
   -webkit-justify-content: flex-start;
   justify-content: flex-start; }
 
-.nav_line, .nav_line #main_nav ul, #main_wrapper aside #sidebar, form, .vorstand_box, #imprint_wrapper, #backend #backend_header nav ul {
+.nav_line, .nav_line #main_nav ul, #main_wrapper aside #sidebar, form, .vorstand_box, #imprint_wrapper, #backend #backend_header nav ul, #backend .crud > div div {
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
   -webkit-flex-pack: justify;
@@ -97,14 +97,14 @@ body, .subnavi ul, .projnavi ul, form div, #imprint_wrapper .imprint_box .imprin
   -moz-align-items: flex-start;
   align-items: flex-start; }
 
-.nav_line, .nav_line #main_nav ul, #backend #backend_header, #backend #backend_header nav ul {
+.nav_line, .nav_line #main_nav ul, #backend #backend_header {
   -webkit-box-align: end;
   -ms-flex-align: end;
   -webkit-align-items: flex-end;
   -moz-align-items: flex-end;
   align-items: flex-end; }
 
-body, .subnavi ul, .projnavi ul, #main_wrapper aside #sidebar {
+body, .subnavi ul, .projnavi ul, #main_wrapper aside #sidebar, #backend #backend_header nav ul, #backend .crud > div, #backend .crud > div div {
   -webkit-box-align: center;
   -ms-flex-align: center;
   -webkit-align-items: center;
@@ -646,7 +646,8 @@ footer {
     margin-right: 2em; }
 
 #backend #backend_header {
-  margin: 3em; }
+  margin: 3em;
+  padding: 1em; }
   @media screen and (max-width: 600px) {
     #backend #backend_header {
       flex-direction: column;
@@ -666,25 +667,16 @@ footer {
         width: 35%;
         margin-left: 1em; } }
   #backend #backend_header nav {
-    width: 25%; }
-    @media screen and (max-width: 1600px) {
-      #backend #backend_header nav {
-        width: 30%; } }
-    @media screen and (max-width: 1400px) {
-      #backend #backend_header nav {
-        width: 35%; } }
+    width: 45%; }
     @media screen and (max-width: 1200px) {
       #backend #backend_header nav {
-        width: 40%; } }
-    @media screen and (max-width: 900px) {
-      #backend #backend_header nav {
-        width: 50%; } }
+        width: 65%; } }
     @media screen and (max-width: 700px) {
       #backend #backend_header nav {
-        width: 60%; } }
+        width: 70%; } }
     @media screen and (max-width: 600px) {
       #backend #backend_header nav {
-        width: 75%;
+        width: 85%;
         margin-left: 1em;
         margin-top: 1em; } }
     @media screen and (max-width: 490px) {
@@ -692,32 +684,61 @@ footer {
         width: 90%; } }
     @media screen and (max-width: 400px) {
       #backend #backend_header nav ul {
-        flex-direction: column; } }
-@media screen and (max-width: 520px) {
-  #backend #backend_main h1 {
-    margin-top: 1em; } }
-@media screen and (max-width: 1000px) {
-  #backend #backend_main .content {
-    flex-direction: column; } }
-#backend #backend_main .content .download {
-  width: 60%; }
+        flex-direction: column;
+        font-size: larger; } }
+#backend #backend_main {
+  width: 75%;
+  margin: 0 auto; }
   @media screen and (max-width: 1000px) {
-    #backend #backend_main .content .download {
-      width: 100%; } }
-  #backend #backend_main .content .download a {
-    padding: 1em; }
+    #backend #backend_main {
+      width: 85%; } }
+  @media screen and (max-width: 520px) {
+    #backend #backend_main h1 {
+      margin-top: 1em; } }
+  @media screen and (max-width: 1000px) {
+    #backend #backend_main .content {
+      flex-direction: column; } }
+  #backend #backend_main .content .download {
+    width: 60%; }
+    @media screen and (max-width: 1000px) {
+      #backend #backend_main .content .download {
+        width: 100%; } }
+    #backend #backend_main .content .download a {
+      padding: 1em; }
 #backend .article_create {
-  width: 80%; }
-@media screen and (max-width: 400px) {
-  #backend .crud {
-    flex-direction: column; } }
-#backend .crud div {
-  width: 35%; }
-  @media screen and (max-width: 1400px) {
-    #backend .crud div {
-      width: 50%; } }
-  @media screen and (max-width: 1000px) {
-    #backend .crud div {
-      width: 50%; } }
+  width: 100%; }
+#backend .crud {
+  padding-bottom: 2em; }
+  @media screen and (max-width: 400px) {
+    #backend .crud {
+      flex-direction: column; } }
+  #backend .crud a {
+    padding: 0.3em; }
+  #backend .crud > div {
+    width: 100%; }
+    @media screen and (max-width: 600px) {
+      #backend .crud > div {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 1em; } }
+    #backend .crud > div h6 {
+      width: 40%; }
+      @media screen and (max-width: 1000px) {
+        #backend .crud > div h6 {
+          width: 50%; } }
+    #backend .crud > div div {
+      width: 20%; }
+      @media screen and (max-width: 1400px) {
+        #backend .crud > div div {
+          width: 30%; } }
+      @media screen and (max-width: 700px) {
+        #backend .crud > div div {
+          width: 40%; } }
+      @media screen and (max-width: 600px) {
+        #backend .crud > div div {
+          width: 60%; } }
+      @media screen and (max-width: 400px) {
+        #backend .crud > div div {
+          width: 80%; } }
 
 /*# sourceMappingURL=style.css.map */

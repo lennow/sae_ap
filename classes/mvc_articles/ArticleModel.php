@@ -63,16 +63,16 @@ class ArticleModel extends Model
      * @return array (Veranstaltung aus DB)
      *
      */
-    public function getSpecialArticleFromDB ($article) {
+    public function getSpecialArticleFromDB ($articleID) {
 
-        $sql = "SELECT * FROM vereine_articles WHERE articleTitle = :selected";
+        $sql = "SELECT * FROM vereine_articles WHERE articleID = :id";
 
         $array = [
-            ":selected" => $article['select']
+            ":id" => $articleID
         ];
 
-        $allArticles = $this->getDataFromDB($sql, $array);
-        return $allArticles;
+        $article = $this->getDataFromDB($sql, $array);
+        return $article;
 
     }
 
@@ -127,14 +127,14 @@ class ArticleModel extends Model
     /**
      * Veranstaltung aus DB löschen
      *
-     * @param $article (ausgewählter Artikel)
+     * @param $articleID (ausgewählter Artikel)
      *
      */
-    public function deleteArticleFromDB ($article) {
+    public function deleteArticleFromDB ($articleID) {
 
-        $sql = "DELETE FROM vereine_articles WHERE articleTitle = :selected";
+        $sql = "DELETE FROM vereine_articles WHERE articleID = :id";
 
-        $array = [":selected" => $article['select']];
+        $array = [":id" => $articleID];
 
         $this->setDataToDB($sql, $array);
 
