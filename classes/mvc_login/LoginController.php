@@ -32,9 +32,6 @@ class LoginController
 
     private $loginModel;
 
-    private $user = [];
-
-
     /**
      * Konstruktor
      *
@@ -69,12 +66,12 @@ class LoginController
             if (empty (FormValidator::$errorMessages)) {
                 $db_data = $this->loginModel->getLoginData($loginData);
                 if (!empty ($db_data[0])) {
-                    $_SESSION['id'] = md5($db_data[0]['userID']);
-                    $_SESSION['username'] = md5($db_data[0]['userUsername']);
-                    $_SESSION['name'] = md5($db_data[0]['userName']);
-                    $_SESSION['lastname'] = md5($db_data[0]['userLastname']);
-                    $_SESSION['email'] = md5($db_data[0]['userEmail']);
-                    $_SESSION['satus'] = md5($db_data[0]['userStatus']);
+                    $_SESSION['id'] = $db_data[0]['userID'];
+                    $_SESSION['username'] = $db_data[0]['userUsername'];
+                    $_SESSION['name'] = $db_data[0]['userName'];
+                    $_SESSION['lastname'] = $db_data[0]['userLastname'];
+                    $_SESSION['email'] = $db_data[0]['userEmail'];
+                    $_SESSION['satus'] = $db_data[0]['userStatus'];
                     $this->redirect('dokumente');
                 }
             } else {
