@@ -46,7 +46,7 @@ class View
     /**
      * GET
      *
-     * liest Daten aus $content aus, wenn welche drin (sonst new Exception mit Fehlermeldung)
+     * liest Daten aus $content auf, wenn welche drin (sonst new Exception mit Fehlermeldung)
      *
      * @param $key
      * @return mixed

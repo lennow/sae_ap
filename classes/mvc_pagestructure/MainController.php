@@ -41,6 +41,10 @@ class MainController {
     use Redirect;
     use Logout;
 
+    public $globals;
+    public $view;
+    public $navigation;
+
     /**
      * Konstruktor
      *
@@ -98,9 +102,9 @@ class MainController {
      *
      */
     public function run_application() {
-        $this->page = $this->navigation->validateSiteParams (@$_SESSION['username'], @$this->globals['p']);
+        $page = $this->navigation->validateSiteParams (@$_SESSION['username'], @$this->globals['p']);
 
-        switch ($this->page) {
+        switch ($page) {
 
             case 'kontakt':
                 $this->view->contactForm = new ContactController();
@@ -133,10 +137,10 @@ class MainController {
          */
         if (isset ($_SESSION['username'])) {
             $this->view->setTemplate("backend");
-            $this->view->pageContent = $this->page . ".php";
+            $this->view->pageContent = $page . ".php";
         } else {
             $this->view->setTemplate("frontend");
-            $this->view->pageContent = $this->page . ".php";
+            $this->view->pageContent = $page . ".php";
         }
 
         /*

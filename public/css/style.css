@@ -171,12 +171,12 @@ body, .subnavi ul, .projnavi ul, #main_wrapper aside #sidebar, #backend #backend
   -ms-user-select: none;
   user-select: none;
 }*/
-p, .accordion_title:after, li, label {
+p, li, label {
   font-family: "Caviar";
   font-size: 1em;
   line-height: 1.5em; }
   @media screen and (max-width: 1000px) {
-    p, .accordion_title:after, li, label {
+    p, li, label {
       font-size: 0.9em;
       line-height: 1.3em; } }
 
@@ -485,8 +485,8 @@ header {
       #main_wrapper main {
         width: 90%;
         margin: 0 auto; } }
-    #main_wrapper main p, #main_wrapper main .accordion_title:after {
-      margin: 0 2em 2em 0; }
+    #main_wrapper main p {
+      padding: 0 2em 2em 0; }
 
 form {
   width: 100%; }
@@ -611,7 +611,11 @@ select {
     content: '\02795';
     float: right;
     margin-right: 0.5em;
-    margin-top: 0.5em; }
+    margin-top: 0.5em;
+    padding-right: 1em;
+    font-family: "Caviar";
+    font-size: 1em;
+    line-height: 1.5em; }
   .accordion_title:hover {
     background-color: #cecece; }
   .accordion_title.active {
@@ -642,7 +646,7 @@ footer {
   @media screen and (max-width: 490px) {
     #imprint_wrapper .imprint_box h3 {
       padding-left: 0.5em; } }
-  #imprint_wrapper .imprint_box .imprint_subbox p, #imprint_wrapper .imprint_box .imprint_subbox .accordion_title:after {
+  #imprint_wrapper .imprint_box .imprint_subbox p {
     margin-right: 2em; }
 
 #backend #backend_header {

@@ -19,24 +19,34 @@
 
 namespace classes\helpers;
 
-
+/**
+ * Class FormValidator.
+ *
+ * validates formfields of all forms
+ *
+ * @package classes\helpers
+ *
+ */
 class FormValidator
 {
 
+    /**
+     * Static property errorMessages.
+     *
+     * contains all error messages
+     *
+     * @var array
+     */
     public static $errorMessages = [];
 
 
     /**
-     * Validierung der Formulareingabedaten
+     * Static method validateFormfields.
      *
-     * prüft im ersten Schritt, ob Submit Button Gedrückt wurde
-     * prüft im zweiten Schritt, ob es sich um Login- oder Kontaktformular handelt
-     * prüft im Login-Formular, ob Felder beide ausgefüllt wurden
-     * prüft im Kontakt-Formular, ob Feld jeweils ausgefüllt wurde, checkt dann noch Email Adresse
-     * gibt entweder Fehlermeldung zurück oder TRUE
+     * checks whether formfield is empty or not, validates eMail addresses
+     * if errors detected, error messages are written in $errorMessages
      *
      * @param $inputData
-     * @return bool
      *
      */
     public static function validateFormfields ($inputData) {

@@ -11,7 +11,10 @@
     float: right;
     margin-right: $em*0.5;
     margin-top: $em*0.5;
-    @extend p;
+    padding-right: $em;
+    font-family: $caviar;
+    font-size: $em;
+    line-height: $em*1.5;
   }
   &:hover {
     background-color: $lightgrey;
