@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Engelstein IT
+ * User: Lena
  * Date: 09.11.2016
  * Time: 11:20
  *
@@ -23,6 +23,8 @@ namespace classes\helpers;
  * Class FormValidator.
  *
  * validates formfields of all forms
+ *
+ * @author: Lena Lehmann lena.lehmann@email.de
  *
  * @package classes\helpers
  *

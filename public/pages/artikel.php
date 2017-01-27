@@ -1,8 +1,11 @@
 <?php
 
-$this->allArticles->createArticles(@$_POST);
 $all = $this->allArticles->all;
-$update = $this->allArticles->updateArticles(@$_GET['action']);
+
+$this->allArticles->createArticles(@$_POST);
+$update = $this->allArticles->readArticles(@$_GET['action']);
+$this->allArticles->updateArticles(@$_POST);
+$this->allArticles->deleteArticles(@$_GET['action']);
 
 ?>
 

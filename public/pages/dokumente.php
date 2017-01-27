@@ -1,11 +1,11 @@
 <?php
 
-$upload = $this->allDocuments->createDocuments(@$_FILES['upload']);
 $allDocs = $this->allDocuments->all;
-$this->allDocuments->chooseDocuments(@$_POST['upload']);
+$upload = $this->allDocuments->saveUploadedFiles(@$_FILES['upload']);
+$this->allDocuments->downloadDocuments(@$_POST['upload']);
+$this->allDocuments->deleteDocuments(@$_POST['upload']);
 
 ?>
-
 
 <h1>Unsere Vereinsdokumente</h1>
 

@@ -1,7 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/cilex/cilex" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/cilex/console-service-provider" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/container-interop/container-interop" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/doctrine/annotations" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/erusev/parsedown" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/herrera-io/json" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/herrera-io/phar-update" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/jms/metadata" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/jms/parser-lib" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/jms/serializer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/justinrainbow/json-schema" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/kherge/version" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/phpcollection/phpcollection" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/phpdocumentor/fileset" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/phpdocumentor/graphviz" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/phpdocumentor/phpdocumentor" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/phpdocumentor/reflection" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/phpdocumentor/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/phpspec/prophecy" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/phpunit/php-code-coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/phpunit/php-file-iterator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/phpunit/php-text-template" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/phpunit/php-timer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/phpunit/php-token-stream" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/phpunit/phpunit-mock-objects" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/pimple/pimple" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/sebastian/environment" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/sebastian/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/sebastian/global-state" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/seld/jsonlint" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/symfony/config" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/symfony/filesystem" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/symfony/stopwatch" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/symfony/validator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/zendframework/zend-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/zendframework/zend-config" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/zendframework/zend-eventmanager" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/zendframework/zend-filter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/zendframework/zend-hydrator" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/zendframework/zend-i18n" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/zendframework/zend-json" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/zendframework/zend-serializer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/zendframework/zend-servicemanager" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/zendframework/zend-stdlib" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/zetacomponents/base" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/vendor/zetacomponents/document" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
@@ -11,6 +78,16 @@
         </CLASSES>
         <SOURCES>
           <root url="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="PHARS">
+        <CLASSES>
+          <root url="phar://$MODULE_DIR$/composer.phar/" />
+        </CLASSES>
+        <SOURCES>
+          <root url="phar://$MODULE_DIR$/composer.phar/" />
         </SOURCES>
       </library>
     </orderEntry>

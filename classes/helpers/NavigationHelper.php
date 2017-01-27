@@ -5,24 +5,6 @@
  * Date: 09.11.2016
  * Time: 11:26
  *
- * Klasse NavigationHelper
- *
- * steuert Erstellung der Seitennavigation
- * validiert Seitenaufruf
- *
- * Eigenschaften:
- * $home (private Variable) => Startseite
- * $frontendNav (public Array) => Hauptnavigation
- * $backendNav (public Array) => Backendnavigation
- * $subNav (public Array) => Unternavigation
- * $projectNav (public Array) => Unternavigation
- * $navArray (leeres public static Array)
- *
- * Methoden:
- * __construct()
- * createNavigation($login_status, $sub) => static
- * validateSiteParams($login_status, $get_param)
- *
  */
 
 namespace classes\helpers;
@@ -31,6 +13,8 @@ namespace classes\helpers;
  * Class NavigationHelper.
  *
  * creates all types of navigation used in the script
+ *
+ * @author: Lena Lehmann lena.lehmann@email.de
  *
  * @package classes\helpers
  *

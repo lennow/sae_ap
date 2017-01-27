@@ -5,34 +5,34 @@
  * Date: 09.11.2016
  * Time: 15:57
  *
- * Klasse View
- *
- * steuert Ansicht der Website
- *
- * Eigenschaften:
- * $template (public Variable)
- * $content (public Variable)
- *
- * Methoden:
- * __set($key, $value)
- * __get($key)
- * setTemplate($template_name)
- * loadTemplate()
- *
  */
 
 namespace classes\mvc_pagestructure;
 
-
+/**
+ * Class View.
+ *
+ * Manages output to viewport
+ *
+ * @author: Lena Lehmann lena.lehmann@email.de
+ *
+ * @package classes\mvc_pagestructure
+ *
+ */
 class View
 {
+
     private $template;
+
+    /**
+     * @var array
+     */
     private $content;
 
     /**
-     * SET
+     * Magic Method set.
      *
-     * schreibt $key & $value in array $content
+     * Writing some content into content array
      *
      * @param $key
      * @param $value
@@ -42,11 +42,11 @@ class View
         $this->content[$key] = $value;
     }
 
-
     /**
-     * GET
+     * Magic method get.
      *
-     * liest Daten aus $content auf, wenn welche drin (sonst new Exception mit Fehlermeldung)
+     * Reads data from content array,
+     * throws error message if there are no data stored in array
      *
      * @param $key
      * @return mixed
@@ -61,9 +61,10 @@ class View
         }
     }
 
-
     /**
-     * Vorbereitung des richtigen Templates
+     * Method setTemplate.
+     *
+     * Prepares template file depending on login status
      *
      * @param $template_name
      *
@@ -74,9 +75,13 @@ class View
 
 
     /**
-     * Laden des richtigen Templates
+     * Method loadTemplate.
      *
-     * @return string $output Name des Templates
+     * Loads template using buffered output if called template file exists,
+     * saves template content to $output, which is being returned in the end,
+     * throws error message if called template file does not exist
+     *
+     * @return string
      * @throws \Exception
      *
      */

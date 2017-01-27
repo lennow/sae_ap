@@ -6,6 +6,7 @@ Kurs WDD 915, Webdesign & Development
 konzipiert und erstellt von
 Dr. Lena Lehmann
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 *** WICHTIG! ***
 Bitte unbedingt Konzept einbeziehen!
@@ -18,6 +19,38 @@ Im Anhang des Konzeptes finden sich die Wireframes, welche als Vorlage für das 
 4.) Für Wireframes 3 & 4 in frontend.php folgende Zeilen einkommentieren:
     51 - 54, 81
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+Die Hover-Effekte für die Navigationen können in folgender Datei ausgetauscht werden:
+
+public\js\script.js
+
+Zwei Effekte stehen zur Verfügung und können nach Bedarf ein-/auskommentiert werden:
+
+    1. Änderung der Schriftfarbe der Navigationspunkte
+    2. Änderung der Hintergrundfarbe der Navigationspunkte
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+LOGIN:
+
+    Zugangsdaten zu Testzwecken:
+
+    test / test
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+DATENBANK:
+
+    SQL Datei liegt im Ordner db im root Verzeichnis.
+    Die Zugangsdaten werden in folgender Datei angelegt:
+
+    .\config\constants.php
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+DATEIUPLOAD:
+
+Dateien werden in folgendem Ordner abgelegt:
+
+.\public\uploads\files

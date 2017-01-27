@@ -5,37 +5,42 @@
 * Date: 21.12.2016
 * Time: 11:19
 *
-* Klasse LoginController
-*
-* steuert Login ins Backend
-*
-* Eigenschaften:
-* $loginModel (leere private Variable)
-* $valid (leere private Variable)
-*
-* Methoden:
-* __construct()
-* checkLoginData()
-*
 */
 
 namespace classes\mvc_login;
 
 use classes\helpers\FormValidator;
-use classes\traits\Redirect;
+use classes\traits\Header;
 
-
+/**
+ * Class LoginController.
+ *
+ * Drives login form
+ *
+ * @author: Lena Lehmann lena.lehmann@email.de
+ *
+ * @package classes\mvc_login
+ *
+ */
 class LoginController
 {
 
-    use Redirect;
+    use Header;
 
+    /**
+     * Object loginModel.
+     *
+     * Instance of class LoginModel
+     *
+     * @var LoginModel
+     *
+     */
     private $loginModel;
 
     /**
-     * Konstruktor
+     * LoginController constructor.
      *
-     * instanziiert LoginModel
+     * Instantiates LoginModel
      *
      */
     public function __construct() {
@@ -44,19 +49,16 @@ class LoginController
 
     }
 
-
     /**
-     * Prüfung der Einwahldaten
+     * Method checkLoginData.
      *
-     * schickt Einwahldaten an LoginModel und
-     * prüft dort mit der Methode getLoginData(), ob
-     * Einwahldaten mir Nutzerdaten in DB übereinstimmen
-     *
-     * schreibt Daten in $_SESSION (MD5-verschlüsselt),
-     * wenn Daten aus DB zurückkommen
+     * Validates login form data using static method validateFormfields in class FormValidator,
+     * moves login data to $_SESSION array,
+     * redirects user to backend (page "dokumente"),
+     * returns error message if validation failed
      *
      * @param $loginData
-     * @return array (Fehlermeldungen aus Klasse FormValidator)
+     * @return array
      *
      */
     public function checkLoginData ($loginData) {
@@ -80,17 +82,5 @@ class LoginController
         }
 
     }
-
-    /*private function createNewUser ($name, $lastname, $email, $username, $password) {
-
-        $user["Vorname"] = $name;
-        $user["Nachname"] = $lastname;
-        $user["Email"] = $email;
-        $user["Benutzername"] = $username;
-        $user["Passwort"] = $password;
-
-        $this->loginModel->setUser($user);
-
-    }*/
 
 }

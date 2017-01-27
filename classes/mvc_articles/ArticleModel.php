@@ -5,45 +5,45 @@
  * Date: 29.12.2016
  * Time: 16:49
  *
- * Klasse ArticleModel
- *
- * archiviert Uploads in DB
- * und gibt sie wieder aus
- *
- * Methoden:
- * __construct()
- * getAllArticlesFromDB()
- * getSpecialArticleFromDB()
- * insertArticleToDB ()
- * updateArticleInDB ()
- * deleteArticleFromDB ()
- *
  */
 
 namespace classes\mvc_articles;
 
-
 use classes\mvc_pagestructure\Model;
 
+
+/**
+ * Class ArticleModel.
+ *
+ * Reads all or single articles or events from database,
+ * inserts and updates articles or events in database,
+ * removes articles or events from database
+ *
+ * @author: Lena Lehmann lena.lehmann@email.de
+ *
+ * @package classes\mvc_articles
+ *
+ */
 class ArticleModel extends Model
 {
 
     /**
-     * Konstruktor
+     * ArticleModel constructor.
      *
-     * führt Konstruktor von Model aus =>
-     * initiiert Datenbankverbindung via Trait DB_Connection
+     * Instantiates parent constructor (in class Model),
+     * initiates database connection via trait DB_Connection
      *
      */
     public function __construct() {
         parent::__construct();
     }
 
-
     /**
-     * alle Veranstaltungen aus DB auslesen
+     * Method getAllArticlesFromDB.
      *
-     * @return array (alle Veranstaltungen aus DB)
+     * Selects and returns all articles or events stored in database
+     *
+     * @return array
      *
      */
     public function getAllArticlesFromDB () {
@@ -55,12 +55,13 @@ class ArticleModel extends Model
 
     }
 
-
     /**
-     * einzelne Veranstaltung aus DB auslesen
+     * Method getSpecialArticleFromDB.
      *
-     * @param $article (ausgewählter Artikel (Titel))
-     * @return array (Veranstaltung aus DB)
+     * Selects and returns single, selected article or event from database
+     *
+     * @param $articleID
+     * @return array
      *
      */
     public function getSpecialArticleFromDB ($articleID) {
@@ -76,11 +77,12 @@ class ArticleModel extends Model
 
     }
 
-
     /**
-     * neue Veranstaltung in DB schreiben
+     * Method insertArticleToDB.
      *
-     * @param $article (eingegebener Artikel)
+     * Saves new article or event to database
+     *
+     * @param $article
      *
      */
     public function insertArticleToDB ($article) {
@@ -101,9 +103,11 @@ class ArticleModel extends Model
 
 
     /**
-     * Veranstaltung in DB aktualisieren
+     * Method updateArticleInDB.
      *
-     * @param $article (eingegebener Artikel)
+     * Updates adapted article or event in database
+     *
+     * @param $article
      *
      */
     public function updateArticleInDB ($article) {
@@ -125,9 +129,11 @@ class ArticleModel extends Model
 
 
     /**
-     * Veranstaltung aus DB löschen
+     * Method deleteArticleFromDB.
      *
-     * @param $articleID (ausgewählter Artikel)
+     * Removes selected article or event from database
+     *
+     * @param $articleID
      *
      */
     public function deleteArticleFromDB ($articleID) {

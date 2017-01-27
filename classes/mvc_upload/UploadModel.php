@@ -5,36 +5,37 @@
  * Date: 29.12.2016
  * Time: 11:19
  *
- * Klasse UploadModel
- *
- * archiviert Uploads in DB
- * und gibt sie wieder aus
- *
- * Methoden:
- * __construct()
- * getUploadsFromDB()
- * getDocumentFromDB()
- * setUploadsToDB()
- * updateUploadsInDB()
- * deleteUploadsFromDB()
- *
  */
 
 namespace classes\mvc_upload;
 
 use classes\mvc_pagestructure\Model;
 
-
+/**
+ * Class UploadModel.
+ *
+ * Gets all or single documents from database,
+ * inserts new uploads to database,
+ * removes documents from database
+ *
+ * @author: Lena Lehmann lena.lehmann@email.de
+ *
+ * @package classes\mvc_upload
+ *
+ */
 class UploadModel extends Model
 {
 
+    /**
+     * @var array
+     */
     public $filename = [];
 
     /**
-     * Konstruktor
+     * UploadModel constructor.
      *
-     * führt Konstruktor von Model aus =>
-     * initiiert Datenbankverbindung via Trait DB_Connection
+     * Instantiates parent constructor (in class Model),
+     * initiates database connection via trait DB_Connection
      *
      */
     public function __construct() {
@@ -43,9 +44,11 @@ class UploadModel extends Model
 
 
     /**
-     * alle Dokumente aus DB auslesen
+     * Method getUploadsFromDB.
      *
-     * @return array (alle Dokumente aus DB)
+     * Selects and returns all documents from database
+     *
+     * @return array
      *
      */
     public function getUploadsFromDB () {
@@ -57,12 +60,13 @@ class UploadModel extends Model
 
     }
 
-
     /**
-     * einzelnes Dokument aus DB auslesen
+     * Method getDocumentFromDB.
      *
-     * @param $document (ausgewähltes Dokument)
-     * @return array (Dokumentdaten aus DB)
+     * Selects and returns requested document from database
+     *
+     * @param $document
+     * @return array
      *
      */
     public function getDocumentFromDB ($document) {
@@ -79,9 +83,11 @@ class UploadModel extends Model
     }
 
     /**
-     * neues Dokument in DB schreiben
+     * Method setUploadsToDB.
      *
-     * @param $uploaded (eingegebenes Dokument)
+     * Inserts new uploaded documents into database
+     *
+     * @param $uploaded
      *
      */
     public function setUploadsToDB ($uploaded) {
@@ -97,28 +103,11 @@ class UploadModel extends Model
     }
 
     /**
-     * Dokument in DB aktualisieren
+     * Method deleteUploadsFromDB.
      *
-     * @param $uploaded (eingegebenes Dokument)
+     * Removes selected document from database
      *
-     */
-    public function updateUploadsInDB ($uploaded) {
-
-        $sql = "UPDATE vereine_uploads 
-                SET uploadName = :uploaded";
-
-        $array = [
-            ":uploaded" => htmlspecialchars($uploaded['name'])
-        ];
-
-        $this->setDataToDB($sql, $array);
-
-    }
-
-    /**
-     * Dokument aus DB löschen
-     *
-     * @param $uploaded (ausgewähltes Dokument)
+     * @param $uploaded
      *
      */
     public function deleteUploadsFromDB ($uploaded) {

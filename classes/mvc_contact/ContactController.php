@@ -1,38 +1,39 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Engelstein IT
+ * User: Lena
  * Date: 01.12.2016
  * Time: 11:28
- *
- * Klasse ContactController
- *
- * steuert Kontaktformular
- *
- * Methoden:
- * run_contact()
  *
  */
 
 namespace classes\mvc_contact;
 
-
 use classes\helpers\FormMailer;
 use classes\helpers\FormValidator;
 
+/**
+ * Class ContactController.
+ *
+ * Drives contact form
+ *
+ * @author: Lena Lehmann lena.lehmann@email.de
+ *
+ * @package classes\mvc_contact
+ *
+ */
 class ContactController
 {
 
     /**
-     * Steuerung Kontaktformular
+     * Method run_contact.
      *
-     * prüft, ob jedes Feld einen Eintrag hat
-     * => wenn ja, wird Klasse FormMailer aktiviert und
-     * Nachricht als Mail an Verein versendet (Statusnachricht wird ausgegeben)
-     * => wenn nicht, werden Fehlermeldungen ausgegeben
+     * Validates contact form data using static method validateFormfields in class FormValidator,
+     * sends information from contact form via eMail using static method sendContactData in class FormMailer,
+     * returns status message after using this method (success or error message)
      *
      * @param $contactData
-     * @return string (Status Mailversand) ODER array (Fehlermeldungen aus Klasse FormValidator)
+     * @return array|string
      *
      */
     public function run_contact($contactData) {

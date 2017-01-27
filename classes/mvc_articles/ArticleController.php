@@ -1,46 +1,63 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Engelstein IT
+ * User: Lena
  * Date: 09.11.2016
  * Time: 11:20
- *
- * Klasse ArticleController
- *
- * steuert Erstellung und Verwaltung der Veranstaltungen (CRUD)
- *
- * Eigenschaften:
- * $all (leere public Variable)
- * $page (gibt Seite für Redirect an)
- * $articleModel (leere public Variable)
- *
- * Methoden:
- * __construct()
- * createArticles()
- * updateArticles()
  *
  */
 
 
 namespace classes\mvc_articles;
-use classes\traits\Redirect;
 
+use classes\traits\Header;
 
+/**
+ * Class ArticleController.
+ *
+ * Create, read, update and delete articles or events (CRUD)
+ *
+ * @author: Lena Lehmann lena.lehmann@email.de
+ *
+ * @package classes\mvc_articles
+ *
+ */
 class ArticleController
 {
 
-    use Redirect;
+    use Header;
 
+    /**
+     * Array all.
+     *
+     * Receives and stores all articles or events from database
+     *
+     * @var array
+     *
+     */
     public $all;
+
+    /**
+     * @var string
+     */
     public $page = "artikel";
+
+    /**
+     * Object articleModel.
+     *
+     * Instance of class ArticleModel
+     *
+     * @var ArticleModel
+     *
+     */
     private $articleModel;
 
 
     /**
-     * Konstruktor
+     * ArticleController constructor.
      *
-     * instanziiert ArticleModel
-     * holt alle Veranstaltungen aus der Datenbank
+     * instantiates ArticleModel,
+     * reads all articles from database
      *
      */
     public function __construct () {
@@ -48,13 +65,10 @@ class ArticleController
         $this->all = $this->articleModel->getAllArticlesFromDB();
     }
 
-
     /**
-     * Erstellung neuer Artikel
+     * Method createArticles.
      *
-     * wenn Artikel noch nicht in DB, wird er reingeschrieben
-     * wenn Artikel schon in DB, wird er aktualisiert
-     *
+     * Create new articles or events, save them to database
      *
      * @param $article
      *
@@ -65,7 +79,41 @@ class ArticleController
             if ($article['article']['id'] == "") {
                 $this->articleModel->insertArticleToDB($article['article']);
                 $this->refresh($this->page);
-            } else {
+            }
+        }
+
+    }
+
+    /**
+     * Method readArticles.
+     *
+     * Reads selected article or event from database.
+     *
+     * @param $clicked
+     * @return array
+     *
+     */
+    public function readArticles ($clicked) {
+
+        if ($clicked  == 'edit') {
+            $update = $this->articleModel->getSpecialArticleFromDB($_GET['edit']);
+            return $update;
+        }
+
+    }
+
+    /**
+     * Method updateArticles.
+     *
+     * Update articles or events, save them to database
+     *
+     * @param $article
+     *
+     */
+    public function updateArticles ($article) {
+
+        if (isset ($article['article']['submit'])) {
+            if ($article['article']['id'] != "") {
                 $this->articleModel->updateArticleInDB($article['article']);
                 $this->refresh($this->page);
             }
@@ -73,21 +121,17 @@ class ArticleController
 
     }
 
-
     /**
-     * Artikel/Veranstaltungen updaten oder löschen
+     * Method deleteArticles.
      *
+     * Removes selected article or event from database
      *
-     * @param $selected
-     * @return array (ausgewählter Artikel)
+     * @param $clicked
      *
      */
-    public function updateArticles ($clicked) {
+    public function deleteArticles ($clicked) {
 
-        if ($clicked  == 'edit') {
-            $update = $this->articleModel->getSpecialArticleFromDB($_GET['edit']);
-            return $update;
-        } elseif ($clicked == 'delete') {
+        if ($clicked == 'delete') {
             $this->articleModel->deleteArticleFromDB($_GET['delete']);
             $this->refresh($this->page);
         }

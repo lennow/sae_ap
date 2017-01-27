@@ -1,28 +1,34 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Engelstein IT
+ * User: Lena
  * Date: 21.12.2016
  * Time: 11:17
- *
- *
- * Trait DB_Connection
- *
- * Methoden:
- * connectDB()
  *
  */
 
 namespace classes\traits;
 
-
+/**
+ * Trait DB_Connection.
+ *
+ * Initiates database connection
+ *
+ * @author: Lena Lehmann lena.lehmann@email.de
+ *
+ * @package classes\traits
+ *
+ */
 trait DB_Connection
 {
 
     /**
-     * Verbindung zur Datenbank
+     * Method connectDB.
      *
-     * etabliert Verbindung zur Datenbank
+     * tries to establish database connection,
+     * throws error message if connection failed
+     *
+     * @return \PDO
      *
      */
     public function connectDB () {

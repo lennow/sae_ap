@@ -5,17 +5,20 @@
  * Date: 03.11.2016
  * Time: 10:34
  *
- * Vordefinition verschiedener Konstanten
- *
  */
 
-// Path to Pages
-
+/**
+ * Constants for Paths.
+ *
+ */
 define ("__PAGEDIR__", "pages/");
 define("_URL_", $_SERVER['PHP_SELF']);
 
-// DB Connection Data
 
+/**
+ * Constants for database connection.
+ *
+ */
 define ("__HOST__", "localhost");
 define ("__DBNAME__", "VereineDatabase");
 define ("__DBUSER__", "root");

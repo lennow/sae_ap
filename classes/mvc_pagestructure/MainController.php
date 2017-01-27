@@ -5,25 +5,7 @@
  * Date: 03.11.2016
  * Time: 11:19
  *
- * Klasse Main Controller
- *
- * steuert Anwendung grundlegend
- * Methoden:
- * __construct()
- * generatePagefiles()
- * runApplication()
- *
  */
-
-// ToDo [Backend]:      ZUM SCHLUSS: Nutzerstatus Admin/Nutzer => für Admin Seite mit Formular, um neue Nutzer anzulegen!
-
-/* ******************************************************* */
-
-// ToDo [Fragen]:       Dokumentenverwaltung besser als select oder als Links?
-
-/* ******************************************************* */
-
-
 
 namespace classes\mvc_pagestructure;
 
@@ -31,26 +13,51 @@ use classes\helpers\NavigationHelper;
 use classes\mvc_contact\ContactController;
 use classes\mvc_upload\UploadController;
 use classes\mvc_login\LoginController;
-use classes\traits\Redirect;
+use classes\traits\Header;
 use classes\traits\Logout;
 use classes\mvc_articles\ArticleController;
 
-
+/**
+ * Class MainController.
+ *
+ * Runs application in its entirety
+ *
+ * @author: Lena Lehmann lena.lehmann@email.de
+ *
+ * @package classes\mvc_pagestructure
+ *
+ */
 class MainController {
 
-    use Redirect;
+    use Header;
     use Logout;
 
-    public $globals;
+    /**
+     * Object view.
+     *
+     * Instance of class View
+     *
+     * @var View
+     *
+     */
     public $view;
+
+    /**
+     * Object navigation.
+     *
+     * Instance of class NavigationHelper
+     *
+     * @var NavigationHelper
+     *
+     */
     public $navigation;
 
     /**
-     * Konstruktor
+     * MainController constructor.
      *
-     * startet Session
-     * schreibt GET und POST Arrays in ein gemeinsames Array
-     * instanziiert View und NavigationHelper
+     * Starts Session with session name "user",
+     * instantiates View,
+     * instantiates NavigationHelper
      *
      */
     public function __construct() {
@@ -58,19 +65,15 @@ class MainController {
         session_name("user");
         session_start();
 
-        $this->globals = array_merge($_GET, $_POST);
         $this->view = new View();
         $this->navigation = new NavigationHelper();
     }
 
-
-
     /**
-     * Erstellung der Seiten
+     * Method generatePagefiles.
      *
-     * benutzt Klasse NavigationHelper
-     * nimmt Navigationsarray aus NavigationHelper und legt im Ordner public/pages
-     * die entsprechenden PHP-Dateien an
+     * Generates files out of all navigation arrays in class NavigationHelper,
+     * files stored in public\pages
      *
      */
     public function generatePagefiles() {
@@ -84,25 +87,19 @@ class MainController {
         }
     }
 
-
     /**
-     * Anwendungssteuerung
+     * Method run_application.
      *
-     * benutzt NavigationHelper
-     * ruft Funktion validateSiteParams() auf und übergibt dieser eine Session-Variable (falls eingeloggter User)
-     * und den aktuellen GET-Parameter
+     * Main method,
+     * instantiates subcontrollers depending on current page,
+     * controls logout,
+     * loads template files for frontend or backend (depending on login status)
      *
-     * ruft Funktion logout() auf (bei Ausloggen)
-     *
-     * switch/case für eigentliche Seitensteuerung
-     * benutzt FormValidator für Formularauswertung
-     * ruft auf Kontaktseite und im Backend entsprechende Routinen auf
-     *
-     * ruft Template (Frontend oder Backend) auf, (je nach Login-Status)
+     * @return string
      *
      */
     public function run_application() {
-        $page = $this->navigation->validateSiteParams (@$_SESSION['username'], @$this->globals['p']);
+        $page = $this->navigation->validateSiteParams (@$_SESSION['username'], @$_GET['p']);
 
         switch ($page) {
 
@@ -132,9 +129,6 @@ class MainController {
 
         }
 
-        /*
-         * Template laden, Content laden
-         */
         if (isset ($_SESSION['username'])) {
             $this->view->setTemplate("backend");
             $this->view->pageContent = $page . ".php";
@@ -143,9 +137,6 @@ class MainController {
             $this->view->pageContent = $page . ".php";
         }
 
-        /*
-         * Template laden, Content laden
-        */
         try {
             return $this->view->loadTemplate();
         } catch (\InvalidArgumentException $e) {

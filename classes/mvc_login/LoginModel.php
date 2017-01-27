@@ -14,38 +14,44 @@
  * Methoden:
  * __construct()
  * getLoginData()
- * setUser()
  *
  */
-
 
 namespace classes\mvc_login;
 
 use classes\mvc_pagestructure\Model;
 
-
+/**
+ * Class LoginModel.
+ *
+ * Reads and compares user data from database with login data
+ *
+ * @author: Lena Lehmann lena.lehmann@email.de
+ *
+ * @package classes\mvc_login
+ *
+ */
 class LoginModel extends Model
 {
 
     /**
-     * Konstruktor
+     * LoginModel constructor.
      *
-     * führt Konstruktor von Model aus =>
-     * initiiert Datenbankverbindung via Trait DB_Connection
+     * Instantiates parent constructor (in class Model),
+     * initiates database connection via trait DB_Connection
      *
      */
     public function __construct() {
         parent::__construct();
     }
 
-
     /**
-     * Daten aus Login mit DB abgleichen
+     * Method getLoginData.
      *
-     * prüft, ob Einwahldaten in DB vorhanden
+     * Selects userdata from database comparing them to submitted login data
      *
      * @param $loginData
-     * @return array (Nutzerdaten aus DB)
+     * @return array
      *
      */
     public function getLoginData ($loginData) {
@@ -61,32 +67,5 @@ class LoginModel extends Model
         $login = $this->getDataFromDB($sql, $array);
         return $login;
     }
-
-
-
-    /**
-     * neuen Benutzer anlegen
-     *
-     * legt neue Zeile in DB mit neuen Nutzerdaten an
-     *
-     * @param $userData
-     *
-     */
-    public function setUser ($userData) {
-        $sql = "INSERT INTO vereine_users
-                (userName, userLastname, userEmail, userUsername, userPassword)
-                VALUES (:name, :lastname, :email, :username, :password)";
-
-        $array = [
-            ":name" => htmlspecialchars($userData["Vorname"]),
-            ":lastname" => htmlspecialchars($userData["Nachname"]),
-            ":email" => htmlspecialchars($userData["Email"]),
-            ":username" => htmlspecialchars($userData["Benutzername"]),
-            ":password" => htmlspecialchars($userData["Passwort"]),
-        ];
-
-        $this->setDataToDB($sql, $array);
-    }
-
 
 }
