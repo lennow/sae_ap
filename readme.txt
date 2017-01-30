@@ -11,13 +11,26 @@ Dr. Lena Lehmann
 *** WICHTIG! ***
 Bitte unbedingt Konzept einbeziehen!
 Im Anhang des Konzeptes finden sich die Wireframes, welche als Vorlage für das hier angelegte Webdesign dienen!
+Es gibt drei Versionen im CSS. Der Header bietet grundlegend zwei Varianten, in Variante 2 wird die Navigation
+verschieden platziert.
+Um das Layout anzupassen, sind folgende Änderungen zu machen:
 
-1.) In der style.scss unter "HEADER", "MAIN NAVI", "MAIN + PAGES" und "FOOTER" entsprechende Layout-Version aktivieren (Zeilen 25, 29, 33 und 42).
-2.) In der frontend.php unter "HEADER" entsprechenden Header aktivieren (Zeile 41 oder 42).
+1.) Dateipfad: public\css\style.scss
+    => unter "HEADER", "MAIN NAVI", "MAIN + PAGES" und "FOOTER" entsprechende Layout-Version aktivieren
+    (Zeilen 23, 27, 31 und 41).
 
-3.) Für Wireframe 2 in pages\templates\version_2\header.php Zeilen 28 und 32 einkommentieren, für Wireframe 3 & 4 auskommentieren.
-4.) Für Wireframes 3 & 4 in frontend.php folgende Zeilen einkommentieren:
-    51 - 54, 81
+2.) Dateipfad: public\pages\templates\frontend.php
+    => unter "HEADER" entsprechenden Header aktivieren (Zeile 30 oder 31, siehe Kommentar darüber).
+    => für Wireframes 3 & 4 zusätzlich noch folgende Zeilen einkommentieren: 41 - 43, 70 - 75
+    => für Wireframe 4 außerdem Zeilen 99 - 116 einkommentieren
+
+5.) Dateipfad: public\pages\templates\version_2\header.php
+    => für Wireframe 2 Zeilen 28 und 32 einkommentieren
+    => für Wireframes 3 & 4 diese Zeilen auskommentieren
+
+6.) Dateipfad: public\css\designs\version_3\_main.scss
+    => für Wireframe 3 folgende Zeilen einkommentieren: 7, 124 - 140
+    => für Wireframe 4 diese Zeilen auskommentieren, dafür folgende Zeilen einkommentieren: 10, 143 - , 180 - 184
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 

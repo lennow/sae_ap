@@ -25,8 +25,8 @@
 
     <!-- Hauptnavigation (Desktop, bis 900px Breite) - NUR mit Wireframe 2! -->
 <nav id="main_nav">
-    <?php classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
+    <?php //classes\helpers\NavigationHelper::createNavigation(@$_SESSION['username'], "frontendNavi"); ?>
 </nav>
 
     <!-- Hauptnavigation (Mobile, ab 900px Breite) - NUR mit Wireframe 2! -->
-<?php require_once "pages/inc/mobileNavi.inc.php"; ?>
+<?php //require_once "pages/inc/mobileNavi.inc.php"; ?>
