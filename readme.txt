@@ -24,13 +24,22 @@ Um das Layout anzupassen, sind folgende Änderungen zu machen:
     => für Wireframes 3 & 4 zusätzlich noch folgende Zeilen einkommentieren: 41 - 43, 70 - 75
     => für Wireframe 4 außerdem Zeilen 99 - 116 einkommentieren
 
+WIREFRAMES 2, 3 / 4:
+
 5.) Dateipfad: public\pages\templates\version_2\header.php
     => für Wireframe 2 Zeilen 28 und 32 einkommentieren
     => für Wireframes 3 & 4 diese Zeilen auskommentieren
 
+WIREFRAME 3 / 4:
+
 6.) Dateipfad: public\css\designs\version_3\_main.scss
-    => für Wireframe 3 folgende Zeilen einkommentieren: 7, 124 - 140
-    => für Wireframe 4 diese Zeilen auskommentieren, dafür folgende Zeilen einkommentieren: 10, 143 - , 180 - 184
+    => für Wireframe 3 folgende Zeilen einkommentieren: 7, 124 - 135
+    => für Wireframe 4 diese Zeilen auskommentieren, dafür folgende Zeilen einkommentieren: 10, 138 - 152, 203 - 210
+
+7.) Dateipfad: public\css\designs\version_3\_navigation.scss
+    => für Wireframe 4 folgende Zeilen einkommentieren: 95 - 97
+    => für Wireframe 3 diese Zeilen auskommentieren
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -43,6 +52,20 @@ Zwei Effekte stehen zur Verfügung und können nach Bedarf ein-/auskommentiert w
     1. Änderung der Schriftfarbe der Navigationspunkte
     2. Änderung der Hintergrundfarbe der Navigationspunkte
 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+CSS:
+
+Die Seite wird mit Hilfe von Partials in SCSS gestylt.
+Änderungen der Schriften, Farben, typografischen Eigenschaften etc. können in den entsprechend benannten Partials
+im Ordner public\css\config vorgenommen werden.
+Im Ordner public\css\designs liegen alle Stylevorgaben für das Gesamtdesign. Die zu verwendenden Media Queries sowie
+das SCSS Flexbox Modul liegen im Ordner public\css\helpers. Seitenspezifische Styleangaben gehen aus den Dateien im
+Ordner public\css\layout hervor.
+Alle Partials werden in der Hauptdatei style.scss eingebunden.
+
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 LOGIN:
@@ -50,6 +73,7 @@ LOGIN:
     Zugangsdaten zu Testzwecken:
 
     test / test
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -59,6 +83,7 @@ DATENBANK:
     Die Zugangsdaten werden in folgender Datei angelegt:
 
     .\config\constants.php
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 

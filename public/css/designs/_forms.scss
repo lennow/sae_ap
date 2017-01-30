@@ -3,6 +3,11 @@
 form {
   width: $percent*100;
   @include flexbox(column, space-between, flex-start);
+  // Media Query max-width 600px
+  @include breakpoint600 {
+    width: $percent*90;
+    margin: $em*2 auto;
+  }
   div {
     width: $percent*100;
     margin-bottom: $em;
@@ -16,6 +21,10 @@ form {
 
 label {
   width: $percent*20;
+  // Media Query max-width 400px
+  @include breakpoint400 {
+    margin-bottom: $em;
+  }
 }
 
 .backend_label {
@@ -43,6 +52,10 @@ input {
   @include breakpoint1000 {
     width: $percent*60;
   }
+  // Media Query max-width 600px
+  @include breakpoint600 {
+    width: $percent*75;
+  }
   // Media Query max-width 400px
   @include breakpoint400 {
     width: $percent*80;
@@ -64,6 +77,10 @@ textarea {
   height: $em*10;
   text-align: left;
   @include box_shadow($box_shadow);
+  // Media Query max-width 600px
+  @include breakpoint600 {
+    margin-left: $em;
+  }
 }
 
 select {
