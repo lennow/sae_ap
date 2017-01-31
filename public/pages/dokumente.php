@@ -1,9 +1,9 @@
 <?php
 
 $allDocs = $this->allDocuments->all;
-$upload = $this->allDocuments->saveUploadedFiles(@$_FILES['upload']);
 $this->allDocuments->downloadDocuments(@$_POST['upload']);
 $this->allDocuments->deleteDocuments(@$_POST['upload']);
+$this->allDocuments->saveUploadedFiles(@$_POST['upload']);
 
 ?>
 
@@ -49,10 +49,10 @@ $this->allDocuments->deleteDocuments(@$_POST['upload']);
             <input type="submit" name="upload[submit]" value="Datei hochladen">
         </form>
         <p class="error">
-            <?php if (isset ($upload)) : ?>
-                <?php foreach ($upload as $key => $error) : ?>
-                    <?php if (isset ($key)) : print_r($error); ?>
-                    <?php endif; ?>
+            <?php if (isset (\classes\helpers\FormValidator::$errorMessages['upload'])) : ?>
+                <?php $errorMessage = \classes\helpers\FormValidator::$errorMessages['upload']; ?>
+                <?php foreach ($errorMessage as $key => $error) : ?>
+                    <?= $error; ?><br />
                 <?php endforeach; ?>
             <?php endif; ?>
         </p>

@@ -1,0 +1,103 @@
+// ------------------------- MAIN --------------------------- //
+
+////////// Wireframe 1 - Width < Viewport ///////////
+
+#main_wrapper {
+  width: $percent*75;
+  margin: 0 auto;
+  background-color: $white_trans;
+  @include flexbox(row, space-around, flex-start);
+  // Media Query max-width 1000px
+  @include breakpoint1000 {
+    width: $percent*85;
+  }
+  // Media Query max-width 700px
+  @include breakpoint700 {
+    flex-direction: column-reverse;
+  }
+  // Media Query max-width 520px
+  @include breakpoint520 {
+    width: $percent*95;
+    padding: $em 0;
+  }
+  // Media Query max-width 400px
+  @include breakpoint400 {
+    padding-top: 0;
+  }
+  #side_wrapper {
+    width: $percent*35;
+    // Media Query max-width 700px
+    @include breakpoint700 {
+      width: $percent*100;
+    }
+  }
+  aside {
+    width: $percent*90;
+    padding: $em $percent*3;
+    // Media Query max-width 700px
+    @include breakpoint700 {
+      padding: 0;
+      margin: $em auto;
+    }
+    #sidebar {
+      padding: $em*0.5 0;
+      text-align: center;
+      @include flexbox(column, space-between, center);
+      // Media Query max-width 700px
+      @include breakpoint700 {
+        flex-direction: row;
+        justify-content: flex-start;
+      }
+      // Media Query max-width 490px
+      @include breakpoint490 {
+        flex-direction: column;
+      }
+    }
+    .img_aside {
+      width: $percent*100;
+      margin: $em auto;
+      // Media Query max-width 700px
+      @include breakpoint700 {
+        width: $percent*30;
+        margin: 0 $em*3;
+      }
+      img {
+        width: $percent*80;
+        // Media Query max-width 1400px
+        @include breakpoint1400 {
+          width: $pixel*130;
+        }
+        // Media Query max-width 1000px
+        @include breakpoint1000 {
+          width: $pixel*100;
+        }
+      }
+    }
+  }
+  main {
+    width: $percent*85;
+    // Media Query max-width 1400px
+    @include breakpoint1400 {
+      width: $percent*75;
+    }
+    // Media Query max-width 700px
+    @include breakpoint700 {
+      width: $percent*90;
+      margin: 0 auto;
+    }
+    h1 {
+      // Media Query max-width 1200px
+      @include breakpoint1200 {
+        font-size: $em*1.5;
+      }
+      // Media Query max-width 490px
+      @include breakpoint490 {
+        font-size: $em*1.2;
+        margin-bottom: $em;
+      }
+    }
+    p {
+      padding: 0 $em*2 $em*2 0;
+    }
+  }
+}

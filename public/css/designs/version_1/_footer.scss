@@ -1,0 +1,32 @@
+// ------------------------- FOOTER --------------------------- //
+
+////////// Wireframe 1 - Width < Viewport ///////////
+
+footer {
+  width: $percent*75;
+  background-color: $white_trans;
+  padding: $em*1.5 0;
+  border-top: $border_dark;
+  @include flexbox(row, space-around, flex-start);
+  // Media Query max-width 1000px
+  @include breakpoint1000 {
+    width: $percent*85;
+  }
+  // Media Query max-width 520px
+  @include breakpoint520 {
+    width: $percent*95;
+  }
+  // Media Query max-width 400px
+  @include breakpoint400 {
+    flex-direction: column;
+  }
+  p {
+    // Media Query max-width 400px
+    @include breakpoint400 {
+      width: $percent*75;
+      margin: $em auto;
+    }
+  }
+}
+
+

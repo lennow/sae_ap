@@ -1,0 +1,145 @@
+// ------------------------- BACKEND --------------------------- //
+
+#backend {
+  #backend_header {
+    margin: $vertspace;
+    padding: $em;
+    @include flexbox(row, space-around, flex-end);
+    // Media Query max-width 600px
+    @include breakpoint600 {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      margin: $em;
+    }
+    figure {
+      width: $percent*10;
+      img {
+        width: $percent*100;
+      }
+      // Media Query max-width 600px
+      @include breakpoint600 {
+        width: $percent*20;
+        margin-left: $em;
+      }
+      // Media Query max-width 400px
+      @include breakpoint400 {
+        width: $percent*35;
+        margin-left: $em;
+      }
+    }
+    nav {
+      width: $percent*45;
+      // Media Query max-width 1200px
+      @include breakpoint1200 {
+        width: $percent*65;
+      }
+      // Media Query max-width 700px
+      @include breakpoint700 {
+        width: $percent*70;
+      }
+      // Media Query max-width 600px
+      @include breakpoint600 {
+        width: $percent*85;
+        margin-left: $em;
+        margin-top: $em;
+      }
+      // Media Query max-width 490px
+      @include breakpoint490 {
+        width: $percent*90;
+      }
+      ul {
+        @include flexbox(row, space-between, center);
+        // Media Query max-width 400px
+        @include breakpoint400 {
+          flex-direction: column;
+          font-size: larger;
+        }
+      }
+    }
+  }
+  #backend_main {
+    width: $percent*75;
+    margin: 0 auto;
+    // Media Query max-width 1000px
+    @include breakpoint1000 {
+      width: $percent*85;
+    }
+    h1 {
+      // Media Query max-width 520px
+      @include breakpoint520 {
+        margin-top: $em;
+      }
+    }
+    .content {
+      @include flexbox(row, flex-start, flex-start);
+      // Media Query max-width 1000px
+      @include breakpoint1000 {
+        flex-direction: column;
+      }
+      .download {
+        width: $percent*60;
+        @include flexbox(column, flex-start, flex-start);
+        // Media Query max-width 1000px
+        @include breakpoint1000 {
+          width: $percent*100;
+        }
+        a {
+          padding: $em;
+        }
+      }
+    }
+  }
+  .article_create {
+    width: $percent*100;
+
+  }
+  .crud {
+    padding-bottom: $em*2;
+    @include flexbox(column, flex-start, flex-start);
+    // Media Query max-width 400px
+    @include breakpoint400 {
+      flex-direction: column;
+    }
+    a {
+      padding: $em*0.3;
+    }
+    &> div {
+      width: $percent*100;
+      @include flexbox(row, flex-start, center);
+      // Media Query max-width 600px
+      @include breakpoint600 {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: $em;
+      }
+      h6 {
+        width: $percent*40;
+        // Media Query max-width 1000px
+        @include breakpoint1000 {
+          width: $percent*50;
+        }
+      }
+      div {
+        width: $percent*20;
+        @include flexbox(row, space-between, center);
+        // Media Query max-width 1400px
+        @include breakpoint1400 {
+          width: $percent*30;
+        }
+        // Media Query max-width 700px
+        @include breakpoint700 {
+          width: $percent*40;
+        }
+        // Media Query max-width 600px
+        @include breakpoint600 {
+          width: $percent*60;
+        }
+        // Media Query max-width 4600px
+        @include breakpoint400 {
+          width: $percent*80;
+        }
+      }
+    }
+  }
+}

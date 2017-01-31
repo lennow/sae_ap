@@ -1,0 +1,84 @@
+// ------------------------- MAIN --------------------------- //
+
+////////// Wireframe 2 - Width = Viewport ///////////
+
+
+#main_wrapper {
+  width: $percent*100;
+  @include flexbox(row-reverse, space-between, flex-start);
+  // Media Query max-width 900px
+  @include breakpoint900 {
+    flex-direction: column-reverse;
+  }
+  #side_wrapper {
+    // Media Query max-width 900px
+    @include breakpoint900 {
+      width: $percent*100;
+    }
+  }
+  aside {
+    width: $percent*75;
+    background-color: $white_trans;
+    margin: $vertspace $percent*9;
+    // Media Query max-width 1000px
+    @include breakpoint1000 {
+      margin: $vertspace $percent*5;
+      width: $percent*80;
+    }
+    // Media Query max-width 900px
+    @include breakpoint900 {
+      width: $percent*90;
+      margin: auto;
+    }
+    #sidebar {
+      padding: $em*0.5 0;
+      text-align: center;
+      @include flexbox(column, space-between, center);
+      // Media Query max-width 900px
+      @include breakpoint900 {
+        width: $percent*100;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      .img_aside {
+        width: $percent*40;
+        margin: $em*1.5 0;
+        // Media Query max-width 900px
+        @include breakpoint900 {
+          width: $percent*25;
+        }
+        // Media Query max-width 800px
+        @include breakpoint800 {
+          width: $percent*20;
+        }
+        img {
+          width: $percent*100;
+        }
+      }
+    }
+  }
+  main {
+    width: $percent*70;
+    padding: $vertspace $percent*6;
+    // Media Query max-width 1200px
+    @include breakpoint1200 {
+      padding: $vertspace $percent*5;
+    }
+    // Media Query max-width 900px
+    @include breakpoint900 {
+      width: $percent*90;
+      margin: auto;
+    }
+    h1 {
+      // Media Query max-width 1200px
+      @include breakpoint1200 {
+        font-size: $em*1.5;
+      }
+      // Media Query max-width 490px
+      @include breakpoint490 {
+        font-size: $em*1.2;
+        margin-bottom: $em;
+      }
+    }
+  }
+}

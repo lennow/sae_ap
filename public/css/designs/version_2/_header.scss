@@ -1,0 +1,52 @@
+// ------------------------- HEADER --------------------------- //
+
+////////// Wireframe 2 - Width = Viewport ///////////
+
+header {
+  width: $percent*100;
+  background-color: $white_trans;
+  position: relative;
+  #banner_wrapper {
+    width: $percent*100;
+    img {
+      width: $percent*100;
+    }
+  }
+  #logo_wrapper {
+    width: auto;
+    position: absolute;
+    top: $percent*5;
+    left: $percent*5;
+    // Media Query max-width 600px
+    @include breakpoint600 {
+      left:  $percent*75;
+    }
+    // Media Query max-width 400px
+    @include breakpoint400 {
+      left:  $percent*70;
+    }
+    img {
+      width: $pixel*300;
+      // Media Query max-width 1200px
+      @include breakpoint1200 {
+        width: $pixel*200;
+      }
+      // Media Query max-width 900px
+      @include breakpoint900 {
+        width: $pixel*180;
+      }
+      // Media Query max-width 800px
+      @include breakpoint800 {
+        width: $pixel*120;
+      }
+      // Media Query max-width 520px
+      @include breakpoint520 {
+        width: $pixel*100;
+      }
+      // Media Query max-width 400px
+      @include breakpoint400 {
+        width: $pixel*80;
+      }
+    }
+  }
+}

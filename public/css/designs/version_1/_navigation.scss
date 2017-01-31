@@ -1,0 +1,134 @@
+// ------------------------- NAVIGATION --------------------------- //
+
+////////// über Bannerbild (Wireframe 1) ///////////
+
+.nav_line {
+  padding: $em*2;
+  @include flexbox(row, space-between, flex-end);
+  #main_nav ul {
+    width: $percent*60;
+    @include flexbox (row, space-between, flex-end);
+    li {
+      padding: 0 $em;
+      font-family: $caviarB;
+      font-size: $em*1.3;
+      // Media Query max-width 1200px
+      @include breakpoint1200 {
+        font-size: $em*1.1;
+        padding: 0 $em*0.5;
+      }
+      // Media Query max-width 1000px
+      @include breakpoint1000 {
+        font-size: $em;
+      }
+      // Media Query max-width 900px
+      @include breakpoint900 {
+        font-size: $em*1.3;
+      }
+    }
+    // Media Query max-width 900px
+    @include breakpoint900 {
+      display: none !important;
+    }
+  }
+  #logo_wrapper {
+    img {
+      width: $pixel*200;
+      // Media Query max-width 1400px
+      @include breakpoint1400 {
+        width: $pixel*150;
+      }
+      // Media Query max-width 1000px
+      @include breakpoint1000 {
+        width: $pixel*120;
+      }
+    }
+  }
+}
+
+////////// Mobile Navigation ///////////
+
+#nav_icon {
+  display: none;
+  cursor: pointer;
+  float: right;
+  i {
+    font-size: $em*3;
+    color: $black;
+  }
+  // Media Query max-width 900px
+  @include breakpoint900 {
+    display: block !important;
+  }
+}
+
+#mobile_nav {
+  display: none;
+  background-color: $lightgrey;
+  width: auto;
+  position: absolute;
+  top: $em*8;
+  right: $em*4;
+  height: auto;
+  padding: $em;
+  // Media Query max-width 800px
+  @include breakpoint800 {
+    right: $em*3;
+  }
+  // Media Query max-width 600px
+  @include breakpoint600 {
+    right: $em*2;
+  }
+  // Media Query max-width 520px
+  @include breakpoint520 {
+    right: $em;
+  }
+  li {
+    padding: $em*0.5;
+    font-size: $em*1.3;
+    &:not(:first-child) {
+      border-top: $border_light;
+    }
+  }
+}
+
+////////// Subnavigationen ///////////
+
+.subnavi ul, .projnavi ul {
+  margin: $em 0;
+  @include flexbox(row, flex-start, center);
+  // Media Query max-width 300px
+  @include breakpoint300 {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  li {
+    padding-right: $em*2;
+    font-family: $caviarB;
+    font-size: $em*1.2;
+    // Media Query max-width 490px
+    @include breakpoint490 {
+      padding-right: $em*0.9;
+    }
+    // Media Query max-width 490px
+    @include breakpoint490 {
+      font-size: $em;
+    }
+    // Media Query max-width 300px
+    @include breakpoint300 {
+      font-size: $em*1.2;
+      padding: $em*0.3 0;
+    }
+  }
+}
+
+////////// Footer Navigation ///////////
+
+.footer_navi {
+  font-family: $caviarB;
+  font-size: $em;
+  // Media Query max-width 700px
+  @include breakpoint700 {
+    display: none;
+  }
+}
